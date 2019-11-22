@@ -1,29 +1,22 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
 @import './assets/primary-palette.scss';
 @import './assets/accent-palette.scss';
 // Plus imports for other components in your app.
-
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat-core();
-
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $gqeventos-primary: mat-palette($md-primary-palette);
-
 $gqeventos-accent: mat-palette($md-accent, A200, A100, A400);
-
 // The warn palette is optional (defaults to red).
 $gqeventos-warn: mat-palette($mat-red);
-
 // Create the theme object (a Sass map containing all of the palettes).
 $gqeventos-theme: mat-light-theme($gqeventos-primary, $gqeventos-accent, $gqeventos-warn);
-
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
@@ -31,12 +24,34 @@ $gqeventos-theme: mat-light-theme($gqeventos-primary, $gqeventos-accent, $gqeven
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 // CRISTIAN:
-
 // Este link genera las paletas de colores como la usada en primary
 // http://mcg.mbitson.com/#!?theming=%23ffd8bd
-
 // En body font-family va la fuente
+.eon6-primarycolor {
+    color: mat-color($md-primary-palette);
+}
+
+.eon6-accent {
+    color: mat-color($md-accent);
+}
+
+// .eon6-darkcolor {
+//     color: var(--ion-color-dark);
+// }
+// .eon6-graycolor {
+//     color: var(--ion-color-medium);
+// }
+// .eon6-lightcolor {
+//     color: var(--ion-color-light);
+// }
