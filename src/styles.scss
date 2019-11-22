@@ -30,6 +30,10 @@ $gqeventos-warn);
 
 /* You can add global styles to this file, and also import other style files */
 
+.eon6-primarycolor {
+    color: mat-color($gqeventos-primary);
+}
+
 html,
 body {
     height: 100%;
