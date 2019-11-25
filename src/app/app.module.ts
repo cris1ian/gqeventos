@@ -15,6 +15,8 @@ import { GaleriasAdminComponent } from './pages/galerias-admin/galerias-admin.co
 import { ClienteAdminComponent } from './pages/cliente-admin/cliente-admin.component';
 import { LandingComponent } from './pages/landing/landing.component';
 
+import {MatButtonModule} from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,7 @@ import { LandingComponent } from './pages/landing/landing.component';
     LandingComponent
   ],
   imports: [
+    MatButtonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule

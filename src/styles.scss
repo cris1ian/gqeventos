@@ -37,6 +37,7 @@ $gqeventos-warn);
 html,
 body {
     height: 100%;
+    max-width: 100vw;
 }
 
 body {
@@ -48,3 +49,13 @@ body {
 // Este link genera las paletas de colores como la usada en primary
 // http://mcg.mbitson.com/#!?theming=%23ffd8bd
 // En body font-family va la fuente
+html,
+body {
+    height: 100%;
+    max-width: 100vw;
+}
+
+body {
+    margin: 0;
+    font-family: 'Julius Sans One', sans-serif;
+}

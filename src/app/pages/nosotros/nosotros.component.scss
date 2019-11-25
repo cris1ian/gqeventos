@@ -1,0 +1,17 @@
+    .parallax {
+        background-image: url(../../../assets/Fotos/paralax1.jpg);
+        width: 100vw;
+        height: 30vh;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    p {
+        color: rgb(197, 185, 185);
+        font-family: julius sans one;
+        font-size: 2vh;
+        max-width: 15vw;
+        margin-left: 1.5vw;
+    }
