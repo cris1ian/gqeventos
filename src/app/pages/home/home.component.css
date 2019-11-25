@@ -6,25 +6,27 @@
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  -webkit-clip-path: polygon(0 0, 0 100vh, 100vw 80vh, 100vw 0);
-          clip-path: polygon(0 0, 0 100vh, 100vw 80vh, 100vw 0);
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% calc(100% - 5vw), 100% 0);
+          clip-path: polygon(0 0, 0 100%, 100% calc(100% - 5vw), 100% 0);
 }
 
 .header {
+  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 24px;
+  font-size: 1.2vw;
   text-align: end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  word-spacing: 9vw;
+  word-spacing: 7vw;
+  font-family: Julius Sans One;
 }
 
 .header img {
   max-width: 6vw;
-  margin-right: 25vw;
+  margin-right: 27vw;
   margin-left: 2vw;
 }
 
@@ -40,18 +42,25 @@ h1 {
   font-family: bad script;
   color: white;
   text-align: center;
-  font-size: 64px;
+  font-size: 7vh;
+  font-weight: normal;
 }
 
 h2 {
   font-family: Julius Sans One;
   color: white;
   text-align: center;
-  font-size: 24px;
+  font-size: 3vh;
+  font-weight: normal;
+  line-height: 2.5rem;
 }
 
 a {
   text-decoration: none;
   color: black;
+}
+
+strong {
+  font-weight: 700;
 }
 /*# sourceMappingURL=home.component.css.map */
