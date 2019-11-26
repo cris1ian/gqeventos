@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ClienteAdminComponent } from './cliente-admin.component';
+import { Component } from '@angular/core';
+
 
 describe('ClienteAdminComponent', () => {
   let component: ClienteAdminComponent;
@@ -8,9 +9,9 @@ describe('ClienteAdminComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ClienteAdminComponent ]
+      declarations: [ClienteAdminComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -23,3 +24,7 @@ describe('ClienteAdminComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
+
+
