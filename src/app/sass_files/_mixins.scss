@@ -12,4 +12,7 @@
     align-items: center;
 }
 
-@mixin dimensiones {}
+@mixin dimensiones($altura:auto, $ancho:auto) {
+    height: $altura;
+    width: $ancho;
+}
