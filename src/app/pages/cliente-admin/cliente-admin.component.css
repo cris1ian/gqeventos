@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Bad+Script&display=swap");
 .contenedor {
   background-color: #fffff0;
-  height: 100vh;
+  height: 100;
 }
 
 .header {
@@ -67,17 +68,35 @@ button {
 }
 
 .cont-galeria {
-  margin: 10px 5em;
+  margin-left: 2.5vw;
   overflow-y: scroll;
-  margin: 0px 3%;
+  margin-top: 30px;
 }
 
-.cont-galeria .masonry {
+.masonry {
   /* Masonry container */
-  -webkit-column-count: 4;
-  column-count: 4;
-  -webkit-column-gap: 1em;
-  column-gap: 1em;
+  -webkit-column-count: 6;
+  column-count: 6;
   padding: 0;
+}
+
+.item {
+  display: block;
+  width: 200px;
+  margin-bottom: 1em;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-box-shadow: 4px 2px 6px 0 black;
+          box-shadow: 4px 2px 6px 0 black;
+  letter-spacing: 0px;
+  line-height: 0px;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=cliente-admin.component.css.map */
