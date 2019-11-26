@@ -1,16 +1,29 @@
+@import '../../sass_files';
 .cont-panel-admin {
     background: #FFFFF0;
     width: 100vw;
     height: 100vh;
     margin-top: 10px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
+    @include flex-column;
+    font-family: 'Julius Sans One', sans-serif;
     header {
         display: flex;
-        justify-content: flex-start;
+        flex-direction: column;
         width: 100vw;
+        .tlb {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .btns {
+            h2 {
+                text-decoration: underline;
+            }
+            display: flex;
+            justify-content: space-around;
+        }
+        .mat-fab {
+            font-size: 50px;
+        }
         img {
             width: 10%;
         }
