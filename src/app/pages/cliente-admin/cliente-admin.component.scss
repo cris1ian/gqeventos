@@ -1,71 +1,88 @@
-                    .contenedor {
-                        background-color: #fffff0;
-                        height: 100vh;
-                    }
-                    
-                    .header {
-                        position: relative;
-                        display: flex;
-                        align-items: center;
-                    }
-                    
-                    .header img {
-                        height: 10vw;
-                    }
-                    
-                    .numero {
-                        font-family: Julius Sans One;
-                        font-size: 2vw;
-                        margin-right: 5vw;
-                    }
-                    
-                    .nombre {
-                        position: absolute;
-                        font-family: Julius Sans One;
-                        font-size: 2vw;
-                        left: 50%;
-                        transform: translateX(-50%);
-                    }
-                    
-                    .borde {
-                        width: 95%;
-                        border: 1px solid #000000;
-                        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-                        align-self: center;
-                        margin-left: 2.5vw;
-                    }
-                    
-                    .buttons {
-                        display: flex;
-                    }
-                    
-                    button {
-                        display: flex;
-                        font-family: Julius Sans One;
-                        background-color: Transparent;
-                        border: none;
-                        cursor: pointer;
-                        align-items: center;
-                        max-width: 200px;
-                        margin-left: 10vw;
-                        margin-bottom: 35px;
-                        font-size: 18px;
-                    }
-                    
-                    .cont-galeria {
-                        margin: 10px 5em;
-                        // height: 100%;
-                        overflow-y: scroll;
-                        margin: 0px 3%;
-                        .masonry {
-                            /* Masonry container */
-                            -webkit-column-count: 4;
-                            -moz-column-count: 4;
-                            column-count: 4;
-                            -webkit-column-gap: 1em;
-                            -moz-column-gap: 1em;
-                            column-gap: 1em;
-                            padding: 0;
-                            // font-size: 2em;
-                        }
-                    }
+@import url("https://fonts.googleapis.com/css?family=Bad+Script&display=swap");
+.contenedor {
+    background-color: #fffff0;
+    height: 100;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.header img {
+    height: 10vw;
+}
+
+.numero {
+    font-family: Julius Sans One;
+    font-size: 2vw;
+    margin-right: 5vw;
+}
+
+.nombre {
+    position: absolute;
+    font-family: Julius Sans One;
+    font-size: 2vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.borde {
+    width: 95%;
+    border: 1px solid #000000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    align-self: center;
+    margin-left: 2.5vw;
+}
+
+.buttons {
+    display: flex;
+}
+
+button {
+    display: flex;
+    font-family: Julius Sans One;
+    background-color: Transparent;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    max-width: 200px;
+    margin-left: 10vw;
+    margin-bottom: 35px;
+    font-size: 18px;
+}
+
+.cont-galeria {
+    // height: 100%;
+    margin-left: 2.5vw;
+    overflow-y: scroll;
+    margin-top: 30px;
+}
+
+.masonry {
+    /* Masonry container */
+    -webkit-column-count: 6;
+    -moz-column-count: 6;
+    column-count: 6;
+    padding: 0;
+    // font-size: 2em;
+}
+
+.item {
+    display: block;
+    width: 200px;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: 4px 2px 6px 0 rgb(0, 0, 0);
+    letter-spacing: 0px;
+    line-height: 0px;
+}
+
+.img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
