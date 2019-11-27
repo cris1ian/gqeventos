@@ -18,14 +18,17 @@ $gqeventos-theme: mat-light-theme($gqeventos-primary, $gqeventos-accent, $gqeven
 }
 
 //definiciones generales 
+html,
 body {
     height: 100%;
-    max-width: 100vw;
+    width: 100%;
     margin: 0;
+    box-sizing: border-box;
     //tipografia 
     font-family: 'Bad Script', cursive;
     // font-family: 'Dancing Script', cursive;
     // font-family: 'Julius Sans One', sans-serif;
+    overflow-x: hidden;
 }
 
 // CRISTIAN:

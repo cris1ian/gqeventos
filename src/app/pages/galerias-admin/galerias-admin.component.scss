@@ -16,26 +16,27 @@
         .btns {
             display: flex;
             justify-content: space-around;
+            height: 30%;
             div {
                 @include flex-row;
                 p {
-                    font-size: 30px;
+                    font-size: 20px;
                     white-space: pre;
                 }
             }
             h2 {
                 text-decoration: underline;
-                font-size: 30px;
+                font-size: 20px;
             }
         }
         .mat-fab {
-            font-size: 50px;
+            font-size: 40px;
         }
         img {
-            width: 10%;
+            width: 4%;
         }
         h1 {
-            font-size: 56px;
+            font-size: 40px;
         }
     }
 }
@@ -47,8 +48,36 @@
 }
 
 .cont-gala-cli {
+    box-sizing: border-box;
     margin-top: 10px;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     background: coral;
+    overflow-y: scroll;
+    padding: 10px;
+    //************
+    display: flex;
+    flex-wrap: wrap;
+    //************
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 400px;
+    margin: 10px;
+}
+
+.item:empty {
+    height: 0;
+}
+
+.example-card {
+    max-width: 400px;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
 }

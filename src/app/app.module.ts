@@ -15,7 +15,9 @@ import { GaleriasAdminComponent } from './pages/galerias-admin/galerias-admin.co
 import { ClienteAdminComponent } from './pages/cliente-admin/cliente-admin.component';
 import { LandingComponent } from './pages/landing/landing.component';
 
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -29,13 +31,16 @@ import {MatButtonModule} from '@angular/material/button';
     ClienteComponent,
     GaleriasAdminComponent,
     ClienteAdminComponent,
-    LandingComponent
+    LandingComponent,
+
   ],
   imports: [
     MatButtonModule,
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
