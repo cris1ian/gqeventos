@@ -17,7 +17,14 @@
     <div class="cont-galeria">
         <div class="masonry">
 
-            <div class="item">
+            <ng-container *ngFor="let photo of photos; let i=index">
+                <div class="item" (click)="onClick(i)"> 
+                    <img [className]="photo.isSelected == true ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
+                    <mat-checkbox [ngModel]="photo.isSelected"></mat-checkbox>
+                </div>
+            </ng-container>
+
+            <!-- <div class="item">
                 <input type="checkbox" id="checkbox-id1" /><label for="checkbox-id1"></label>
                 <label for="checkbox-id1" class="check"></label>
                 <img src="../../../assets/Fotos/galeria-porfiolio/img- (1).jpg" alt="">
@@ -131,7 +138,7 @@
                 <input type="checkbox" id="checkbox-id23" /><label for="checkbox-id23"></label>
                 <label for="checkbox-id23" class="check"></label>
                 <img src="../../../assets/Fotos/galeria-porfiolio/img- (8).jpg" alt="">
-            </div>
+            </div> -->
 
 
 

@@ -7,9 +7,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GaleriaComponent implements OnInit {
 
+  photos: any[] = [
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (1).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (2).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (3).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (4).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (5).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (6).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (7).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (8).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (10).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (11).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (12).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (5).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (6).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (7).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (8).jpg" }
+  ]
+
   constructor() { }
 
   ngOnInit() {
+    console.log("Esto se ejecuta al inicio");
   }
 
 }

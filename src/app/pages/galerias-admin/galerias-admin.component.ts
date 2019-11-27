@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./galerias-admin.component.scss']
 })
 export class GaleriasAdminComponent implements OnInit {
+  photos: any[] = [,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,];
 
   constructor() { }
 

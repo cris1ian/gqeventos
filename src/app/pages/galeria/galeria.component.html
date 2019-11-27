@@ -6,56 +6,29 @@
     <div class="cont-galeria ">
         <div class="masonry">
 
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (1).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (2).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (3).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (4).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (5).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (6).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (7).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (8).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (10).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (11).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (12).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (5).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (6).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (7).jpg" alt="">
-            </div>
-            <div class="item">
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (8).jpg" alt="">
-            </div>
+            <ng-container *ngFor="let photo of photos">
+                <div class="item">
+                    <img [src]="photo.imagen" alt="">
+                </div>
+            </ng-container>
 
-
-
-
-
+            <!-- 
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (1).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (2).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (3).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (4).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (5).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (6).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (7).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (8).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (10).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (11).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (12).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (5).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (6).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (7).jpg" alt=""></div>
+                <div class="item"><img src="../../../assets/Fotos/galeria-porfiolio/img- (8).jpg" alt=""></div>
+            -->
 
         </div>
     </div>
