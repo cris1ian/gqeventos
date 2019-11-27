@@ -1,11 +1,15 @@
 @import '../../sass_files/';
 .cont-panel-admin {
+    position: relative;
     background: #FFFFF0;
     margin-top: 10px;
     @include dimensiones(100vh, 100vw);
     @include flex-column;
     font-family: 'Julius Sans One', sans-serif;
     header {
+        position: static;
+        top: 0px;
+        left: 0px;
         display: flex;
         flex-direction: column;
         width: 100vw;
@@ -48,12 +52,11 @@
 }
 
 .cont-gala-cli {
-    box-sizing: border-box;
+    // background: coral;
     margin-top: 10px;
-    height: 100%;
+    // height: 100vh;
     overflow-y: scroll;
     width: 100vw;
-    background: coral;
     padding: 10px;
     //************
     display: flex;
@@ -61,24 +64,50 @@
     //************
 }
 
-.item {
+.column {
+    // background: rgba(0, 110, 255, 0.863);
     display: flex;
     justify-content: center;
     flex-grow: 1;
-    flex-basis: 400px;
+    flex-basis: 360px;
     margin: 10px;
 }
 
-.item:empty {
+.column:empty {
     height: 0;
 }
 
-.example-card {
-    max-width: 400px;
-    // height: 200px;
+.tarjeta {
+    // background: red;
+    width: 300px;
+    min-height: 300px;
+    padding: 10px 10px;
+    span {
+        height: 40%;
+    }
 }
 
-.example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+.stackPics {
+    height: 60%;
+    position: relative;
+    img {
+        z-index: 100;
+        width: 90%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        box-shadow: 4px 4px 6px #000000;
+    }
+    .stack_1 {
+        z-index: 12;
+    }
+    .stack_2 {
+        transform: translate(10px, 10px);
+        z-index: 11;
+    }
+    .stack_3 {
+        transform: translate(20px, 20px);
+        z-index: 10;
+    }
 }
