@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Client } from 'src/app/models/client.model';
+import { responseClient } from 'src/app/models/backend-client';
 
 @Component({
   selector: 'app-galerias-admin',
@@ -6,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./galerias-admin.component.scss']
 })
 export class GaleriasAdminComponent implements OnInit {
-  photos: any[] = [, , , , , , , , , , , ,];
+  clients: Client[];
 
   constructor() { }
 
   ngOnInit() {
+    this.clients = responseClient;
   }
 
 }

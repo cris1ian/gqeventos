@@ -3,7 +3,7 @@
     position: relative;
     background: #FFFFF0;
     margin-top: 10px;
-    @include dimensiones(100vh, 100vw);
+    // @include dimensiones(100vh, 100vw);
     @include flex-column;
     font-family: 'Julius Sans One', sans-serif;
     header {
@@ -55,7 +55,7 @@
     // background: coral;
     margin-top: 10px;
     // height: 100vh;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     width: 100vw;
     padding: 10px;
     //************
