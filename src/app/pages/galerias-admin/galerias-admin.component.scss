@@ -51,9 +51,9 @@
     box-sizing: border-box;
     margin-top: 10px;
     height: 100%;
+    overflow-y: scroll;
     width: 100vw;
     background: coral;
-    overflow-y: scroll;
     padding: 10px;
     //************
     display: flex;
@@ -75,6 +75,7 @@
 
 .example-card {
     max-width: 400px;
+    // height: 200px;
 }
 
 .example-header-image {

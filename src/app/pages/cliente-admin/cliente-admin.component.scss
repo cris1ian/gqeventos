@@ -28,11 +28,11 @@
 }
 
 .borde {
-  width: 95%;
-  border: 1px solid #000000;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-  align-self: center;
-  margin-left: 2.5vw;
+    width: 95%;
+    border: 1px solid #000000;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    align-self: center;
+    margin-left: 2.5vw;
 }
 
 .buttons {
@@ -67,13 +67,13 @@ button {
     padding: 0;
     // font-size: 2em;
 }
+
 @media only screen and (max-width: 700px) {
     .masonry {
         -moz-column-count: 2;
         -webkit-column-count: 2;
         column-count: 2;
     }
-    
 }
 
 @media only screen and (min-width: 701px) and (max-width: 900px) {
@@ -82,7 +82,6 @@ button {
         -webkit-column-count: 3;
         column-count: 3;
     }
-    
 }
 
 @media only screen and (min-width: 901px) and (max-width: 1100px) {
@@ -91,7 +90,6 @@ button {
         -webkit-column-count: 4;
         column-count: 4;
     }
-    
 }
 
 @media only screen and (min-width: 1101px) and (max-width: 1300px) {
@@ -100,10 +98,9 @@ button {
         -webkit-column-count: 5;
         column-count: 5;
     }
-   
 }
 
-@media only screen and (min-width: 1301px){
+@media only screen and (min-width: 1301px) {
     .masonry {
         -moz-column-count: 6;
         -webkit-column-count: 6;
@@ -112,6 +109,7 @@ button {
 }
 
 .item {
+    position: relative;
     display: block;
     width: 200px;
     margin-bottom: 1em;
@@ -124,36 +122,43 @@ button {
 }
 
 .item img {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  z-index: 0;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    z-index: 0;
 }
 
-label {
-  display: block;
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  z-index: 1;
-  cursor: pointer;
-  background-image: url(../../../assets/Icons/csscheckbox_391ce065f36b1460c4845fa9b5173fba.png);
-  background-repeat: no-repeat;
-  background-position: right bottom;
-}
-
-input{
-    display: none;
+label:not(.check) {
+    display: block;
     position: absolute;
-    z-index: 2;
-    vertical-align: bottom;
-    
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    cursor: pointer;
+    background-image: url(../../../assets/Icons/csscheckbox_391ce065f36b1460c4845fa9b5173fba.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
 }
 
-input[type=checkbox]:checked + label{
-  background-color: blue;
-  opacity: 0.3;
-  background-image: url(../../../assets/Icons/checkd.png);
- 
+input {
+    display: none;
+    //position: absolute;
+    //z-index: 2;
+    //vertical-align: bottom;
+}
+
+input[type=checkbox]:checked+label {
+    background-color: blue;
+    opacity: 0.1;
+}
+
+input[type=checkbox]:checked~.check {
+    display: block;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    z-index: 3;
+    background-image: url(../../../assets/Icons/checkd.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
 }
