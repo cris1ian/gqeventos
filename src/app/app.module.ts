@@ -20,6 +20,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatGridListModule,
     MatCardModule,
+    MatIconModule,
     MatCheckboxModule,
     FormsModule
   ],

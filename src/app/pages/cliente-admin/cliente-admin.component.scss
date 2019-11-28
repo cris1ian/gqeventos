@@ -63,7 +63,7 @@ button {
 }
 
 .column {
-    // background: rgba(0, 110, 255, 0.863);
+    background: rgba(0, 110, 255, 0.863);
     display: flex;
     justify-content: center;
     flex-grow: 1;
@@ -76,17 +76,29 @@ button {
 }
 
 .tarjeta {
-    // background: red;
-    position: relative;
+    background: rgb(150, 131, 46);
     @include dimensiones(300px, 300px);
-    img {
-        object-fit: contain;
-        // box-shadow: 2px 2px 4px #000;
-        @include dimensiones(100%, 100%);
-        transition: transform 0.1s linear;
-        &:hover {
-            transform: scale(1.02);
+    .thumbnail {
+        background: goldenrod;
+        width: 100%;
+        height: 90%;
+        img {
+            object-fit: contain;
+            @include dimensiones(100%, 100%);
+            transition: transform 0.1s linear;
+            &:hover {
+                transform: scale(1.02);
+            }
         }
+    }
+    .pie {
+        @include flex-row;
+        justify-content: left;
+        font-family: 'Julius Sans One', sans-serif;
+        background: red;
+        position: relative;
+        height: 10%;
+        text-align: left;
     }
 }
 

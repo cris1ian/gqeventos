@@ -39,17 +39,10 @@
                             margin: 0px 15px 0px 3%;
                         }
                     }
-                }
-                .mat-mini-fab {
-                    font-size: 3.8vh;
-                    width: 3.8vh;
-                    height: 3.8vh;
-                }
-                .mat-mini-fab.mas {
-                    background: url(../../../assets/Icons/plus.svg);
-                }
-                .mat-mini-fab.menos {
-                    background: url(../../../assets/Icons/minus.svg);
+                    .mat-mini-fab {
+                        border: 1px solid #000000;
+                        background-color: #FFFFFF;
+                    }
                 }
             }
         }
