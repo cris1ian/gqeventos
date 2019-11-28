@@ -22,4 +22,9 @@ export class ClienteAdminComponent implements OnInit {
         console.log(`Click en la foto ${i}: check = ${this.photos[i].isSelected}`);
     }
 
+    onEnlarge(i: number) {
+        // this.photos[i].isSelected = !this.photos[i].isSelected;
+        console.log(`Agrandar foto ${i}`);
+    }    
+
 }
