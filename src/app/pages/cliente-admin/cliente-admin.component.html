@@ -9,6 +9,7 @@
     <div class="buttons">
         <button><img src="../../../assets/Icons/boton mas.png" alt="mas">Agregar Fotografía</button>
         <button><img src="../../../assets/Icons/boton menos.png" alt="menos">Eliminar Fotografías</button>
+        <span>Seleccionadas: {{selected}}</span>
         <button mat-raised-button color="primary" style="left: 30vw; transform: translateX(-50%);">Aceptar</button>
     </div>
 
@@ -24,7 +25,7 @@
                     </div>
                     <div class="pie" (click)="onClick(i)">
                         <h4>{{photo.fileName}}</h4>
-                        <mat-checkbox color="warn" [ngModel]="photo.isSelected"></mat-checkbox>
+                        <mat-checkbox color="warn" [(ngModel)]="photo.isSelected"></mat-checkbox>
                     </div>
                 </div>
             </div>

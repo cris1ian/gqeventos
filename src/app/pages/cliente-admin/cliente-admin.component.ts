@@ -9,11 +9,13 @@ import { responsePhoto1 } from 'src/app/models/backend-photos';
 })
 export class ClienteAdminComponent implements OnInit {
     photos: Photo[];
+    selected: number;
 
     constructor() { }
 
     ngOnInit() {
         this.photos = responsePhoto1;
+        this.selected = this.photos.filter(element => element.isSelected).length;
         console.log(this.photos);
     }
 
@@ -23,6 +25,7 @@ export class ClienteAdminComponent implements OnInit {
 
     onClick(i: number) {
         this.photos[i].isSelected = !this.photos[i].isSelected;
+        this.selected = this.photos.filter(element => element.isSelected).length;
         console.log(`Click en el pie ${i}: check = ${this.photos[i].isSelected}`);
     }
 

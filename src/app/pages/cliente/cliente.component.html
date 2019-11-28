@@ -9,7 +9,7 @@
         <span class="numero"><span style="text-decoration: underline;">cliente</span>: 33-365 </span>
         <span class="numero">nombre de cliente</span> 
         <button mat-raised-button color="primary">Aceptar</button>
-        <span>Seleccionadas:</span>
+        <span>Seleccionadas: {{selected}}</span>
     </div>
    
 
@@ -21,7 +21,7 @@
             <div class="column">
                 <div class="tarjeta" (click)="onClick(i)">
                     <img [className]="photo.isSelected == true ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
-                    <mat-checkbox color="warn" [ngModel]="photo.isSelected"></mat-checkbox>
+                    <mat-checkbox color="warn" [(ngModel)]="photo.isSelected"></mat-checkbox>
                 </div>
             </div>
         </ng-container>
