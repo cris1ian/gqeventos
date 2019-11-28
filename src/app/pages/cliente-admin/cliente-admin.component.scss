@@ -1,6 +1,6 @@
 @import '../../sass_files/index';
 .contenedor {
-    background-color: #fffff0;
+    background-color: #ffffff;
 }
 
 .header {
@@ -63,7 +63,7 @@ button {
 }
 
 .column {
-    background: rgba(0, 110, 255, 0.863);
+    // background: rgba(0, 110, 255, 0.863);
     display: flex;
     justify-content: center;
     flex-grow: 1;
@@ -76,10 +76,10 @@ button {
 }
 
 .tarjeta {
-    background: rgb(150, 131, 46);
+    // background: rgb(150, 131, 46);
     @include dimensiones(300px, 300px);
     .thumbnail {
-        background: goldenrod;
+        // background: goldenrod;
         width: 100%;
         height: 90%;
         img {
@@ -92,10 +92,10 @@ button {
         }
     }
     .pie {
+        // background: red;
         @include flex-row;
         justify-content: center;
         font-family: 'Julius Sans One', sans-serif;
-        background: red;
         position: relative;
         height: 10%;
         text-align: left;
