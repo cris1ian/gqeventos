@@ -1,113 +1,135 @@
-@import '../../sass_files/';
-.cont-panel-admin {
-    position: relative;
-    background: #FFFFF0;
-    margin-top: 10px;
-    // @include dimensiones(100vh, 100vw);
-    @include flex-column;
-    font-family: 'Julius Sans One', sans-serif;
-    header {
-        position: static;
-        top: 0px;
-        left: 0px;
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-        .tlb {
-            display: flex;
-            justify-content: flex-start;
-        }
-        .btns {
-            display: flex;
-            justify-content: space-around;
-            height: 30%;
-            div {
-                @include flex-row;
-                p {
-                    font-size: 20px;
-                    white-space: pre;
+        @import '../../sass_files/';
+        .cont-panel-admin {
+            @include flex-column;
+            width: 100vw;
+            font-family: 'Julius Sans One', sans-serif;
+            background: #FFFFF0;
+            header {
+                @include flex-column;
+                width: 100vw;
+                .logo {
+                    width: 10vw;
+                    max-width: 100px;
+                }
+                .tlb {
+                    box-sizing: border-box;
+                    @include flex-row;
+                    justify-content: flex-start;
+                    width: 100vw;
+                    padding: 10px 2%;
+                    h1 {
+                        font-size: 3.5vh;
+                    }
+                }
+                .btns {
+                    @include flex-row;
+                    box-sizing: border-box;
+                    justify-content: space-between;
+                    width: 100vw;
+                    padding: 5px 6%;
+                    h2 {
+                        text-decoration: underline;
+                        font-size: 2.1vh;
+                    }
+                    div {
+                        @include flex-row;
+                        p {
+                            font-size: 2vh;
+                            white-space: pre;
+                            margin: 0px 15px 0px 3%;
+                        }
+                    }
+                }
+                .mat-mini-fab {
+                    font-size: 3.8vh;
+                    width: 3.8vh;
+                    height: 3.8vh;
+                }
+                .mat-mini-fab.mas {
+                    background: url(../../../assets/Icons/plus.svg);
+                }
+                .mat-mini-fab.menos {
+                    background: url(../../../assets/Icons/minus.svg);
                 }
             }
-            h2 {
-                text-decoration: underline;
-                font-size: 20px;
+        }
+        
+        .borde {
+            width: 95%;
+            border: 1px solid #000000;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .cont-gala-cli {
+            // background: coral;
+            margin-top: 10px;
+            // height: 100vh;
+            // overflow-y: scroll;
+            width: 100vw;
+            padding: 10px;
+            //************
+            display: flex;
+            flex-wrap: wrap;
+            //************
+        }
+        
+        .column {
+            // background: rgba(0, 110, 255, 0.863);
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            flex-basis: 360px;
+            margin: 10px;
+        }
+        
+        .column:empty {
+            height: 0;
+        }
+        
+        .tarjeta {
+            // background: red;
+            width: 300px;
+            min-height: 300px;
+            padding: 10px 10px;
+            span {
+                height: 40%;
+                h3 {
+                    margin: 5px 0px;
+                }
             }
         }
-        .mat-fab {
-            font-size: 40px;
+        
+        .stackPics {
+            height: 60%;
+            position: relative;
+            img {
+                z-index: 100;
+                width: 90%;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                box-shadow: 4px 4px 6px #000000;
+            }
+            .stack_1 {
+                z-index: 12;
+            }
+            .stack_2 {
+                transform: translate(10px, 10px);
+                transition: transform 0.2s linear 0s;
+                z-index: 11;
+            }
+            .stack_3 {
+                transform: translate(20px, 20px);
+                transition: transform 0.2s linear 0.1s;
+                z-index: 10;
+            }
         }
-        img {
-            width: 4%;
+        
+        .stackPics:hover .stack_2 {
+            transform: translate(15px, 15px);
         }
-        h1 {
-            font-size: 40px;
+        
+        .stackPics:hover .stack_3 {
+            transform: translate(25px, 25px);
         }
-    }
-}
-
-.borde {
-    width: 95%;
-    border: 1px solid #000000;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.cont-gala-cli {
-    // background: coral;
-    margin-top: 10px;
-    // height: 100vh;
-    // overflow-y: scroll;
-    width: 100vw;
-    padding: 10px;
-    //************
-    display: flex;
-    flex-wrap: wrap;
-    //************
-}
-
-.column {
-    // background: rgba(0, 110, 255, 0.863);
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    flex-basis: 360px;
-    margin: 10px;
-}
-
-.column:empty {
-    height: 0;
-}
-
-.tarjeta {
-    // background: red;
-    width: 300px;
-    min-height: 300px;
-    padding: 10px 10px;
-    span {
-        height: 40%;
-    }
-}
-
-.stackPics {
-    height: 60%;
-    position: relative;
-    img {
-        z-index: 100;
-        width: 90%;
-        height: 100%;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        box-shadow: 4px 4px 6px #000000;
-    }
-    .stack_1 {
-        z-index: 12;
-    }
-    .stack_2 {
-        transform: translate(10px, 10px);
-        z-index: 11;
-    }
-    .stack_3 {
-        transform: translate(20px, 20px);
-        z-index: 10;
-    }
-}
