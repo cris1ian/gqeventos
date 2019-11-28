@@ -101,5 +101,6 @@ button {
 }
 
 .selected {
+    cursor: pointer;
     filter: brightness(0.6) drop-shadow(4px 4px 6px rgb(0, 0, 0));
 }
