@@ -17,9 +17,13 @@ export class ClienteAdminComponent implements OnInit {
         console.log(this.photos);
     }
 
+    enlargePhoto(i: number){        
+        console.log(`Click en la foto ${i}`);
+    }
+
     onClick(i: number) {
         this.photos[i].isSelected = !this.photos[i].isSelected;
-        console.log(`Click en la foto ${i}: check = ${this.photos[i].isSelected}`);
+        console.log(`Click en el pie ${i}: check = ${this.photos[i].isSelected}`);
     }
 
     onEnlarge(i: number) {

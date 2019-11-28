@@ -93,12 +93,13 @@ button {
     }
     .pie {
         @include flex-row;
-        justify-content: left;
+        justify-content: center;
         font-family: 'Julius Sans One', sans-serif;
         background: red;
         position: relative;
         height: 10%;
         text-align: left;
+        font-size: calc(1em + 0.5vw);
     }
 }
 

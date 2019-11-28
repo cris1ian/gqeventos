@@ -18,12 +18,12 @@
 
         <ng-container *ngFor="let photo of photos; let i=index">
             <div class="column">
-                <div class="tarjeta" (click)="onClick(i)">
-                    <div class="thumbnail">
+                <div class="tarjeta">
+                    <div class="thumbnail" (click)="enlargePhoto(i)">
                         <img [className]="photo.isSelected == true ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
                     </div>
-                    <div class="pie">
-                        <h4>Archivo:{{photo.fileName}}</h4>
+                    <div class="pie" (click)="onClick(i)">
+                        <h4>{{photo.fileName}}</h4>
                         <mat-checkbox color="warn" [ngModel]="photo.isSelected"></mat-checkbox>
                     </div>
                 </div>
