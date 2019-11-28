@@ -15,22 +15,27 @@
     <div class="borde"></div>
 
     <div class="cont-galeria">
-        <div class="masonry">
 
-            <ng-container *ngFor="let photo of photos; let i=index">
-                <div class="item" (click)="onClick(i)"> 
+        <ng-container *ngFor="let photo of photos; let i=index">
+            <div class="column">
+                <div class="tarjeta" (click)="onClick(i)">
                     <img [className]="photo.isSelected == true ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
-                    <mat-checkbox [ngModel]="photo.isSelected"></mat-checkbox>
+                    <mat-checkbox color="warn" [ngModel]="photo.isSelected"></mat-checkbox>
                 </div>
-            </ng-container>
+            </div>
+        </ng-container>
 
-            <!-- <div class="item">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+
+        <!-- <div class="item">
                 <input type="checkbox" id="checkbox-id23" /><label for="checkbox-id23"></label>
                 <label for="checkbox-id23" class="check"></label>
                 <img src="../../../assets/Fotos/galeria-porfiolio/img- (8).jpg" alt="">
             </div>  -->
 
-        </div>
     </div>
 
 </div>

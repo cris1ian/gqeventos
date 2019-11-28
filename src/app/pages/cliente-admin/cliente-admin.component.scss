@@ -1,6 +1,6 @@
+@import '../../sass_files/index';
 .contenedor {
     background-color: #fffff0;
-    height: 100;
 }
 
 .header {
@@ -54,132 +54,51 @@ button {
 
 //***************************************************************************************
 .cont-galeria {
-    margin: 30px 2.5vw;
+    // background: lightblue;    
+    margin: 30px 10px;
+    //************
+    display: flex;
+    flex-wrap: wrap;
+    //************
 }
 
-.masonry {
-    /* Masonry container */
-    -webkit-column-count: 6;
-    -moz-column-count: 6;
-    column-count: 6;
+.column {
+    // background: rgba(0, 110, 255, 0.863);
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 300px;
+    margin: 10px;
 }
 
-@media only screen and (max-width: 700px) {
-    .masonry {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
+.column:empty {
+    height: 0;
 }
 
-@media only screen and (min-width: 701px) and (max-width: 900px) {
-    .masonry {
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count: 3;
-    }
-}
-
-@media only screen and (min-width: 901px) and (max-width: 1100px) {
-    .masonry {
-        -moz-column-count: 4;
-        -webkit-column-count: 4;
-        column-count: 4;
-    }
-}
-
-@media only screen and (min-width: 1101px) and (max-width: 1300px) {
-    .masonry {
-        -moz-column-count: 5;
-        -webkit-column-count: 5;
-        column-count: 5;
-    }
-}
-
-@media only screen and (min-width: 1301px) {
-    .masonry {
-        -moz-column-count: 6;
-        -webkit-column-count: 6;
-        column-count: 6;
-    }
-}
-
-.item {
+.tarjeta {
+    // background: red;
     position: relative;
-    display: block;
-    width: 200px;
-    margin-bottom: 1em;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-shadow: 4px 2px 6px 0 rgb(0, 0, 0);
-    letter-spacing: 0px;
-    line-height: 0px;
+    @include dimensiones(300px, 300px);
+    img {
+        box-shadow: 2px 2px 4px #000;
+        @include dimensiones(100%, 100%);
+        transition: transform 0.1s linear;
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
 }
 
-.item img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    z-index: 0;
-}
-
-label:not(.check) {
-    display: block;
+.mat-checkbox {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    z-index: 1;
-    cursor: pointer;
-    background-image: url(../../../assets/Icons/csscheckbox_391ce065f36b1460c4845fa9b5173fba.png);
-    background-repeat: no-repeat;
-    background-position: right bottom;
-}
-
-input {
-    display: none;
-    //position: absolute;
-    //z-index: 2;
-    //vertical-align: bottom;
-}
-
-input[type="checkbox"]:checked+label {
-    background-color: blue;
-    opacity: 0.1;
-}
-
-input[type="checkbox"]:checked~.check {
-    display: block;
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    z-index: 3;
-    background-image: url(../../../assets/Icons/checkd.png);
-    background-repeat: no-repeat;
-    background-position: right bottom;
+    bottom: 0px;
+    right: 0px;
 }
 
 .not-selected {
-    display: block;
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    z-index: 1;
     cursor: pointer;
-    //   background-image: url(../../../assets/Icons/csscheckbox_391ce065f36b1460c4845fa9b5173fba.png);
-    background-repeat: no-repeat;
-    background-position: right bottom;
 }
 
 .selected {
-    display: block;
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    z-index: 3;
-    //   background-image: url(../../../assets/Icons/checkd.png);
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    background-color: blue;
-    opacity: 0.3;
+    filter: brightness(0.6) drop-shadow(4px 4px 6px rgb(0, 0, 0));
 }
