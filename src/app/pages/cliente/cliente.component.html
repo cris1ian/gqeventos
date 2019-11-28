@@ -1,1 +1,42 @@
-<p>cliente works!</p>
+<div class="contenedor">
+
+    <div class="header">
+        <img src="../../../assets/Fotos/LOGO-INVERTIDO.png" alt="logo">
+        <span class="titulo">seleccione las fotos que desea recibir!</span>
+        <span class="subtitulo">*Haga click en cada foto para seleccionarla y una vez finalice la seleccion, haga click en aceptar para enviarlas</span>
+    </div>
+    <div class="cliente">
+        <span class="numero"><span style="text-decoration: underline;">cliente</span>: 33-365 </span>
+        <span class="numero">nombre de cliente</span> 
+        <button mat-raised-button color="primary">Aceptar</button>
+        <span>Seleccionadas:</span>
+    </div>
+   
+
+    <div class="borde"></div>
+
+    <div class="cont-galeria">
+
+        <ng-container *ngFor="let photo of photos; let i=index">
+            <div class="column">
+                <div class="tarjeta" (click)="onClick(i)">
+                    <img [className]="photo.isSelected == true ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
+                    <mat-checkbox color="warn" [ngModel]="photo.isSelected"></mat-checkbox>
+                </div>
+            </div>
+        </ng-container>
+
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+
+        <!-- <div class="item">
+                <input type="checkbox" id="checkbox-id23" /><label for="checkbox-id23"></label>
+                <label for="checkbox-id23" class="check"></label>
+                <img src="../../../assets/Fotos/galeria-porfiolio/img- (8).jpg" alt="">
+            </div>  -->
+
+    </div>
+
+</div>
