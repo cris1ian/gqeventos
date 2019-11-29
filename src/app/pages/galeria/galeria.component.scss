@@ -22,6 +22,10 @@
         margin: 0px 3%;
     }
     
+     ::-webkit-scrollbar {
+        display: none;
+    }
+    
     .masonry {
         /* Masonry container */
         -webkit-column-count: 4;
