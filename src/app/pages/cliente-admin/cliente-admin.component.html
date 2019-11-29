@@ -20,9 +20,10 @@
         <ng-container *ngFor="let photo of photos; let i=index">
             <div class="column">
                 <div class="tarjeta">
-                    <div class="thumbnail" (click)="enlargePhoto(i)">
+                    <div class="thumbnail" (click)="open()">
                         <img [className]="photo.isSelected == true ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
                     </div>
+
                     <div class="pie" (click)="onClick(i)">
                         <h4>{{photo.fileName}}</h4>
                         <mat-checkbox color="warn" [(ngModel)]="photo.isSelected"></mat-checkbox>
@@ -36,11 +37,27 @@
         <div class="column"></div>
         <div class="column"></div>
 
-        <!-- <div class="item">
-                <input type="checkbox" id="checkbox-id23" /><label for="checkbox-id23"></label>
-                <label for="checkbox-id23" class="check"></label>
-                <img src="../../../assets/Fotos/galeria-porfiolio/img- (8).jpg" alt="">
-            </div>  -->
+
+
+
+
+
+        <!-- <ng-template #myModal let-modal>
+
+
+            <div class="modalcontent">
+
+                <app-carousel-config></app-carousel-config>
+                
+
+            </div>
+
+            
+        </ng-template> -->
+
+
+
+
 
     </div>
 

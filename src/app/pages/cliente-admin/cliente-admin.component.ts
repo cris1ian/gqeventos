@@ -2,16 +2,35 @@ import { Component, OnInit } from '@angular/core';
 import { Photo } from 'src/app/models/photo.model';
 import { responsePhoto1 } from 'src/app/models/backend-photos';
 
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselConfigComponent } from '../carousel-config/carousel-config.component';
+
+
 @Component({
     selector: 'app-cliente-admin',
     templateUrl: './cliente-admin.component.html',
-    styleUrls: ['./cliente-admin.component.scss']
+    styleUrls: ['./cliente-admin.component.scss'],
+
+    providers: [NgbModalConfig, NgbModal]
 })
 export class ClienteAdminComponent implements OnInit {
     photos: Photo[];
     selected: number;
 
-    constructor() { }
+    constructor(config: NgbModalConfig, private modalService: NgbModal) {
+        // customize default values of modals used by this component tree
+        // config.backdrop = 'static';
+        config.centered = true;
+        // config.size = "xl";
+        config.scrollable = false;
+
+        config.windowClass = "windowOfModal";
+    }
+
+    open() {
+        this.modalService.open(CarouselConfigComponent);
+    }
+
 
     ngOnInit() {
         this.photos = responsePhoto1;
@@ -19,9 +38,6 @@ export class ClienteAdminComponent implements OnInit {
         console.log(this.photos);
     }
 
-    enlargePhoto(i: number){        
-        console.log(`Click en la foto ${i}`);
-    }
 
     onClick(i: number) {
         this.photos[i].isSelected = !this.photos[i].isSelected;
@@ -29,9 +45,6 @@ export class ClienteAdminComponent implements OnInit {
         console.log(`Click en el pie ${i}: check = ${this.photos[i].isSelected}`);
     }
 
-    onEnlarge(i: number) {
-        // this.photos[i].isSelected = !this.photos[i].isSelected;
-        console.log(`Agrandar foto ${i}`);
-    }    
+
 
 }

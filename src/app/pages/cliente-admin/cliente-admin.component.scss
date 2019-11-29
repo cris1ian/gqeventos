@@ -103,6 +103,10 @@ button {
     }
 }
 
+.modal-btn {
+    @include dimensiones(100%, 100%);
+}
+
 .mat-checkbox {
     position: absolute;
     bottom: 0px;
@@ -117,3 +121,11 @@ button {
     cursor: pointer;
     filter: brightness(0.6) drop-shadow(4px 4px 6px rgb(0, 0, 0));
 }
+
+::ng-deep .windowOfModal .modal-dialog {
+    max-width: 60vw;
+}
+
+// ::ng-deep .windowOfModal {
+//     background: rgba(0, 0, 0, 0.5);
+// }
