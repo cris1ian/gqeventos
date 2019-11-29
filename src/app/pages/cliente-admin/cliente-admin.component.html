@@ -21,12 +21,14 @@
             <div class="column">
                 <div class="tarjeta">
                     <div class="thumbnail" (click)="open()">
-                        <img [className]="photo.isSelected == true ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
+                        <img [className]="photo.isSelected  ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
                     </div>
 
                     <div class="pie" (click)="onClick(i)">
-                        <h4>{{photo.fileName}}</h4>
-                        <mat-checkbox color="warn" [(ngModel)]="photo.isSelected"></mat-checkbox>
+                        <span class="checkbox"><i [className]="photo.isSelected ? 'not-show' : 'show'" class="fas fa-check-square"></i></span>
+                        <span class="checkbox"><i [className]="photo.isSelected ? 'show' : 'not-show'" class="far fa-check-square"></i></span>
+                        <span class="fileName"><h4>{{photo.fileName}}</h4></span>
+                        <!-- <mat-checkbox color="warn" [(ngModel)]="photo.isSelected"></mat-checkbox> -->
                     </div>
                 </div>
             </div>
