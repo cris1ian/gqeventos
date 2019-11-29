@@ -1,12 +1,20 @@
 .container {
     display: flex;
     height: 100vh;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: bad script;
+    font-size: 4.5rem;
+    text-decoration: underline;
+    margin-left: 5vw
 }
 
 .grid {
     display: grid;
     grid-template-columns: 3;
-    grid-gap: 0px;
+    grid-gap: 2vw;
     grid-auto-rows: 2;
     align-self: center;
 }
@@ -49,6 +57,8 @@
 }
 
 .grid div {
+    display: flex;
+    position: relative;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -57,10 +67,25 @@
 }
 
 .grid h2 {
-    font-size: 1.5vw;
+    position: absolute;
+    font-size: 2vw;
+    color: white;
     font-family: julius sans one;
+    font-weight: normal;
+    z-index: 3;
+    top: 65%;
+    margin-left: 1.5vw;
+}
+
+.opacity {
+    position: absolute;
     height: 20vw;
     width: 30vw;
     background-color: black;
-    z-index: 2;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+a:hover>h2 {
+    font-size: 2.5vw;
 }
