@@ -1,0 +1,17 @@
+<ngb-carousel *ngIf="photos">
+
+
+    <ng-container *ngFor="let photo of photos; let i=index">
+
+        <ng-template ngbSlide>
+
+            <div class="slidewindow">
+                <img [src]="photo.picture" alt="">
+            </div>
+
+        </ng-template>
+
+    </ng-container>
+
+
+</ngb-carousel>

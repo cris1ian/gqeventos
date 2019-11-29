@@ -22,6 +22,13 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselConfigComponent } from './pages/carousel-config/carousel-config.component';
+
+
+
+
+
 
 @NgModule({
   declarations: [
@@ -36,6 +43,8 @@ import { MatIconModule } from '@angular/material/icon';
     GaleriasAdminComponent,
     ClienteAdminComponent,
     LandingComponent,
+    CarouselConfigComponent,
+
 
   ],
   imports: [
@@ -47,7 +56,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatIconModule,
     MatCheckboxModule,
-    FormsModule
+    FormsModule,
+    NgbModule,
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
