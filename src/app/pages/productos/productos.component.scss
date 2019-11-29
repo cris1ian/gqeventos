@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 3;
+    grid-gap: 0px;
+    grid-auto-rows: 2;
+    align-self: center;
+}
+
+.one {
+    background-image: url(../../../assets/Fotos/productos/murales.jpg);
+    grid-column: 1;
+    grid-row: 1;
+    height: 20vw;
+}
+
+.two {
+    background-image: url(../../../assets/Fotos/productos/historia-de-fotos.jpg);
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.three {
+    background-image: url(../../../assets/Fotos/productos/numero-de-mesa.jpg);
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.four {
+    background-image: url(../../../assets/Fotos/productos/foto-libros.jpg);
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.five {
+    background-image: url(../../../assets/Fotos/productos/Props.jpg);
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.six {
+    background-image: url(../../../assets/Fotos/productos/gigantografias.jpg);
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.grid div {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 20vw;
+    width: 30vw;
+}
+
+.grid h2 {
+    font-size: 1.5vw;
+    font-family: julius sans one;
+    height: 20vw;
+    width: 30vw;
+    background-color: black;
+    z-index: 2;
+}
