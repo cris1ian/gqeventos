@@ -2,17 +2,30 @@
 
     <header>
         <div class="renglon-1">
-            <img src="../../../assets/Fotos/LOGO-INVERTIDO.png" alt="logo">
-            <span class="numero"><span style="text-decoration: underline;">cliente</span>: 33-365 </span>
-            <span class="nombre">nombre de cliente</span>
+            <h1>Administrar cliente</h1>
+        </div>
+        <div class="renglon-2">
+            <div class="client-info">
+                <p> <span>Nº de cliente:</span> 25-356</p>
+                <p> <span>Nombre:</span> Emilio Jose</p>
+            </div>
+
+            <div class="btn">
+                <button mat-mini-fab class="mas"><i class="material-icons">add</i></button>
+                <p>Agregar<br>Fotografia</p>
+                <button mat-mini-fab class="menos"><i class="material-icons">remove</i></button>
+                <p>Borrar<br>Fotografia</p>
+            </div>
+
+            <div class="btn-acep">
+                <button mat-raised-button color="primary">Aceptar</button>
+                <span>Seleccionadas: {{selected}}</span>
+            </div>
+
+
         </div>
 
-        <div class="renglon-2">
-            <button><img src="../../../assets/Icons/boton mas.png" alt="mas">Agregar Fotografía</button>
-            <button><img src="../../../assets/Icons/boton menos.png" alt="menos">Eliminar Fotografías</button>
-            <span>Seleccionadas: {{selected}}</span>
-            <button mat-raised-button color="primary">Aceptar</button>
-        </div>
+
 
         <div class="borde"></div>
     </header>
@@ -33,7 +46,6 @@
                         <div class="fileName">
                             <p>{{photo.fileName}}</p>
                         </div>
-                        <!-- <mat-checkbox color="warn" [(ngModel)]="photo.isSelected"></mat-checkbox> -->
                     </div>
                 </div>
             </div>

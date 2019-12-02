@@ -8,13 +8,29 @@
     header {
         width: 100%;
         .renglon-1 {
-            background: rgb(0, 140, 255);
+            // background: rgb(0, 140, 255);
             @include flex-row;
             justify-content: space-between;
+            padding: 10px 2% 0px;
+            h1 {
+                font-size: 3.5vh;
+            }
+        }
+        .client-info {
+            display: flex;
+            width: 30%;
+            justify-content: space-between;
+            span {
+                font-family: 'Bad Script', cursive;
+                font-size: 1.1em;
+                margin: 0px 10px;
+            }
         }
         .renglon-2 {
-            background: rgb(0, 255, 200);
+            // background: rgb(0, 255, 200);
             @include flex-row;
+            justify-content: space-between;
+            padding: 0px 2%;
         }
         .borde {
             width: 95%;
@@ -92,7 +108,7 @@
             }
             i {
                 font-size: 33px;
-                color: rgb(30, 125, 233);
+                color: #ffbf98;
             }
             .not-show {
                 display: none;
@@ -124,4 +140,4 @@
 
 // ::ng-deep .windowOfModal {
 //     background: rgba(0, 0, 0, 0.5);
-// }º
+// }º1

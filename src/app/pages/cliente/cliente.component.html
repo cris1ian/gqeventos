@@ -1,17 +1,22 @@
 <div class="contenedor">
 
-    <div class="header">
-        <img src="../../../assets/Fotos/LOGO-INVERTIDO.png" alt="logo">
-        <span class="titulo">seleccione las fotos que desea recibir!</span>
-        <span class="subtitulo">*Haga click en cada foto para seleccionarla y una vez finalice la seleccion, haga click en aceptar para enviarlas</span>
-    </div>
-    <div class="cliente">
-        <span class="numero"><span style="text-decoration: underline;">cliente</span>: 33-365 </span>
-        <span class="numero">nombre de cliente</span>
-        <button mat-raised-button color="primary">Aceptar</button>
-        <span>Seleccionadas: {{selected}}</span>
-    </div>
+    <header>
+        <div class="client-info">
+            <!-- <p><span>Nº de cliente:</span>25-356</p> -->
+            <p>Emilio Jose Biasizo</p>
+        </div>
 
+        <div class="titulo">
+            <h1>seleccione las fotos que desea recibir!</h1>
+            <p>*Haga click en cada foto para seleccionarla y una vez finalice la seleccion, haga click en aceptar para enviarlas</p>
+        </div>
+
+        <div class="btn-acep">
+            <button mat-raised-button color="primary">Aceptar</button>
+            <span>Seleccionadas: {{selected}}</span>
+        </div>
+
+    </header>
 
     <div class="borde"></div>
 
@@ -19,9 +24,18 @@
 
         <ng-container *ngFor="let photo of photos; let i=index">
             <div class="column">
-                <div class="tarjeta" (click)="onClick(i)">
-                    <img [className]="photo.isSelected == true ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
-                    <mat-checkbox color="warn" [(ngModel)]="photo.isSelected"></mat-checkbox>
+                <div class="tarjeta">
+                    <div class="thumbnail" (click)="open()">
+                        <img [className]="photo.isSelected  ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
+                    </div>
+
+                    <div class="pie" (click)="onClick(i)">
+                        <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i class="far fa-square"></i></span>
+                        <span class="checkbox" class="checkbox-check" [className]="photo.isSelected ? 'show' : 'not-show'"><i class="fas fa-check-square"></i></span>
+                        <div class="fileName">
+                            <p>{{photo.fileName}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </ng-container>
