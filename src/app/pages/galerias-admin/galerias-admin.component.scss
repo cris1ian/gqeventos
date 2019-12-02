@@ -3,7 +3,7 @@
             @include flex-column;
             width: 100vw;
             font-family: 'Julius Sans One', sans-serif;
-            background: #FFFFF0;
+            background: #ffffff;
             header {
                 @include flex-column;
                 width: 100vw;
@@ -11,7 +11,7 @@
                     width: 10vw;
                     max-width: 100px;
                 }
-                .tlb {
+                .renglon-1 {
                     box-sizing: border-box;
                     @include flex-row;
                     justify-content: flex-start;
@@ -21,7 +21,7 @@
                         font-size: 3.5vh;
                     }
                 }
-                .btns {
+                .renglon-2 {
                     @include flex-row;
                     box-sizing: border-box;
                     justify-content: space-between;
@@ -45,97 +45,89 @@
                     }
                 }
             }
-        }
-        
-        .borde {
-            width: 95%;
-            border: 1px solid #000000;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        //**************************************************************************************************************
-        .cont-gala-cli {
-            margin-top: 10px;
-            width: 100vw;
-            padding: 10px;
-            //************
-            display: flex;
-            flex-wrap: wrap;
-            //************
-        }
-        
-        .column {
-            // background: rgba(0, 110, 255, 0.863);
-            display: flex;
-            justify-content: center;
-            flex-grow: 1;
-            flex-basis: 360px;
-            margin: 10px;
-        }
-        
-        .column:empty {
-            height: 0;
-        }
-        
-        .tarjeta {
-            background: rgb(255, 255, 255);
-            width: 300px;
-            min-height: 300px;
-            padding: 10px 10px;
-            border: 1px solid #000000;
-            border-radius: 5px;
-            box-shadow: 2px 2px 6px #000000;
-            .cabecera {
-                height: 20%;
-                font-size: 1.2em;
-                margin-bottom: 5px;
-                span {
-                    font-family: 'Bad Script', cursive;
-                    text-decoration: underline;
-                }
-                .renglon {
-                    width: 100%;
-                    // background: lightgreen;
-                    p {
-                        text-overflow: ellipsis;
-                        overflow: hidden;
-                        white-space: nowrap;
+            .borde {
+                width: 95%;
+                border-bottom: 1px solid #000000;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            //**************************************************************************************************************
+            .cont-gala-cli {
+                margin-top: 10px;
+                width: 100vw;
+                padding: 10px;
+                //************
+                display: flex;
+                flex-wrap: wrap;
+                //************
+            }
+            .column {
+                // background: rgba(0, 110, 255, 0.863);
+                display: flex;
+                justify-content: center;
+                flex-grow: 1;
+                flex-basis: 360px;
+                margin: 10px;
+            }
+            .column:empty {
+                height: 0;
+            }
+            .tarjeta {
+                background: #fffff0;
+                width: 300px;
+                min-height: 300px;
+                padding: 10px 10px;
+                border: 1px solid #000000;
+                border-radius: 5px;
+                box-shadow: 2px 2px 6px #000000;
+                .cabecera {
+                    height: 20%;
+                    font-size: 1.2em;
+                    margin-bottom: 5px;
+                    span {
+                        font-family: 'Bad Script', cursive;
+                        text-decoration: underline;
+                    }
+                    .renglon {
+                        width: 100%;
+                        // background: lightgreen;
+                        p {
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
                     }
                 }
             }
-        }
-        
-        .stackPics {
-            height: 70%;
-            position: relative;
-            img {
-                z-index: 100;
-                width: 90%;
-                height: 100%;
-                position: absolute;
-                top: 0px;
-                left: 0px;
-                box-shadow: 4px 4px 6px #000000;
+            .stackPics {
+                height: 70%;
+                position: relative;
+                img {
+                    z-index: 100;
+                    width: 90%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    box-shadow: 4px 4px 6px #000000;
+                }
+                .stack_1 {
+                    z-index: 12;
+                }
+                .stack_2 {
+                    transform: translate(10px, 10px);
+                    transition: transform 0.2s linear 0s;
+                    z-index: 11;
+                }
+                .stack_3 {
+                    transform: translate(20px, 20px);
+                    transition: transform 0.2s linear 0.1s;
+                    z-index: 10;
+                }
             }
-            .stack_1 {
-                z-index: 12;
+            .stackPics:hover .stack_2 {
+                transform: translate(15px, 15px);
             }
-            .stack_2 {
-                transform: translate(10px, 10px);
-                transition: transform 0.2s linear 0s;
-                z-index: 11;
+            .stackPics:hover .stack_3 {
+                transform: translate(25px, 25px);
             }
-            .stack_3 {
-                transform: translate(20px, 20px);
-                transition: transform 0.2s linear 0.1s;
-                z-index: 10;
-            }
-        }
-        
-        .stackPics:hover .stack_2 {
-            transform: translate(15px, 15px);
-        }
-        
-        .stackPics:hover .stack_3 {
-            transform: translate(25px, 25px);
         }

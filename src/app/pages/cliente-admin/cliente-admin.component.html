@@ -1,19 +1,22 @@
 <div class="contenedor">
 
-    <div class="header">
-        <img src="../../../assets/Fotos/LOGO-INVERTIDO.png" alt="logo">
-        <span class="numero"><span style="text-decoration: underline;">cliente</span>: 33-365 </span>
-        <span class="nombre">nombre de cliente</span>
-    </div>
+    <header>
+        <div class="renglon-1">
+            <img src="../../../assets/Fotos/LOGO-INVERTIDO.png" alt="logo">
+            <span class="numero"><span style="text-decoration: underline;">cliente</span>: 33-365 </span>
+            <span class="nombre">nombre de cliente</span>
+        </div>
 
-    <div class="buttons">
-        <button><img src="../../../assets/Icons/boton mas.png" alt="mas">Agregar Fotografía</button>
-        <button><img src="../../../assets/Icons/boton menos.png" alt="menos">Eliminar Fotografías</button>
-        <span>Seleccionadas: {{selected}}</span>
-        <button mat-raised-button color="primary" style="left: 30vw; transform: translateX(-50%);">Aceptar</button>
-    </div>
+        <div class="renglon-2">
+            <button><img src="../../../assets/Icons/boton mas.png" alt="mas">Agregar Fotografía</button>
+            <button><img src="../../../assets/Icons/boton menos.png" alt="menos">Eliminar Fotografías</button>
+            <span>Seleccionadas: {{selected}}</span>
+            <button mat-raised-button color="primary">Aceptar</button>
+        </div>
 
-    <div class="borde"></div>
+        <div class="borde"></div>
+    </header>
+
 
     <div class="cont-galeria">
 
@@ -27,7 +30,9 @@
                     <div class="pie" (click)="onClick(i)">
                         <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i class="far fa-square"></i></span>
                         <span class="checkbox" class="checkbox-check" [className]="photo.isSelected ? 'show' : 'not-show'"><i class="fas fa-check-square"></i></span>
-                        <span class="fileName"><p>{{photo.fileName}}</p></span>
+                        <div class="fileName">
+                            <p>{{photo.fileName}}</p>
+                        </div>
                         <!-- <mat-checkbox color="warn" [(ngModel)]="photo.isSelected"></mat-checkbox> -->
                     </div>
                 </div>
