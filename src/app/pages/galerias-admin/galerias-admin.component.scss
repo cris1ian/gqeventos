@@ -53,6 +53,7 @@
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
+        //**************************************************************************************************************
         .cont-gala-cli {
             margin-top: 10px;
             width: 100vw;
@@ -77,20 +78,35 @@
         }
         
         .tarjeta {
-            // background: red;
+            background: rgb(255, 255, 255);
             width: 300px;
             min-height: 300px;
             padding: 10px 10px;
-            span {
-                height: 40%;
-                h3 {
-                    margin: 5px 0px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            box-shadow: 2px 2px 6px #000000;
+            .cabecera {
+                height: 20%;
+                font-size: 1.2em;
+                margin-bottom: 5px;
+                span {
+                    font-family: 'Bad Script', cursive;
+                    text-decoration: underline;
+                }
+                .renglon {
+                    width: 100%;
+                    // background: lightgreen;
+                    p {
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
                 }
             }
         }
         
         .stackPics {
-            height: 60%;
+            height: 70%;
             position: relative;
             img {
                 z-index: 100;

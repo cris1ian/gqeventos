@@ -25,9 +25,9 @@
                     </div>
 
                     <div class="pie" (click)="onClick(i)">
-                        <span class="checkbox"><i [className]="photo.isSelected ? 'not-show' : 'show'" class="fas fa-check-square"></i></span>
-                        <span class="checkbox"><i [className]="photo.isSelected ? 'show' : 'not-show'" class="far fa-check-square"></i></span>
-                        <span class="fileName"><h4>{{photo.fileName}}</h4></span>
+                        <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i class="far fa-square"></i></span>
+                        <span class="checkbox" class="checkbox-check" [className]="photo.isSelected ? 'show' : 'not-show'"><i class="fas fa-check-square"></i></span>
+                        <span class="fileName"><p>{{photo.fileName}}</p></span>
                         <!-- <mat-checkbox color="warn" [(ngModel)]="photo.isSelected"></mat-checkbox> -->
                     </div>
                 </div>
