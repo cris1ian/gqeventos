@@ -3,7 +3,7 @@
     @include flex-column;
     width: 100vw;
     font-family: 'Julius Sans One', sans-serif;
-    background: #ffffff;
+    background: #fffff0;
     //************************************* header**************************************************
     header {
         width: 100%;
@@ -46,7 +46,7 @@
         // background: rgb(150, 131, 46);
         @include dimensiones(350px, 300px);
         box-shadow: 4px 4px 10px rgb(0, 0, 0);
-        background-color: #fffff0;
+        background-color: #ffffff;
         border-radius: 4px;
         padding: 10px 10px 0px 10px;
         .thumbnail {

@@ -3,7 +3,7 @@
             @include flex-column;
             width: 100vw;
             font-family: 'Julius Sans One', sans-serif;
-            background: #ffffff;
+            background: #fffff0;
             header {
                 @include flex-column;
                 width: 100vw;
@@ -72,7 +72,7 @@
                 height: 0;
             }
             .tarjeta {
-                background: #fffff0;
+                background: #ffffff;
                 width: 300px;
                 min-height: 300px;
                 padding: 10px 10px;
@@ -81,19 +81,20 @@
                 box-shadow: 2px 2px 6px #000000;
                 .cabecera {
                     height: 20%;
-                    font-size: 1.2em;
+                    // font-size: 0.9em;
                     margin-bottom: 5px;
-                    span {
-                        font-family: 'Bad Script', cursive;
-                        text-decoration: underline;
-                    }
                     .renglon {
                         width: 100%;
                         // background: lightgreen;
+                        span {
+                            font-family: 'Bad Script', cursive;
+                            font-size: 1.1em;
+                        }
                         p {
                             text-overflow: ellipsis;
                             overflow: hidden;
                             white-space: nowrap;
+                            font-size: 1em;
                         }
                     }
                 }
