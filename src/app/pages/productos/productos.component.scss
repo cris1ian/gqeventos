@@ -1,20 +1,21 @@
 .container {
     display: flex;
-    height: 100vh;
+    
     flex-direction: column;
+    margin-top: 8vh;
 }
 
 h1 {
     font-family: bad script;
-    font-size: 4.5rem;
+    font-size: 5vw;
     text-decoration: underline;
-    margin-left: 5vw
+    margin-bottom: 4vw
 }
 
 .grid {
     display: grid;
     grid-template-columns: 3;
-    grid-gap: 2vw;
+    grid-gap: 1vw;
     grid-auto-rows: 2;
     align-self: center;
 }

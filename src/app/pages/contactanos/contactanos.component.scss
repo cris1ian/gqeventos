@@ -1,0 +1,35 @@
+.parallax {
+    position: relative;
+    display: flex;
+    background-image: url(../../../assets/Fotos/paralax3.jpg);
+    width: 100vw;
+    height: 40vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 5vh;
+}
+
+p:not(.opacity) {
+    align-self: flex-end;
+    color: white;
+    font-family: julius sans one;
+    font-size: 1.5vw;
+    max-width: 30vw;
+    margin-left: 1.5vw;
+    z-index: 2;
+}
+
+.opacity {
+    position: absolute;
+    width: 100vw;
+    height: 40vh;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.contacto{
+    display: flex;
+}
