@@ -131,6 +131,27 @@
     max-width: 60vw;
 }
 
-// ::ng-deep .windowOfModal {
-//     background: rgba(0, 0, 0, 0.5);
-// }º1
+::ng-deep .windowOfModal .modal-content {
+    background-color: rgb(0, 0, 0, 0);
+}
+
+// ::ng-deep .modal-content:focus {
+//     outline: none;
+// }
+//  ::ng-deep .modal-dialog:focus {
+//     outline: none;
+// }
+//  ::ng-deep .windowOfModal:focus {
+//     outline: none;
+// }
+// ::ng-deep .modal-open:focus {
+//     outline: none;
+// }
+// ::ng-deep .modal:focus {
+//     outline: none;
+// }
+// ::ng-deep .windowOfModal:focus .modal-dialog:focus .modal-content:focus {
+//     outline: none;
+// border: 0px !important;
+// outline: 0px;
+// }
