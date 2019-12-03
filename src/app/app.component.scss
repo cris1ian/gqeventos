@@ -1,46 +1,46 @@
-        @import '../app/sass_files/';
-        header {
-            box-sizing: border-box;
-            @include flex-row;
-            @include dimensiones(7vh, 100vw);
-            justify-content: space-between;
-            padding: 0px 2%;
-            border: 2px solid #000;
-            position: sticky;
-            top: 0px;
-            z-index: 100;
-            background: cornsilk;
-            a {
-                height: 90%;
-                width: 50px;
-            }
-            div {
-                @include flex-row;
-                height: 100%;
-                width: 40vw;
-                justify-content: space-between;
-                a {
-                    width: 30%;
-                    font-size: 1.5vw;
-                    border-radius: 5px;
-                    text-align: center;
-                    background: cornflowerblue;
-                }
-            }
+@import '../app/sass_files/';
+.logo {
+    @include dimensiones(100%, 100%);
+}
+
+header {
+    box-sizing: border-box;
+    @include flex-row;
+    @include dimensiones(7vh, 100vw);
+    justify-content: space-between;
+    padding: 0px 2%;
+    border: 2px solid #000;
+    position: sticky;
+    top: 0px;
+    z-index: 100;
+    background: cornsilk;
+    a {
+        height: 90%;
+        width: 50px;
+    }
+    div {
+        @include flex-row;
+        height: 100%;
+        width: 40vw;
+        justify-content: space-between;
+        a {
+            width: 30%;
+            font-size: 1.5vw;
+            border-radius: 5px;
+            text-align: center;
+            background: cornflowerblue;
         }
-        
-        .logo {
-            @include dimensiones(100%, 100%);
-        }
-        
-        footer {
-            background-color: #CBA78D;
-            height: 4vh;
-            @include flex-row;
-            justify-content: center;
-            padding: 5px 5%;
-            box-shadow: -2px 0px 4px #000000;
-            p {
-                font-size: 1.5rem;
-            }
-        }
+    }
+}
+
+footer {
+    background-color: #CBA78D;
+    height: 4vh;
+    @include flex-row;
+    justify-content: center;
+    padding: 5px 5%;
+    box-shadow: -2px 0px 4px #000000;
+    p {
+        font-size: 1.5rem;
+    }
+}

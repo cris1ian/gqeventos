@@ -65,6 +65,10 @@ p {
     }
 }
 
+:focus {
+    outline: none;
+}
+
 // CRISTIAN:
 // Este link genera las paletas de colores como la usada en primary
 // http://mcg.mbitson.com/#!?theming=%23ffd8bd
