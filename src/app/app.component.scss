@@ -1,53 +1,37 @@
-        @import '../app/sass_files/';
-        .logo {
-            @include dimensiones(100%, 100%);
-        }
-        
-        header {
-            box-sizing: border-box;
+    @import '../app/sass_files/';
+    .header-principal {
+        position: sticky;
+        top: 0px;
+        left: 0px;
+        z-index: 5;
+        width: 100vw;
+        .wrapper {
+            background: rgb(170, 125, 212);
             @include flex-row;
-            @include dimensiones(7vh, 100vw);
             justify-content: space-between;
-            padding: 0px 2%;
-            border: 2px solid #000;
-            position: sticky;
-            top: 0px;
-            z-index: 100;
-            background: cornsilk;
+            height: 7vh;
+            padding: 10px 2%;
+            position: relative;
+            ul {
+                background: rgb(125, 180, 212);
+                @include flex-row;
+            }
+            .logo {
+                height: 10vh;
+                position: absolute;
+                top: 10px;
+            }
         }
-        
-        a {
-            height: 90%;
-            width: 50px;
-        }
-        
-        div {
-            @include flex-row;
-            height: 100%;
-            width: 40vw;
-            justify-content: space-between;
-        }
-        
-        a {
-            width: 30%;
-            font-size: 1.5vw;
-            border-radius: 5px;
-            text-align: center;
-            background: cornflowerblue;
-        }
-        
-        .logo {
-            @include dimensiones(100%, 100%);
-        }
-        
-        footer {
-            background-color: #CBA78D;
-            height: 4vh;
-            @include flex-row;
-            justify-content: center;
-            padding: 5px 5%;
-        }
-        
+    }
+    
+    //****************************************footer****************************************************************
+    footer {
+        background-color: #CBA78D;
+        height: 4vh;
+        @include flex-row;
+        justify-content: center;
+        padding: 5px 5%;
         p {
             font-size: 2vh;
         }
+    }

@@ -10,22 +10,6 @@
     clip-path: polygon(0 0, 0 100%, 100% calc(100% - 5vw), 100% 0);
 }
 
-.header {
-    position: absolute;
-    display: flex;
-    font-size: 1.2vw;
-    text-align: end;
-    align-items: center;
-    word-spacing: 7vw;
-    font-family: Julius Sans One;
-}
-
-.header img {
-    max-width: 6vw;
-    margin-right: 27vw;
-    margin-left: 2vw;
-}
-
 .home-text {
     display: block;
     position: absolute;
