@@ -17,6 +17,11 @@ $gqeventos-theme: mat-light-theme($gqeventos-primary, $gqeventos-accent, $gqeven
     color: mat-color($gqeventos-primary);
 }
 
+//clases para aplicar los colores primerios
+.eon6-primarycolor-bd {
+    background: mat-color($gqeventos-primary);
+}
+
 //definiciones generales 
 html,
 body {

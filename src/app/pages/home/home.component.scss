@@ -7,6 +7,7 @@
     height: 100vh;
     // max-height: 600px;
     width: 100vw;
+    margin-top: -7vh;
     clip-path: polygon(0 0, 0 100%, 100% calc(100% - 5vw), 100% 0);
 }
 

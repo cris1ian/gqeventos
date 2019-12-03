@@ -6,15 +6,36 @@
         z-index: 5;
         width: 100vw;
         .wrapper {
-            background: rgb(170, 125, 212);
+            background: rgba(255, 255, 255, 0.7);
             @include flex-row;
             justify-content: space-between;
             height: 7vh;
-            padding: 10px 2%;
+            max-height: 150px;
+            padding: 10px 5% 10px 2%;
             position: relative;
-            ul {
-                background: rgb(125, 180, 212);
+            width: 100%;
+            nav {
+                // background: rgb(212, 206, 125);
                 @include flex-row;
+                width: 50%;
+                height: 100%;
+                ul {
+                    // background: rgb(125, 180, 212);
+                    @include flex-row;
+                    justify-content: space-between;
+                    width: 100%;
+                    margin: 0px;
+                    li {
+                        list-style: none;
+                        text-decoration: none;
+                        font-family: 'Bad Script', cursive;
+                        font-size: 1.3vw;
+                        color: #000000;
+                        a {
+                            color: #000000;
+                        }
+                    }
+                }
             }
             .logo {
                 height: 10vh;
