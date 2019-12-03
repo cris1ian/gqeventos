@@ -1,28 +1,33 @@
         @import '../app/sass_files/';
-.logo {
-    @include dimensiones(100%, 100%);
-}
-
-header {
-    box-sizing: border-box;
-    @include flex-row;
-    @include dimensiones(7vh, 100vw);
-    justify-content: space-between;
-    padding: 0px 2%;
-    border: 2px solid #000;
-    position: sticky;
-    top: 0px;
-    z-index: 100;
-    background: cornsilk;
-    a {
-        height: 90%;
-        width: 50px;
-    }
-    div {
-        @include flex-row;
-        height: 100%;
-        width: 40vw;
-        justify-content: space-between;
+        .logo {
+            @include dimensiones(100%, 100%);
+        }
+        
+        header {
+            box-sizing: border-box;
+            @include flex-row;
+            @include dimensiones(7vh, 100vw);
+            justify-content: space-between;
+            padding: 0px 2%;
+            border: 2px solid #000;
+            position: sticky;
+            top: 0px;
+            z-index: 100;
+            background: cornsilk;
+        }
+        
+        a {
+            height: 90%;
+            width: 50px;
+        }
+        
+        div {
+            @include flex-row;
+            height: 100%;
+            width: 40vw;
+            justify-content: space-between;
+        }
+        
         a {
             width: 30%;
             font-size: 1.5vw;
@@ -30,16 +35,19 @@ header {
             text-align: center;
             background: cornflowerblue;
         }
+        
         .logo {
             @include dimensiones(100%, 100%);
         }
+        
         footer {
             background-color: #CBA78D;
             height: 4vh;
             @include flex-row;
             justify-content: center;
             padding: 5px 5%;
-            p {
-                font-size: 2vh;
-            }
+        }
+        
+        p {
+            font-size: 2vh;
         }
