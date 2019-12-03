@@ -20,7 +20,7 @@
     h1 {
         font-family: bad script;
         text-align: center;
-        font-size: 4vh;
+        font-size: 4vw;
         z-index: 2;
         margin-top: 4vh;
         text-decoration: underline;
@@ -32,6 +32,7 @@
     }
     
     .main img {
+        object-fit: cover;
         width: 50vw;
         margin-left: 5vw;
         margin-right: 10vw
