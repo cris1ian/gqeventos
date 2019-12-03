@@ -22,6 +22,7 @@ h1 {
     font-family: dancing script;
     font-size: 3vw;
     text-decoration: underline;
+    margin: 5vh;
 }
 
 .grid {
@@ -84,7 +85,7 @@ h1 {
 }
 
 button {
-    width: 10vw;
+    width: 15vw;
     height: 5vh;
     align-self: center;
     font-size: 1.4vw;
@@ -92,6 +93,7 @@ button {
     font-family: julius sans one;
     border-radius: 2vw;
     font-weight: 800;
-    margin-bottom: 1vw;
+    margin-top: 3vh;
+    margin-bottom: 5vh;
     cursor: pointer;
 }
