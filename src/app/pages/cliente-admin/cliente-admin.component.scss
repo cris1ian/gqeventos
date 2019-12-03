@@ -6,37 +6,29 @@
     background: #fffff0;
     //************************************* header**************************************************
     header {
+        // background: rgb(0, 140, 255);
+        @include flex-row;
         width: 100%;
-        .renglon-1 {
-            // background: rgb(0, 140, 255);
-            @include flex-row;
-            justify-content: space-between;
-            padding: 10px 2% 0px;
+        justify-content: space-between;
+        padding: 10px 2%;
+        .titulo {
             h1 {
                 font-size: 3.5vh;
             }
-        }
-        .client-info {
-            display: flex;
-            width: 30%;
-            justify-content: space-between;
-            span {
-                font-family: 'Bad Script', cursive;
-                font-size: 1.1em;
-                margin: 0px 10px;
+            .client-info {
+                display: flex;
+                justify-content: space-between;
+                span {
+                    font-family: 'Bad Script', cursive;
+                    font-size: 1.1em;
+                }
             }
         }
-        .renglon-2 {
-            // background: rgb(0, 255, 200);
-            @include flex-row;
-            justify-content: space-between;
-            padding: 0px 2%;
-        }
-        .borde {
-            width: 95%;
-            border-bottom: 1px solid #000000;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+    }
+    .borde {
+        width: 95%;
+        border-bottom: 1px solid #000000;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
     }
     //************************************body*********************************************
     .cont-galeria {
