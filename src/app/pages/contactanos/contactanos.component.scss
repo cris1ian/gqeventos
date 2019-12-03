@@ -32,4 +32,11 @@ p:not(.opacity) {
 
 .contacto{
     display: flex;
+    font-family: julius sans one;
+}
+
+.linea-contacto{
+    height: 0.1vh;
+    width: 40vw;
+    background-color: gray;
 }
