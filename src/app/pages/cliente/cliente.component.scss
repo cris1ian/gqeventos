@@ -131,3 +131,7 @@
  ::ng-deep .windowOfModal .modal-dialog {
     max-width: 60vw;
 }
+
+::ng-deep .windowOfModal .modal-content {
+    background-color: rgb(0, 0, 0, 0);
+}
