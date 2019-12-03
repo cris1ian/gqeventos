@@ -86,17 +86,21 @@
                 }
                 .stack_1 {
                     z-index: 12;
+                    transition: transform 0.1s linear 0s;
                 }
                 .stack_2 {
                     transform: translate(10px, 10px);
-                    transition: transform 0.2s linear 0s;
+                    transition: transform 0.1s linear 0.1s;
                     z-index: 11;
                 }
                 .stack_3 {
                     transform: translate(20px, 20px);
-                    transition: transform 0.2s linear 0.1s;
+                    transition: transform 0.1s linear 0.2s;
                     z-index: 10;
                 }
+            }
+            .stackPics:hover .stack_1 {
+                transform: translate(5px, 5px);
             }
             .stackPics:hover .stack_2 {
                 transform: translate(15px, 15px);
