@@ -43,6 +43,28 @@ p {
     padding: 0px;
 }
 
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        margin: 0px 10px;
+        text-align: left;
+        font-size: 0.9em;
+    }
+}
+
+.btn-acep {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    span {
+        margin: 5px 0px;
+        font-family: "Julius Sans One", sans-serif;
+    }
+}
+
 // CRISTIAN:
 // Este link genera las paletas de colores como la usada en primary
 // http://mcg.mbitson.com/#!?theming=%23ffd8bd

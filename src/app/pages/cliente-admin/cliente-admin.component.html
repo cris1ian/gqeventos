@@ -1,19 +1,35 @@
 <div class="contenedor">
 
-    <div class="header">
-        <img src="../../../assets/Fotos/LOGO-INVERTIDO.png" alt="logo">
-        <span class="numero"><span style="text-decoration: underline;">cliente</span>: 33-365 </span>
-        <span class="nombre">nombre de cliente</span>
-    </div>
+    <header>
+        <div class="renglon-1">
+            <h1>Administrar cliente</h1>
+        </div>
+        <div class="renglon-2">
+            <div class="client-info">
+                <p> <span>Nº de cliente:</span> 25-356</p>
+                <p> <span>Nombre:</span> Emilio Jose</p>
+            </div>
 
-    <div class="buttons">
-        <button><img src="../../../assets/Icons/boton mas.png" alt="mas">Agregar Fotografía</button>
-        <button><img src="../../../assets/Icons/boton menos.png" alt="menos">Eliminar Fotografías</button>
-        <span>Seleccionadas: {{selected}}</span>
-        <button mat-raised-button color="primary" style="left: 30vw; transform: translateX(-50%);">Aceptar</button>
-    </div>
+            <div class="btn">
+                <button mat-mini-fab class="mas"><i class="material-icons">add</i></button>
+                <p>Agregar<br>Fotografia</p>
+                <button mat-mini-fab class="menos"><i class="material-icons">remove</i></button>
+                <p>Borrar<br>Fotografia</p>
+            </div>
 
-    <div class="borde"></div>
+            <div class="btn-acep">
+                <button mat-raised-button color="primary">Aceptar</button>
+                <span>Seleccionadas: {{selected}}</span>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="borde"></div>
+    </header>
+
 
     <div class="cont-galeria">
 
@@ -25,10 +41,11 @@
                     </div>
 
                     <div class="pie" (click)="onClick(i)">
-                        <span class="checkbox"><i [className]="photo.isSelected ? 'not-show' : 'show'" class="fas fa-check-square"></i></span>
-                        <span class="checkbox"><i [className]="photo.isSelected ? 'show' : 'not-show'" class="far fa-check-square"></i></span>
-                        <span class="fileName"><h4>{{photo.fileName}}</h4></span>
-                        <!-- <mat-checkbox color="warn" [(ngModel)]="photo.isSelected"></mat-checkbox> -->
+                        <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i class="far fa-square"></i></span>
+                        <span class="checkbox" class="checkbox-check" [className]="photo.isSelected ? 'show' : 'not-show'"><i class="fas fa-check-square"></i></span>
+                        <div class="fileName">
+                            <p>{{photo.fileName}}</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,153 +1,144 @@
 @import '../../sass_files/index';
 .contenedor {
-    background-color: #fffff0;
-}
-
-.header {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.header img {
-    height: 10vw;
-}
-
-.numero {
-    font-family: Julius Sans One;
-    font-size: 2vw;
-    margin-right: 5vw;
-}
-
-.nombre {
-    position: absolute;
-    font-family: Julius Sans One;
-    font-size: 2vw;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.borde {
-    width: 95%;
-    border: 1px solid #000000;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-    align-self: center;
-    margin-left: 2.5vw;
-}
-
-.buttons {
-    display: flex;
-}
-
-button {
-    display: flex;
-    font-family: Julius Sans One;
-    background-color: Transparent;
-    border: none;
-    cursor: pointer;
-    align-items: center;
-    max-width: 200px;
-    margin-left: 10vw;
-    margin-bottom: 35px;
-    font-size: 18px;
-}
-
-//***************************************************************************************
-.cont-galeria {
-    // background: lightblue;    
-    margin: 30px 10px;
-    //************
-    display: flex;
-    flex-wrap: wrap;
-    //************
-}
-
-.column {
-    // background: rgba(0, 110, 255, 0.863);
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    flex-basis: 300px;
-    margin: 10px;
-}
-
-.column:empty {
-    height: 0;
-}
-
-.tarjeta {
-    // background: rgb(150, 131, 46);
-    @include dimensiones(350px, 300px);
-    box-shadow: 4px 4px 10px rgb(0, 0, 0);
-    background: #ffffff;
-    border-radius: 4px;
-    padding: 10px 10px 0px 10px;
-    .thumbnail {
-        // background: goldenrod;
+    @include flex-column;
+    width: 100vw;
+    font-family: 'Julius Sans One', sans-serif;
+    background: #fffff0;
+    //************************************* header**************************************************
+    header {
         width: 100%;
-        height: 85%;
-        img {
-            object-fit: cover;
-            @include dimensiones(100%, 100%);
-            transition: transform 0.1s linear;
-            &:hover {
-                transform: scale(1.02);
+        .renglon-1 {
+            // background: rgb(0, 140, 255);
+            @include flex-row;
+            justify-content: space-between;
+            padding: 10px 2% 0px;
+            h1 {
+                font-size: 3.5vh;
+            }
+        }
+        .client-info {
+            display: flex;
+            width: 30%;
+            justify-content: space-between;
+            span {
+                font-family: 'Bad Script', cursive;
+                font-size: 1.1em;
+                margin: 0px 10px;
+            }
+        }
+        .renglon-2 {
+            // background: rgb(0, 255, 200);
+            @include flex-row;
+            justify-content: space-between;
+            padding: 0px 2%;
+        }
+        .borde {
+            width: 95%;
+            border-bottom: 1px solid #000000;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+    }
+    //************************************body*********************************************
+    .cont-galeria {
+        // background: lightblue;    
+        margin: 30px 10px;
+        //************
+        display: flex;
+        flex-wrap: wrap;
+        //************
+    }
+    .column {
+        // background: rgba(0, 110, 255, 0.863);
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        flex-basis: 300px;
+        margin: 10px;
+    }
+    .column:empty {
+        height: 0;
+    }
+    .tarjeta {
+        // background: rgb(150, 131, 46);
+        @include dimensiones(350px, 300px);
+        box-shadow: 4px 4px 10px rgb(0, 0, 0);
+        background-color: #ffffff;
+        border-radius: 4px;
+        padding: 10px 10px 0px 10px;
+        .thumbnail {
+            // background: goldenrod;
+            position: relative;
+            width: 100%;
+            height: 85%;
+            img {
+                object-fit: cover;
+                @include dimensiones(100%, 100%);
+                transition: transform 0.1s linear;
+                &:hover {
+                    transform: scale(1.02);
+                    filter: blur(1px);
+                }
+            }
+        }
+        .pie {
+            // background: red;
+            @include flex-row;
+            justify-content: flex-start;
+            font-family: 'Bad Script', cursive;
+            position: relative;
+            height: 15%;
+            cursor: pointer;
+            .fileName {
+                // background: green;
+                padding-left: 10px;
+                width: 90%;
+                font-size: 0.8em;
+                // font-size: calc(1em + 0.5vw);
+                p {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-transform: capitalize;
+                }
+            }
+            .checkbox {
+                // background: rgb(0, 255, 200);
+                display: block;
+                width: 10%;
+            }
+            i {
+                font-size: 33px;
+                color: #ffbf98;
+            }
+            .not-show {
+                display: none;
+            }
+            .show {
+                display: inline-block;
             }
         }
     }
-    .pie {
-        // background: red;
-        @include flex-row;
-        justify-content: flex-start;
-        font-family: 'Julius Sans One', sans-serif;
-        position: relative;
-        height: 15%;
-        text-align: left;
-        // font-size: calc(1em + 0.5vw);
-        .fileName {
-            width: 80%;
-            // background: green;
-        }
-        .checkbox {
-            width: 20%;
-            // background: rgb(0, 255, 200);
-        }
-        .show {
-            display: inline-block;
-            align-self: flex-start;
-            width: 90%;
-        }
-        .not-show {
-            display: none;
-            align-self: flex-start;
-            width: 90%;
-        }
+    .modal-btn {
+        @include dimensiones(100%, 100%);
+    }
+    .mat-checkbox {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+    }
+    .not-selected {
+        cursor: pointer;
+    }
+    .selected {
+        cursor: pointer;
+        filter: brightness(0.6);
     }
 }
 
-.modal-btn {
-    @include dimensiones(100%, 100%);
-}
-
-.mat-checkbox {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-}
-
-.not-selected {
-    cursor: pointer;
-}
-
-.selected {
-    cursor: pointer;
-    filter: brightness(0.6) drop-shadow(4px 4px 6px rgb(0, 0, 0));
-}
-
-::ng-deep .windowOfModal .modal-dialog {
+ ::ng-deep .windowOfModal .modal-dialog {
     max-width: 60vw;
 }
 
 // ::ng-deep .windowOfModal {
 //     background: rgba(0, 0, 0, 0.5);
-// }
+// }º1

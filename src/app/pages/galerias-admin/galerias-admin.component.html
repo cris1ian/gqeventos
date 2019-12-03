@@ -1,14 +1,13 @@
 <div class="cont-panel-admin">
 
     <header>
-        <div class="tlb">
-            <img class="logo" src="../../../assets/Fotos/LOGO-INVERTIDO.svg" alt="logo">
+        <div class="renglon-1">
             <h1>Panel Administrativo</h1>
         </div>
 
-        <div class="btns">
+        <div class="renglon-2">
             <h2>Clientes</h2>
-            <div>
+            <div class="btn">
                 <button mat-mini-fab class="mas"><i class="material-icons">add</i></button>
                 <p>Agregar<br>Galeria</p>
                 <button mat-mini-fab class="menos"><i class="material-icons">remove</i></button>
@@ -27,10 +26,14 @@
             <div class="column">
                 <!-- cada tarjeta -->
                 <div class="tarjeta">
-                    <span>
-                        <h3>Nombre:     {{client.name}}</h3>
-                        <h3>Nº Cliente: {{client.hash}}</h3>
-                    </span>
+                    <div class="cabecera">
+                        <div class="renglon">
+                            <p><span>Nombre:</span> {{client.name}}</p>
+                        </div>
+                        <div class="renglon">
+                            <p><span>Nº Cliente:</span> {{client.hash}}</p>
+                        </div>
+                    </div>
                     <div class="stackPics">
                         <img class="stack_1" [src]="client.img01" alt="">
                         <img class="stack_2" [src]="client.img02" alt="">
