@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
 .parallax {
     background-image: url(../../../assets/Fotos/paralax2.jpg);
+    display: flex;
     width: 100vw;
-    height: 40vh;
+    height: 80vh;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,9 +12,11 @@
 }
 
 .parallax p {
-    color: black;
+    color: white;
+    align-self: flex-end;
     font-size: 1.5vw;
-    font-family: bad script;
+    font-family: julius sans one;
+    font-weight: bold;
     width: 15vw;
     margin-left: 1.5vw;
 }
