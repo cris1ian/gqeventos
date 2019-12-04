@@ -1,7 +1,8 @@
     .parallax {
         background-image: url(../../../assets/Fotos/paralax1.jpg);
+        display: flex;
         width: 100vw;
-        height: 40vh;
+        height: 80vh;
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -9,31 +10,37 @@
         margin-top: 5vh;
     }
     
-    p {
+    .para-text {
         color: white;
+        align-self: flex-end;
         font-family: julius sans one;
         font-size: 1.5vw;
+        font-weight: bold;
         max-width: 15vw;
         margin-left: 1.5vw;
+    }
+    
+    p:not(.para-text) {
+        margin-bottom: 4vh;
+        font-size: 1vw;
     }
     
     h1 {
         font-family: bad script;
         text-align: center;
         font-size: 4vw;
-        z-index: 2;
-        margin-top: 4vh;
+        margin-bottom: 4vh;
     }
     
     .main {
         display: flex;
-        margin-top: 5vh;
+        margin-top: 9vh;
     }
     
     .main img {
         object-fit: cover;
         width: 50vw;
-        margin-left: 5vw;
+        margin-left: 7.5vw;
         margin-right: 10vw
     }
     
@@ -41,4 +48,7 @@
         font-family: julius sans one;
         font-size: 2vw;
         margin-right: 9vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }

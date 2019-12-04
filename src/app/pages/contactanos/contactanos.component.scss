@@ -3,7 +3,7 @@
     display: flex;
     background-image: url(../../../assets/Fotos/paralax3.jpg);
     width: 100vw;
-    height: 40vh;
+    height: 80vh;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -16,6 +16,7 @@ p:not(.opacity) {
     color: white;
     font-family: julius sans one;
     font-size: 1.5vw;
+    font-weight: bold;
     max-width: 30vw;
     margin-left: 1.5vw;
     z-index: 2;
@@ -24,7 +25,7 @@ p:not(.opacity) {
 .opacity {
     position: absolute;
     width: 100vw;
-    height: 40vh;
+    height: 80vh;
     background-color: black;
     opacity: 0.5;
     z-index: 1;
@@ -57,6 +58,12 @@ h2 {
     display: flex;
     font-family: julius sans one;
     margin-top: 1vh;
+    margin-left: 2.7vw;
+    margin-right: 4.5vw;
+}
+
+.datos {
+    margin-top: 4vh;
 }
 
 .linea-contacto {

@@ -1,18 +1,1 @@
-.parallax {
-  background-image: url(../../../assets/Fotos/paralax1.jpg);
-  width: 100vw;
-  height: 40vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-p {
-  color: #c5b9b9;
-  font-family: julius sans one;
-  font-size: 2vh;
-  max-width: 15vw;
-  margin-left: 1.5vw;
-}
 /*# sourceMappingURL=nosotros.component.css.map */
