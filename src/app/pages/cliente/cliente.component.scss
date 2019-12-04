@@ -1,24 +1,45 @@
 @import '../../sass_files/index';
 .contenedor {
+    //para el boton flotante
     background-color: #fffff0;
+    //*************************************header********************************************
     header {
-        display: flex;
-        flex-direction: row;
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color: #fffff0;
+        z-index: 1000;
+        @include flex-column;
+        width: 100vw;
+    }
+    .cont {
+        @include flex-row;
         justify-content: space-between;
+        width: 100%;
         padding: 10px 2% 0px;
-        .titulo {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-family: 'Julius Sans One', sans-serif;
-            p {
-                font-family: 'Bad Script', cursive;
-                margin: 20px;
-            }
+    }
+    .titulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Julius Sans One', sans-serif;
+        p {
+            font-family: 'Bad Script', cursive;
+            margin: 20px;
         }
-        .client-info {
-            font-size: 1.5em;
-            align-self: center;
+    }
+    .client-info {
+        font-size: 1.5em;
+        align-self: center;
+    }
+    .botonera {
+        @include flex-column;
+        width: 10%;
+        .botones {
+            margin: 10px;
+            width: 100%;
+            @include flex-row;
+            justify-content: space-between;
         }
     }
     .borde {
@@ -108,9 +129,6 @@
             }
         }
     }
-    .modal-btn {
-        @include dimensiones(100%, 100%);
-    }
     .mat-checkbox {
         position: absolute;
         bottom: 0px;
@@ -128,10 +146,12 @@
     }
 }
 
+//*************************************modal********************************************
  ::ng-deep .windowOfModal .modal-dialog {
     max-width: 60vw;
 }
 
 ::ng-deep .windowOfModal .modal-content {
     background-color: rgb(0, 0, 0, 0);
+    border: none;
 }
