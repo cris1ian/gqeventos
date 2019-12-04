@@ -14,16 +14,16 @@
 .home-text {
     display: block;
     position: absolute;
-    text-align: center;
+    text-align: left;
+    margin-left: 10vw;
     width: 100vw;
-    top: 40%
+    top: 35%
 }
 
 h1 {
     font-family: bad script;
     color: white;
-    text-align: center;
-    font-size: 5vw;
+    font-size: 4vw;
     font-weight: normal;
     margin-bottom: 3vh;
 }
@@ -31,10 +31,9 @@ h1 {
 h2 {
     font-family: Julius Sans One;
     color: white;
-    text-align: center;
-    font-size: 2vw;
+    font-size: 1vw;
     font-weight: normal;
-    line-height: 2.5rem;
+    line-height: 1rem;
 }
 
 a {
@@ -48,4 +47,13 @@ strong {
 
 button {
     margin-top: 5vh;
+}
+
+p{
+    position: absolute;
+    background: black;
+    height: 100vh;
+    width: 100vw;
+    clip-path: polygon(0 0, 0 100%, 100% calc(100% - 5vw), 100% 0);
+    opacity: 0.3;
 }
