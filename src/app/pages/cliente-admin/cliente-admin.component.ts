@@ -19,17 +19,15 @@ export class ClienteAdminComponent implements OnInit {
     @ViewChild('file', { static: false }) file;
     photos: Photo[] = [];
     selected: number;
-    try: any;
+    spinnerProgress: number = 90;
+    spinnerShow: boolean = false;
 
     constructor(
         config: NgbModalConfig,
         private modalService: NgbModal,
         private imageCompress: NgxImageCompressService
     ) {
-        // customize default values of modals used by this component tree
-        // config.backdrop = 'static';
         config.centered = true;
-        // config.size = "xl";
         config.scrollable = false;
         config.windowClass = "windowOfModal";
     }
@@ -53,15 +51,22 @@ export class ClienteAdminComponent implements OnInit {
     }
 
     addPhoto() { this.file.nativeElement.click(); }
+    
+    counter1= 0;
+    spinnerUp(){
+        this.spinnerProgress = 100 * ++this.counter1 / 10;
+    }
 
     onInputChange(event: any) {
         const files = Array.from(event.target.files);
-        let orientation = -2;
+        let orientation = -1;
+        let counter = 0;
+        console.log(files);
+        this.spinnerShow = true;
 
         files.forEach(
             (element: any) => {
                 var reader = new FileReader();
-                // if(element.type == "image*") reader.readAsDataURL(element);
                 reader.readAsDataURL(element);
                 reader.onload = (event: any) => {
                     this.imageCompress.compressFile(reader.result, orientation, 50, 50)
@@ -72,6 +77,9 @@ export class ClienteAdminComponent implements OnInit {
                                     fileName: element.name
                                 })
                                 this.photos = this.photos.sort((a, b) => (a.fileName > b.fileName) ? 1 : -1)
+                                this.spinnerProgress = 100 * ++counter / files.length;
+                                if (this.spinnerProgress == 100) this.spinnerShow = false;
+                                console.log(this.spinnerProgress);
                             })
                 }
             })

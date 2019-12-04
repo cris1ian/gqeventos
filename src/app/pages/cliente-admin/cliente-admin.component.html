@@ -13,9 +13,10 @@
         <div class="btn">
             <button mat-mini-fab class="mas" (click)="addPhoto()"><i class="material-icons">add</i></button>
             <p>Agregar<br>Fotografia</p>
-            <input style="display: none;" #file type="file" accept="image/*" (change)="onInputChange($event)" multiple/>
+            <input style="display: none;" #file type="file" accept="image/*" (change)="onInputChange($event)"
+                multiple />
 
-            <button mat-mini-fab class="menos"><i class="material-icons">remove</i></button>
+            <button mat-mini-fab class="menos" (click)="spinnerUp()"><i class="material-icons">remove</i></button>
             <p>Borrar<br>Fotografia</p>
         </div>
 
@@ -28,6 +29,9 @@
     </header>
     <div class="borde"></div>
 
+    <div style="margin: 50px;">
+        <mat-progress-spinner style="margin: auto;" mode="determinate" [value]="spinnerProgress"></mat-progress-spinner>
+    </div>
 
     <div class="cont-galeria">
 
@@ -39,8 +43,11 @@
                     </div>
 
                     <div class="pie" (click)="onSelect(i)">
-                        <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i class="far fa-square"></i></span>
-                        <span class="checkbox" class="checkbox-check" [className]="photo.isSelected ? 'show' : 'not-show'"><i class="fas fa-check-square"></i></span>
+                        <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i
+                                class="far fa-square"></i></span>
+                        <span class="checkbox" class="checkbox-check"
+                            [className]="photo.isSelected ? 'show' : 'not-show'"><i
+                                class="fas fa-check-square"></i></span>
                         <div class="fileName">
                             <p>{{photo.fileName}}</p>
                         </div>
