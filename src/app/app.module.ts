@@ -24,11 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselConfigComponent } from './pages/carousel-config/carousel-config.component';
-
-
-
-
-
+import { FileSelectDirective } from 'ng2-file-upload';
+import { NgxImageCompressService } from 'ngx-image-compress';
 
 @NgModule({
   declarations: [
@@ -44,8 +41,7 @@ import { CarouselConfigComponent } from './pages/carousel-config/carousel-config
     ClienteAdminComponent,
     LandingComponent,
     CarouselConfigComponent,
-
-
+    FileSelectDirective
   ],
   imports: [
     MatButtonModule,
@@ -61,7 +57,7 @@ import { CarouselConfigComponent } from './pages/carousel-config/carousel-config
 
 
   ],
-  providers: [],
+  providers: [NgxImageCompressService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -11,8 +11,10 @@
         </div>
 
         <div class="btn">
-            <button mat-mini-fab class="mas"><i class="material-icons">add</i></button>
+            <button mat-mini-fab class="mas" (click)="addPhoto()"><i class="material-icons">add</i></button>
             <p>Agregar<br>Fotografia</p>
+            <input style="display: none;" #file type="file" accept="image/*" (change)="onInputChange($event)" multiple/>
+
             <button mat-mini-fab class="menos"><i class="material-icons">remove</i></button>
             <p>Borrar<br>Fotografia</p>
         </div>
@@ -36,7 +38,7 @@
                         <img [className]="photo.isSelected  ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
                     </div>
 
-                    <div class="pie" (click)="onClick(i)">
+                    <div class="pie" (click)="onSelect(i)">
                         <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i class="far fa-square"></i></span>
                         <span class="checkbox" class="checkbox-check" [className]="photo.isSelected ? 'show' : 'not-show'"><i class="fas fa-check-square"></i></span>
                         <div class="fileName">
