@@ -22,6 +22,9 @@
                     font-family: "Bad Script", cursive;
                     font-size: 1.1em;
                 }
+                p {
+                    margin-right: 5px;
+                }
             }
         }
     }
@@ -72,16 +75,16 @@
             }
         }
         .pie {
-            // background: red;
+            background: red;
             @include flex-row;
             justify-content: flex-start;
             font-family: "Julius Sans One", sans-serif;
             position: relative;
             height: 15%;
             .fileName {
-                // background: green;
+                background: green;
                 padding-left: 10px;
-                width: 90%;
+                width: 76%;
                 font-size: 0.8em;
                 // font-size: calc(1em + 0.5vw);
                 p {
@@ -91,9 +94,12 @@
                     text-transform: capitalize;
                 }
             }
+            .mat-icon-button {
+                width: 36px;
+            }
             .checkbox {
                 cursor: pointer;
-                // background: rgb(0, 255, 200);
+                background: rgb(0, 255, 200);
                 display: block;
                 width: 10%;
             }

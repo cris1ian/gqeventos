@@ -47,7 +47,7 @@
                         </button>
                     </div>
 
-                    <div class="stackPics">
+                    <div class="stackPics" (click)="navigateTo()">
                         <img class="stack_1" [src]="client.img01" alt="">
                         <img class="stack_2" [src]="client.img02" alt="">
                         <img class="stack_3" [src]="client.img03" alt="">
@@ -68,16 +68,24 @@
 
     <ng-template #content let-c="close" let-d="dismiss">
         <div class="modal-header">
-            <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
-            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <h4 class="modal-title" id="modal-title">Eliminar galeíra</h4>
+            <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
         </div>
         <div class="modal-body">
-            <p>Hello, World!</p>
+            <p><strong>Esta seguro/a que desea borrar esta galeria?</strong> </p>
+            <div>
+                <p>Nombre:<span class="text-primary">emilio</span> <br> Nº :<span class="text-primary">emilio</span></p>
+            </div>
+
+            <p>Toda la información asociada a esta galeria será borrada permanentemente.</p>
+            <span class="text-danger">Esta acción no se puede deshacer !</span>
+
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+            <button type="button" ngbAutofocus class="btn btn-danger" (click)="d('cancel click')">Cancel</button>
+            <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria(5) " (click)="d('cancel click')">Ok</button>
         </div>
     </ng-template>
 
