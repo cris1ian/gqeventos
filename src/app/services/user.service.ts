@@ -11,9 +11,10 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getGallery = (id?: number) => {
+  getGallery = (options?: {id?: number, hash?: string}) => {
     let params = new HttpParams();
-    if (id != undefined) params = params.append('id', `${id}`);
+    if (options['id'] != undefined) params = params.append('id', `${options['id']}`);
+    if (options['hash'] != undefined) params = params.append('hash', `${options['hash']}`);
     return this.httpClient.get(`${environment.WS_URL}/gallery`, { params });
   }
 

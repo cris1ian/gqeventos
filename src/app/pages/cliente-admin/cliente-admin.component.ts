@@ -50,7 +50,7 @@ export class ClienteAdminComponent implements OnInit {
 
         this.route.paramMap.subscribe(
             (params: Params) => {
-                this.userService.getGallery(params.params.id)
+                this.userService.getGallery({id: params.params.id})
                     .subscribe(
                         (resp: any) => {
                             console.log(resp.result[0]);

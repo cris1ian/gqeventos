@@ -3,8 +3,14 @@
     <header>
         <div class="cont">
             <div class="client-info">
-                <p *ngIf="client">{{client.name}}</p>
-                <p *ngIf="client" class="no">{{client.hash}}</p>
+                <p>
+                    <span>Nº de cliente:</span>
+                    <ng-container *ngIf="client"> {{client.hash}} </ng-container>
+                </p>
+                <p>
+                    <span>Nombre:</span>
+                    <ng-container *ngIf="client"> {{client.name}} </ng-container>
+                </p>
             </div>
 
             <div class="titulo">
@@ -16,7 +22,8 @@
             <div class="botonera">
                 <div class="botones">
                     <button type="button" routerLink="/" class="btn btn-outline-danger btn-block ">Volver </button>
-                    <button type="button" (click)="Aceptar()" class="btn btn-success btn-block">Aceptar</button>
+                    <!-- <mat-slide-toggle color="primary-dark"></mat-slide-toggle>
+                    <button type="button" (click)="Aceptar()" class="btn btn-success btn-block">Aceptar</button> -->
                 </div>
 
                 <span>Seleccionadas: {{selected}}</span>
@@ -50,11 +57,6 @@
                 </div>
             </div>
         </ng-container>
-
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
 
     </div>
 

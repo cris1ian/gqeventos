@@ -12,15 +12,15 @@
                 <li><a href="#productos">Productos</a> </li>
                 <li><a href="#contacto">Contacto</a> </li>
                 <li>
-                    <div ngbDropdown>
-                        <button class="btn btn-primary" id="dropdownForm1" ngbDropdownToggle>Clientes</button>
+                    <div ngbDropdown placement="bottom-right">
+                        <button class="btn btn-primary" id="dropdownForm1"ngbDropdownToggle>Clientes</button>
                         <div ngbDropdownMenu aria-labelledby="dropdownForm1">
                             <form class="px-4 py-3">
-                                <div class="form-group">
-                                    <label for="exampleDropdownFormEmail1">Ingrese su Nº de Cliente</label>
-                                    <input type="email" class="form-control" id="exampleDropdownFormEmail1">
-                                </div>
-                                <button type="submit" class="btn btn-outline-secondary">Aceptar</button>
+                                <div class="form-group" >
+                                    <label for="clientId">Ingrese su Nº de Cliente</label>
+                                    <input type="text" class="form-control" id="exampleDropdownFormEmail1" name="hash" [(ngModel)]="hash" required>
+                                </div>  
+                                <button type="submit" class="btn btn-outline-secondary" (click)="submitClientId()">Aceptar</button>
                             </form>
                         </div>
                     </div>

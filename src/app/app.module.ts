@@ -21,6 +21,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselConfigComponent } from './pages/carousel-config/carousel-config.component';
@@ -62,7 +63,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatProgressSpinnerModule,
     MatInputModule,
     HttpClientModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSlideToggleModule
   ],
   providers: [NgxImageCompressService],
   bootstrap: [AppComponent]
