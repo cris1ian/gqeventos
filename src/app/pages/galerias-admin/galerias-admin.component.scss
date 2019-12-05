@@ -132,18 +132,24 @@
   }
 }
 
-.modal-header,
-.modal-body,
-.modal-footer {
+.modal-1 {
   font-family: "Julius Sans One", sans-serif;
+}
+
+.modal-header {
+  background-color: #fffff0;
 }
 
 .modal-body {
   @include flex-column;
-  align-items: flex-start;
+  align-items: center;
   line-height: 1.1;
-  p {
-    margin: 5px;
+  .delete-client {
+    margin: 20px;
+    text-align: center;
+  }
+  .delete-warning {
+    text-align: center;
   }
 }
 
@@ -151,4 +157,8 @@
   margin-top: 1vh;
   font-weight: bold;
   margin-left: 5px;
+}
+
+.modal-footer {
+  background-color: #fffff0;
 }
