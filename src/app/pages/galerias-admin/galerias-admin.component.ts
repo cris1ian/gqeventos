@@ -38,8 +38,12 @@ export class GaleriasAdminComponent implements OnInit {
 
   }
 
-  open(content) {
+  borrar(content) {
     this.modalService.open(content);
+  }
+
+  agregar(content) {
+    this.modalService.open(content, { centered: true, backdrop: 'static' });
   }
 
   navigateTo() {
