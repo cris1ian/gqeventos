@@ -9,7 +9,7 @@
 
 
             <div class="btn">
-                <button mat-mini-fab class="mas"><i class="material-icons">add</i></button>
+                <button mat-mini-fab class="mas" (click)="agregar(modalAgregar)"><i class="material-icons">add</i></button>
                 <p>Agregar<br>Galeria</p>
 
             </div>
@@ -54,7 +54,7 @@
 
     </div>
 
-    <!-- *************************************************Modal******************************************************* -->
+    <!-- *************************************************Modal borrar galeria******************************************************* -->
 
     <ng-template #content let-c="close" let-d="dismiss">
         <span class="modal-1">
@@ -62,36 +62,74 @@
                 <h4 class="modal-title" id="modal-title">Eliminar galería</h4>
                 <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
                     <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div>
-                    <strong>¿Esta seguro/a que desea borrar esta galeria?</strong> 
-                </div>
-                <div class="delete-client">
-                    <p>
-                        Nombre: <span *ngIf="deleteClient" class="text-primary">{{deleteClient.name}}</span>
-                    </p>
-                    <p>
-                        ID: <span *ngIf="deleteClient" class="text-primary">{{deleteClient.hash}}</span>
-                    </p>
-                </div>
+        </button>
+</div>
+<div class="modal-body">
+    <div>
+        <strong>¿Esta seguro/a que desea borrar esta galeria?</strong>
+    </div>
+    <div class="delete-client">
+        <p>
+            Nombre: <span *ngIf="deleteClient" class="text-primary">{{deleteClient.name}}</span>
+        </p>
+        <p>
+            ID: <span *ngIf="deleteClient" class="text-primary">{{deleteClient.hash}}</span>
+        </p>
+    </div>
 
-                <div class="delete-warning">
-                    Toda la información asociada a esta galeria será borrada permanentemente.
-                </div>
-                <div class="text-danger">
-                    ¡Esta acción no se puede deshacer!
-                </div>
-            </div>
+    <div class="delete-warning">
+        Toda la información asociada a esta galeria será borrada permanentemente.
+    </div>
+    <div class="text-danger">
+        ¡Esta acción no se puede deshacer!
+    </div>
+</div>
 
-            </span>
-        <div class="modal-footer">
-            <button type="button" ngbAutofocus class="btn btn-primary" (click)="d('cancel click')">Cancel</button>
-            <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria(5) " (click)="d('cancel click')">Ok</button>
-        </div>
-    </ng-template>
+</span>
+<div class="modal-footer">
+    <button type="button" ngbAutofocus class="btn btn-primary" (click)="d('cancel click')">Cancel</button>
+    <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria(5) " (click)="d('cancel click')">Ok</button>
+</div>
+</ng-template>
 
-    <!-- ************************************************************************************************************** -->
+<!-- ************************************************************************************************************** -->
+
+
+<!-- *************************************************Modal agregar galeria******************************************************* -->
+
+<ng-template #modalAgregar let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Agregar galería</h4>
+        <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+    </div>
+    <div class="modal-body">
+        <mat-form-field>
+            <input matInput placeholder="Input">
+        </mat-form-field>
+
+        <mat-form-field>
+            <textarea matInput placeholder="Textarea"></textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select placeholder="Select">
+                <mat-option value="option">Option</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" ngbAutofocus class="btn btn-primary" (click)="d('cancel click')">Cancel</button>
+        <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria(5) " (click)="d('cancel click')">Ok</button>
+    </div>
+</ng-template>
+
+<!-- ************************************************************************************************************** -->
+
+
+
+
 
 </div>

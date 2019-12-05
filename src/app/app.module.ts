@@ -27,8 +27,9 @@ import { CarouselConfigComponent } from './pages/carousel-config/carousel-config
 import { FileSelectDirective } from 'ng2-file-upload';
 import { NgxImageCompressService } from 'ngx-image-compress';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -60,7 +61,8 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     MatProgressSpinnerModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    MatFormFieldModule
   ],
   providers: [NgxImageCompressService],
   bootstrap: [AppComponent]
