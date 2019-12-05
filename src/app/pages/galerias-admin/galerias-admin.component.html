@@ -105,19 +105,22 @@
             </button>
     </div>
     <div class="modal-body">
+
         <mat-form-field>
-            <input matInput placeholder="Input">
+            <mat-label>Nombre y Apellido</mat-label>
+            <input matInput #nombre placeholder="Emilio Perez" maxlength="60" required>
+            <mat-hint>Para nuevo usuario</mat-hint>
+            <mat-hint align="end">{{nombre.value.length}} / 60</mat-hint>
         </mat-form-field>
 
         <mat-form-field>
-            <textarea matInput placeholder="Textarea"></textarea>
+            <mat-label>Nº de usuario</mat-label>
+            <input type="text" #no matInput placeholder="37-659" maxlength="10" required>
+            <mat-hint>para identificar la galeria</mat-hint>
+            <mat-hint align="end">{{no.value.length}} / 10</mat-hint>
         </mat-form-field>
 
-        <mat-form-field>
-            <mat-select placeholder="Select">
-                <mat-option value="option">Option</mat-option>
-            </mat-select>
-        </mat-form-field>
+
 
     </div>
     <div class="modal-footer">
