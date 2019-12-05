@@ -24,7 +24,7 @@
 
 h1 {
   font-family: dancing script;
-  font-size: 3vw;
+
   font-weight: bold;
 }
 
@@ -35,69 +35,8 @@ h2 {
   padding-top: 3vh;
   margin-left: 4vw;
 }
-/*
-.grid {
-  display: grid;
-  grid-template-columns: 2;
-  grid-gap: 0px;
-  grid-template-rows: 2;
-  margin-left: 20vw;
-  margin-right: 20vw;
-  text-align: center;
-  margin-top: 6vh;
-}
 
-.grid p {
-  font-family: julius sans one;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  margin-bottom: 3vh;
-  line-height: 2vw;
-  font-size: 1vw;
-}
-
-.digital {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  grid-column: 1;
-  grid-row: 1;
-  border-right: 1px solid rgb(199, 194, 194);
-  border-bottom: 1px solid rgb(199, 194, 194);
-}
-
-.bodas {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  grid-column: 2;
-  grid-row: 1;
-  border-left: 1px solid rgb(199, 194, 194);
-  border-bottom: 1px solid rgb(199, 194, 194);
-}
-
-.quinces {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  grid-column: 1;
-  grid-row: 2;
-  border-top: 1px solid rgb(199, 194, 194);
-  border-right: 1px solid rgb(199, 194, 194);
-}
-
-.infantil {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  grid-column: 2;
-  grid-row: 2;
-  border-left: 1px solid rgb(199, 194, 194);
-  border-top: 1px solid rgb(199, 194, 194);
-}
-*/
-
-.container {
+.seccion-combos {
   width: 100vw;
   display: flex;
   justify-content: space-evenly;
@@ -107,14 +46,45 @@ h2 {
 }
 
 .card {
+  text-align: center;
+  height: 620px;
+  margin-top: 2vh;
+
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
-  text-align: center;
-  margin-left: 1vw;
-  margin-right: 1vw;
+  align-content: center;
+
+  .title,
+  .foto,
+  .video,
+  .entregamos {
+  }
+
+  .title {
+    height: 20%;
+  }
+  .foto {
+    height: 30%;
+  }
+  .video {
+    height: 22%;
+  }
+  .entregamos {
+    height: 13%;
+  }
+  .button {
+    display: flex;
+    height: 15%;
+    align-items: center;
+    justify-content: center;
+  }
+}
+b {
+  margin-bottom: 10px;
 }
 
-.row {
-  flex-wrap: nowrap;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
