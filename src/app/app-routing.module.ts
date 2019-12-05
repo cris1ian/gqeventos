@@ -10,10 +10,10 @@ import { CarouselConfigComponent } from './pages/carousel-config/carousel-config
 
 const routes: Routes = [
   { path: '', component: LandingComponent },
-  { path: 'cliente', component: ClienteComponent },
-  { path: 'cliente-admin', component: ClienteAdminComponent },
+  { path: 'cliente/:id', component: ClienteComponent },
+  { path: 'cliente-admin/:id', component: ClienteAdminComponent },
   { path: 'galerias-admin', component: GaleriasAdminComponent },
-  { path: 'carousel', component: CarouselConfigComponent },
+  { path: 'carousel', component: CarouselConfigComponent }
 
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   // { path: '**', component: AppComponent },

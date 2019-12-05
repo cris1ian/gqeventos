@@ -41,7 +41,7 @@
                         </button>
                     </div>
 
-                    <div class="stackPics" (click)="navigateTo()">
+                    <div class="stackPics" (click)="navigateTo()" [routerLink]="['/cliente-admin', client.id]">
                         <img class="stack_1" [src]="client.img01" alt="">
                         <img class="stack_2" [src]="client.img02" alt="">
                         <img class="stack_3" [src]="client.img03" alt="">

@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment';
 import { NgxImageCompressService } from 'ngx-image-compress';
 import { Client } from 'src/app/models/client.model';
 import { ImageService } from 'src/app/services/image.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
     selector: 'app-cliente-admin',
@@ -19,7 +21,7 @@ import { ImageService } from 'src/app/services/image.service';
 export class ClienteAdminComponent implements OnInit {
     @ViewChild('file', { static: false }) file;
     photos: Photo[] = [];
-    client: Client = new Client('202-23', 'Emilio Jose Mena');
+    client: Client;
     selected: number;
     spinnerProgress: number;
     spinnerShow: boolean = false;
@@ -28,7 +30,9 @@ export class ClienteAdminComponent implements OnInit {
         config: NgbModalConfig,
         private modalService: NgbModal,
         private imageCompress: NgxImageCompressService,
-        private imageService: ImageService
+        private imageService: ImageService,
+        private route: ActivatedRoute,
+        private userService: UserService,
     ) {
         config.centered = true;
         config.scrollable = false;
@@ -37,16 +41,37 @@ export class ClienteAdminComponent implements OnInit {
 
     ngOnInit() {
         this.selected = 0;
-        this.photos[0] = new Photo();
-        this.photos[0] = {
-            id: 1,
-            fileName: 'IMG_BUCKET',
-            picture: 'https://s3.console.aws.amazon.com/s3/object/gq-eventos/1/IMG_7239.JPG'
-        }
-        this.client.id = 1; // BORRAR ESTA LINEA, PRUEBA
-        // this.photos = responsePhoto1;
-        // this.selected = this.photos.filter(element => element.isSelected).length;
-        // console.log(this.photos);
+        // this.photos[0] = new Photo();
+        // this.photos[0] = {
+        //     id: 1,
+        //     fileName: 'IMG_BUCKET',
+        //     picture: 'https://s3.console.aws.amazon.com/s3/object/gq-eventos/1/IMG_7239.JPG'
+        // }
+
+        this.route.paramMap.subscribe(
+            (params: Params) => {
+                this.userService.getGallery(params.params.id)
+                    .subscribe(
+                        (resp: any) => {
+                            console.log(resp.result[0]);
+                            this.client = <Client>resp.result[0];
+                        },
+                        error => {
+                            console.log(error);
+                        }
+                    )
+                this.userService.getPhoto(params.params.id)
+                    .subscribe(
+                        (resp: any) => {
+                            console.log(resp);
+                            this.photos = resp.result;
+                            this.selected = this.photos.filter(element => element.isSelected).length;
+                        },
+                        error => {
+                            console.log(error);
+                        }
+                    )
+            })
     }
 
     open() {
