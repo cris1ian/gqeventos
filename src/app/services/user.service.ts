@@ -11,13 +11,15 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getGallery = () => {
-    return this.httpClient.get(`${environment.WS_URL}/gallery`);
+  getGallery = (id?: number) => {
+    let params = new HttpParams();
+    if (id != undefined) params = params.append('id', `${id}`);
+    return this.httpClient.get(`${environment.WS_URL}/gallery`, { params });
   }
 
-  getPhoto = (id: number) => {
+  getPhoto = (userId: number) => {
     let params = new HttpParams();
-    params = params.append('id', `${id}`);
+    params = params.append('userId', `${userId}`);
     return this.httpClient.get(`${environment.WS_URL}/photo`, { params });
   }
 
