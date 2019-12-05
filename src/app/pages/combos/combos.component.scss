@@ -25,19 +25,17 @@
 h1 {
   font-family: dancing script;
   font-size: 3vw;
-  margin: 5vh;
   font-weight: bold;
 }
 
 h2 {
   font-family: bad script;
   font-size: 4vw;
-  display: flex;
-  position: absolute;
+
   padding-top: 3vh;
   margin-left: 4vw;
 }
-
+/*
 .grid {
   display: grid;
   grid-template-columns: 2;
@@ -97,17 +95,26 @@ h2 {
   border-left: 1px solid rgb(199, 194, 194);
   border-top: 1px solid rgb(199, 194, 194);
 }
+*/
 
-button {
-  width: 15vw;
-  height: 5vh;
-  align-self: center;
-  font-size: 1.4vw;
-  background: none;
-  font-family: julius sans one;
-  border-radius: 2vw;
-  font-weight: 800;
-  margin-top: 3vh;
-  margin-bottom: 5vh;
-  cursor: pointer;
+.container {
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  margin-left: 1vw;
+  margin-right: 1vw;
+}
+
+.row {
+  flex-wrap: nowrap;
 }
