@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  WS_URL: 's3amazon'
+  WS_URL: 'http://localhost:3001/api/v1',
+  S3_URL: 'https://gq-eventos.s3.us-east-2.amazonaws.com'
 };
 
 /*

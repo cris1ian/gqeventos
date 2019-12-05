@@ -26,6 +26,7 @@
     "ng2-file-upload": "^1.4.0",
     "ngx-image-compress": "^8.0.3",
     "rxjs": "~6.4.0",
+    "shortid": "^2.2.15",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },

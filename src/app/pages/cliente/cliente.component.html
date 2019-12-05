@@ -38,7 +38,7 @@
                         <img [className]="photo.isSelected  ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
                     </div>
 
-                    <div class="pie" (click)="onClick(i)">
+                    <div class="pie" (click)="onSelect(i)">
                         <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i class="far fa-square"></i></span>
                         <span class="checkbox" class="checkbox-check" [className]="photo.isSelected ? 'show' : 'not-show'"><i class="fas fa-check-square"></i></span>
                         <div class="fileName">

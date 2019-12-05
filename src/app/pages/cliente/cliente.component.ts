@@ -42,7 +42,7 @@ export class ClienteComponent implements OnInit {
     console.log("hicieron click en el boton de aceptar");
   }
 
-  onClick(i: number) {
+  onSelect(i: number) {
     this.photos[i].isSelected = !this.photos[i].isSelected;
     this.selected = this.photos.filter(element => element.isSelected).length;
     console.log(`Click en la foto ${i}: check = ${this.photos[i].isSelected}`);

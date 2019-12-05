@@ -5,23 +5,35 @@
         <div class="titulo">
             <h1>Administrar cliente</h1>
             <div class="client-info">
-                <p> <span>Nº de cliente:</span> 25-356</p>
-                <p> <span>Nombre:</span> Emilio Jose</p>
+                <!-- <form>
+                    <mat-form-field>
+                        <input matInput type="text" name="clientHash" placeholder="Nº de cliente:"
+                            [(value)]="client.hash" required>
+                    </mat-form-field>
+
+                    <mat-form-field style="margin-left: 5px;">
+                        <input matInput type="text" name="clientName" placeholder="Nombre:" [(value)]="client.name"
+                            required>
+                    </mat-form-field>
+                </form> -->
+                <p>
+                    <span>Nº de cliente:</span>{{client.hash}}
+                </p>
+                <p>
+                    <span>Nombre:</span>{{client.name}}
+                </p>
             </div>
         </div>
 
-        <div class="btn">
-            <button mat-mini-fab class="mas" (click)="addPhoto()"><i class="material-icons">add</i></button>
-            <p>Agregar<br>Fotografia</p>
+        <div class="btn" (click)="addPhoto()">
+            <button mat-mini-fab class="mas"><i class="material-icons">add</i></button>
+            <p>Agregar Fotografias</p>
             <input style="display: none;" #file type="file" accept="image/*" (change)="onInputChange($event)"
                 multiple />
-
-            <button mat-mini-fab class="menos" (click)="spinnerUp()"><i class="material-icons">remove</i></button>
-            <p>Borrar<br>Fotografia</p>
         </div>
 
         <div class="btn-acep">
-            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="primary" type="submit" (click)="uploadPhotos()">Cargar</button>
             <span>Seleccionadas: {{selected}}</span>
         </div>
 
@@ -29,8 +41,16 @@
     </header>
     <div class="borde"></div>
 
+    <!-- <div class="dataTest">
+        <div> spinnerProgress = {{spinnerProgress}}</div>
+        <div> spinerShow = {{spinnerShow}}</div>
+    </div>
     <div style="margin: 50px;">
         <mat-progress-spinner style="margin: auto;" mode="determinate" [value]="spinnerProgress"></mat-progress-spinner>
+    </div> -->
+
+    <div *ngIf="spinnerShow" color="accept" style="margin: 50px;">
+        <mat-spinner style="margin: auto;"></mat-spinner>
     </div>
 
     <div class="cont-galeria">
@@ -42,15 +62,20 @@
                         <img [className]="photo.isSelected  ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
                     </div>
 
-                    <div class="pie" (click)="onSelect(i)">
-                        <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i
-                                class="far fa-square"></i></span>
+                    <div class="pie">
+                        <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'">
+                            <i class="far fa-square"></i>
+                        </span>
                         <span class="checkbox" class="checkbox-check"
-                            [className]="photo.isSelected ? 'show' : 'not-show'"><i
-                                class="fas fa-check-square"></i></span>
+                            [className]="photo.isSelected ? 'show' : 'not-show'">
+                            <i class="fas fa-check-square"></i>
+                        </span>
                         <div class="fileName">
                             <p>{{photo.fileName}}</p>
                         </div>
+                        <button mat-icon-button (click)="deletePhoto(i)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -60,28 +85,6 @@
         <div class="column"></div>
         <div class="column"></div>
         <div class="column"></div>
-
-
-
-
-
-
-        <!-- <ng-template #myModal let-modal>
-
-
-            <div class="modalcontent">
-
-                <app-carousel-config></app-carousel-config>
-                
-
-            </div>
-
-            
-        </ng-template> -->
-
-
-
-
 
     </div>
 
