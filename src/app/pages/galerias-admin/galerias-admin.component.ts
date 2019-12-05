@@ -12,6 +12,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class GaleriasAdminComponent implements OnInit {
     clients: Client[];
+    newClient: Client = new Client("","");
+    deleteClient: Client;
 
     constructor(
         config: NgbModalConfig,
@@ -22,7 +24,7 @@ export class GaleriasAdminComponent implements OnInit {
         // config.backdrop = 'static';
         config.keyboard = false;
     }
-    
+
     ngOnInit() {
         console.log(responseClient);
         this.userService.getGallery()
@@ -38,25 +40,18 @@ export class GaleriasAdminComponent implements OnInit {
 
     }
 
-    open(content) {
+    open(content,client: Client) {
+        console.log(client);
+        this.deleteClient = client;
         this.modalService.open(content);
     }
 
-<<<<<<< HEAD
+    navigateTo() {
+        console.log("ir a vclientes");
+    }
+
     borrarGaleria(number) {
         console.log("se quiere borrar " + number);
-=======
-  navigateTo() {
-    console.log("ir a vclientes");
-
-
-
-  }
-
-  borrarGaleria(number) {
-    console.log("se quiere borrar " + number);
->>>>>>> 9a918f2f1d90afae43b6f57e3e8c0cc73655e847
-
     }
 
 }

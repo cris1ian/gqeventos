@@ -42,7 +42,7 @@
                             <p><span>Nº Cliente:</span> {{client.hash}}</p>
                         </div>
 
-                        <button class="papelera" mat-icon-button (click)="open(content)">
+                        <button class="papelera" mat-icon-button (click)="open(content,client)">
                             <mat-icon>delete</mat-icon>
                         </button>
                     </div>
@@ -63,27 +63,38 @@
     <!-- *************************************************Modal******************************************************* -->
 
     <ng-template #content let-c="close" let-d="dismiss">
-        <div class="modal-header">
-            <h4 class="modal-title" id="modal-title">Eliminar galería</h4>
-            <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <p><strong>Esta seguro/a que desea borrar esta galeria?</strong> </p>
-            <div>
-                <p>Nombre:<span class="text-primary">emilio</span> <br> Nº:<span class="text-primary">emilio</span></p>
+        <span class="modal-1">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-title">Eliminar galería</h4>
+                <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
+            <div class="modal-body">
+                <div><strong>¿Esta seguro/a que desea borrar esta galeria?</strong> </div>
+                <div class="delete-client">
+                    <p>
+                        Nombre: <span *ngIf="deleteClient" class="text-primary">{{deleteClient.name}}</span>
+                    </p>
+                    <p>
+                        ID: <span *ngIf="deleteClient" class="text-primary">{{deleteClient.hash}}</span>
+                    </p>
+                </div>
 
-            <p>Toda la información asociada a esta galeria será borrada permanentemente.</p>
-            <span class="text-danger">Esta acción no se puede deshacer !</span>
+                <div class="delete-warning">
+                    Toda la información asociada a esta galeria será borrada permanentemente.
+                </div>
+                <div class="text-danger">
+                    ¡Esta acción no se puede deshacer!
+                </div>
 
-        </div>
-        <div class="modal-footer">
-            <button type="button" ngbAutofocus class="btn btn-danger" (click)="d('cancel click')">Cancel</button>
-            <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria(5) "
-                (click)="d('cancel click')">Ok</button>
-        </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ngbAutofocus class="btn btn-danger" (click)="d('cancel click')">Cancel</button>
+                <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria(5) "
+                    (click)="d('cancel click')">Ok</button>
+            </div>
+        </span>
     </ng-template>
 
     <!-- ************************************************************************************************************** -->
