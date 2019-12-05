@@ -42,8 +42,20 @@ export class GaleriasAdminComponent implements OnInit {
         this.modalService.open(content);
     }
 
+<<<<<<< HEAD
     borrarGaleria(number) {
         console.log("se quiere borrar " + number);
+=======
+  navigateTo() {
+    console.log("ir a vclientes");
+
+
+
+  }
+
+  borrarGaleria(number) {
+    console.log("se quiere borrar " + number);
+>>>>>>> 9a918f2f1d90afae43b6f57e3e8c0cc73655e847
 
     }
 
