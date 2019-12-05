@@ -2,30 +2,50 @@ import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/models/client.model';
 import { responseClient } from 'src/app/models/backend-client';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
-  selector: 'app-galerias-admin',
-  templateUrl: './galerias-admin.component.html',
-  styleUrls: ['./galerias-admin.component.scss'],
-  providers: [NgbModalConfig, NgbModal]
+    selector: 'app-galerias-admin',
+    templateUrl: './galerias-admin.component.html',
+    styleUrls: ['./galerias-admin.component.scss'],
+    providers: [NgbModalConfig, NgbModal]
 })
 export class GaleriasAdminComponent implements OnInit {
-  clients: Client[];
+    clients: Client[];
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal) {
-    // customize default values of modals used by this component tree
-    // config.backdrop = 'static';
-    config.keyboard = false;
-  }
+    constructor(
+        config: NgbModalConfig,
+        private modalService: NgbModal,
+        private userService: UserService
+    ) {
+        // customize default values of modals used by this component tree
+        // config.backdrop = 'static';
+        config.keyboard = false;
+    }
+    
+    ngOnInit() {
+        console.log(responseClient);
+        this.userService.getGallery()
+            .subscribe(
+                (resp: any) => {
+                    console.log(resp);
+                    this.clients = resp.result;
+                },
+                error => {
+                    console.log(error);
+                }
+            )
 
-  ngOnInit() {
-    this.clients = responseClient;
-  }
+    }
 
-  open(content) {
-    this.modalService.open(content);
-  }
+    open(content) {
+        this.modalService.open(content);
+    }
 
+<<<<<<< HEAD
+    borrarGaleria(number) {
+        console.log("se quiere borrar " + number);
+=======
   navigateTo() {
     console.log("ir a vclientes");
 
@@ -35,7 +55,8 @@ export class GaleriasAdminComponent implements OnInit {
 
   borrarGaleria(number) {
     console.log("se quiere borrar " + number);
+>>>>>>> 9a918f2f1d90afae43b6f57e3e8c0cc73655e847
 
-  }
+    }
 
 }

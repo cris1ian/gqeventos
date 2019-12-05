@@ -158,6 +158,25 @@
     }
 }
 
+.modal-btn {
+    @include dimensiones(100%, 100%);
+}
+
+.mat-checkbox {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.not-selected {
+    cursor: pointer;
+}
+
+.selected {
+    cursor: pointer;
+    filter: brightness(0.6);
+}
+
 ::ng-deep .windowOfModal .modal-dialog {
     max-width: 60vw;
 }
