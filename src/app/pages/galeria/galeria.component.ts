@@ -27,8 +27,6 @@ export class GaleriaComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log("Esto se ejecuta al inicio");
-  }
+  ngOnInit() { }
 
 }

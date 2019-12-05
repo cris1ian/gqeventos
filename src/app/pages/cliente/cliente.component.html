@@ -1,18 +1,16 @@
 <div class="contenedor">
 
-
-
     <header>
         <div class="cont">
             <div class="client-info">
-                <!-- <p><span>Nº de cliente:</span>25-356</p> -->
-                <p>Emilio Jose Biasizo</p>
-                <p class="no">Nº : 25-365 </p>
+                <p *ngIf="client">{{client.name}}</p>
+                <p *ngIf="client" class="no">{{client.hash}}</p>
             </div>
 
             <div class="titulo">
-                <h1>seleccione las fotos que desea recibir!</h1>
-                <p>*Haga click en cada foto para seleccionarla y una vez finalice la seleccion, haga click en aceptar para enviarlas</p>
+                <h1>Seleccione las fotos que desea recibir</h1>
+                <p>*Haga click en cada foto para seleccionarla y una vez finalice la seleccion, haga click en aceptar
+                    para enviarlas</p>
             </div>
 
             <div class="botonera">
@@ -39,9 +37,12 @@
                         <img [className]="photo.isSelected  ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
                     </div>
 
-                    <div class="pie" (click)="onSelect(i)">
-                        <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i class="far fa-square"></i></span>
-                        <span class="checkbox" class="checkbox-check" [className]="photo.isSelected ? 'show' : 'not-show'"><i class="fas fa-check-square"></i></span>
+                    <div class="pie" (click)="onSelect(i, photo)">
+                        <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i
+                                class="far fa-square"></i></span>
+                        <span class="checkbox" class="checkbox-check"
+                            [className]="photo.isSelected ? 'show' : 'not-show'"><i
+                                class="fas fa-check-square"></i></span>
                         <div class="fileName">
                             <p>{{photo.fileName}}</p>
                         </div>

@@ -4,49 +4,80 @@ import { responsePhoto1 } from 'src/app/models/backend-photos';
 
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselConfigComponent } from '../carousel-config/carousel-config.component';
+import { ActivatedRoute, Params } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
+import { Client } from 'src/app/models/client.model';
 
 
 @Component({
-  selector: 'app-cliente',
-  templateUrl: './cliente.component.html',
-  styleUrls: ['./cliente.component.scss'],
+    selector: 'app-cliente',
+    templateUrl: './cliente.component.html',
+    styleUrls: ['./cliente.component.scss'],
 
-  providers: [NgbModalConfig, NgbModal]
+    providers: [NgbModalConfig, NgbModal]
 })
 export class ClienteComponent implements OnInit {
-  photos: Photo[];
-  selected: number;
+    photos: Photo[];
+    client: Client;
+    selected: number;
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal) {
-    // customize default values of modals used by this component tree
-    // config.backdrop = 'static';
-    config.centered = true;
-    // config.size = "xl";
-    config.scrollable = false;
+    constructor(
+        config: NgbModalConfig,
+        private modalService: NgbModal,
+        private route: ActivatedRoute,
+        private userService: UserService,
+    ) {
+        config.centered = true;
+        config.scrollable = false;
+        config.windowClass = "windowOfModal";
+    }
 
-    config.windowClass = "windowOfModal";
-  }
+    open() {
+        this.modalService.open(CarouselConfigComponent);
+    }
 
-  open() {
-    this.modalService.open(CarouselConfigComponent);
-  }
+    ngOnInit() {
+        this.selected = 0;
+        this.route.paramMap.subscribe(
+            (params: Params) => {
+                this.userService.getGallery(params.params.id)
+                    .subscribe(
+                        (resp: any) => {
+                            console.log(resp.result[0]);
+                            this.client = <Client>resp.result[0];
+                        },
+                        error => {
+                            console.log(error);
+                        }
+                    )
+                this.userService.getPhoto(params.params.id)
+                    .subscribe(
+                        (resp: any) => {
+                            console.log(resp);
+                            this.photos = resp.result;
+                            this.selected = this.photos.filter(element => element.isSelected).length;
+                        },
+                        error => {
+                            console.log(error);
+                        }
+                    )
+            })
+    }
 
-  ngOnInit() {
-    this.photos = responsePhoto1;
-    this.selected = this.photos.filter(element => element.isSelected).length;
-    console.log(this.photos);
-  }
 
+    Aceptar() {
+        console.log("hicieron click en el boton de aceptar");
+    }
 
-  Aceptar() {
-    console.log("hicieron click en el boton de aceptar");
-  }
-
-  onSelect(i: number) {
-    this.photos[i].isSelected = !this.photos[i].isSelected;
-    this.selected = this.photos.filter(element => element.isSelected).length;
-    console.log(`Click en la foto ${i}: check = ${this.photos[i].isSelected}`);
-  }
+    onSelect(i: number, photo: Photo) {
+        this.photos[i].isSelected = !this.photos[i].isSelected;
+        this.selected = this.photos.filter(element => element.isSelected).length;
+        this.userService.selectPhoto(photo.id, photo.isSelected)
+            .subscribe(
+                (resp: any) => {  },
+                error => { console.log(error); }
+            )
+    }
 
 
 

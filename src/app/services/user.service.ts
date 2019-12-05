@@ -31,6 +31,13 @@ export class UserService {
     return this.httpClient.post(`${environment.WS_URL}/gallery`, photo, this.appJsonHeader);
   }
 
+  selectPhoto = (photoId: number, isSelected: boolean) => {
+    let params = new HttpParams();
+    params = params.append('id', `${photoId}`);
+    params = params.append('isSelected', `${isSelected ? 1 : 0}`);
+    return this.httpClient.put(`${environment.WS_URL}/photo`, {}, { params });
+  }
+
   deleteGallery = (id: number) => {
     let params = new HttpParams();
     params = params.append('id', `${id}`);
