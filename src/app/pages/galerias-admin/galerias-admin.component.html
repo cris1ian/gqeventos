@@ -1,8 +1,5 @@
 <div class="cont-panel-admin">
 
-
-
-
     <header>
         <div class="contenedor">
             <div class="titulo">
@@ -12,7 +9,7 @@
 
 
             <div class="btn">
-                <button mat-mini-fab class="mas"><i class="material-icons">add</i></button>
+                <button mat-mini-fab class="mas" (click)="agregar(modalAgregar)"><i class="material-icons">add</i></button>
                 <p>Agregar<br>Galeria</p>
 
             </div>
@@ -25,12 +22,9 @@
 
     </header>
 
-
-
-
     <div class="cont-gala-cli">
 
-        <ng-container *ngFor="let client of clients">
+        <ng-container *ngFor="let client of clients, let i = index">
             <!-- solo para resposnsive -->
             <div class="column">
                 <!-- cada tarjeta -->
@@ -42,15 +36,15 @@
                             <p><span>Nº Cliente:</span> {{client.hash}}</p>
                         </div>
 
-                        <button class="papelera" mat-icon-button (click)="open(content)">
+                        <button class="papelera" mat-icon-button (click)="open(content, i, client)">
                             <mat-icon>delete</mat-icon>
                         </button>
                     </div>
 
-                    <div class="stackPics" (click)="navigateTo()">
-                        <img class="stack_1" [src]="client.img01" alt="">
-                        <img class="stack_2" [src]="client.img02" alt="">
-                        <img class="stack_3" [src]="client.img03" alt="">
+                    <div class="stackPics" [routerLink]="['/cliente-admin', client.id]">
+                        <img class="stack_1" [src]="client.picture" alt="">
+                        <img class="stack_2" [src]="client.picture" alt="">
+                        <img class="stack_3" [src]="client.picture" alt="">
                     </div>
 
 
@@ -60,32 +54,82 @@
 
     </div>
 
-    <!-- *************************************************Modal******************************************************* -->
+    <!-- *************************************************Modal borrar galeria******************************************************* -->
 
     <ng-template #content let-c="close" let-d="dismiss">
-        <div class="modal-header">
-            <h4 class="modal-title" id="modal-title">Eliminar galería</h4>
-            <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
+        <span class="modal-1">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modal-title">Eliminar galería</h4>
+                <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+        </button>
+</div>
+<div class="modal-body">
+    <div>
+        <strong>¿Esta seguro/a que desea borrar esta galeria?</strong>
+    </div>
+    <div class="delete-client">
+        <p>
+            Nombre: <span *ngIf="deleteClient" class="text-primary">{{deleteClient.name}}</span>
+        </p>
+        <p>
+            ID: <span *ngIf="deleteClient" class="text-primary">{{deleteClient.hash}}</span>
+        </p>
+    </div>
+
+    <div class="delete-warning">
+        Toda la información asociada a esta galeria será borrada permanentemente.
+    </div>
+    <div class="text-danger">
+        ¡Esta acción no se puede deshacer!
+    </div>
+</div>
+
+</span>
+<div class="modal-footer">
+    <button type="button" ngbAutofocus class="btn btn-primary" (click)="d('cancel click')">Cancel</button>
+    <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria() " (click)="d('cancel click')">Ok</button>
+</div>
+</ng-template>
+
+<!-- ************************************************************************************************************** -->
+
+
+<!-- *************************************************Modal agregar galeria******************************************************* -->
+
+<ng-template #modalAgregar let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Agregar galería</h4>
+        <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
                 <span aria-hidden="true">&times;</span>
             </button>
-        </div>
-        <div class="modal-body">
-            <p><strong>Esta seguro/a que desea borrar esta galeria?</strong> </p>
-            <div>
-                <p>Nombre:<span class="text-primary">emilio</span> <br> Nº:<span class="text-primary">emilio</span></p>
-            </div>
+    </div>
+    <div class="modal-body">
 
-            <p>Toda la información asociada a esta galeria será borrada permanentemente.</p>
-            <span class="text-danger">Esta acción no se puede deshacer !</span>
+        <mat-form-field>
+            <mat-label>Nombre y Apellido</mat-label>
+            <input matInput #nombre placeholder="Emilio Perez" maxlength="60" required>
+            <mat-hint>Para nuevo usuario</mat-hint>
+            <mat-hint align="end">{{nombre.value.length}} / 60</mat-hint>
+        </mat-form-field>
 
-        </div>
-        <div class="modal-footer">
-            <button type="button" ngbAutofocus class="btn btn-primary" (click)="d('cancel click')">Cancel</button>
-            <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria(5) " (click)="d('cancel click')">Ok</button>
-        </div>
-    </ng-template>
+        <mat-form-field>
+            <mat-label>Nº de usuario</mat-label>
+            <input type="text" #no matInput placeholder="37-659" maxlength="10" required>
+            <mat-hint>para identificar la galeria</mat-hint>
+            <mat-hint align="end">{{no.value.length}} / 10</mat-hint>
+        </mat-form-field>
 
-    <!-- ************************************************************************************************************** -->
+    </div>
+    <div class="modal-footer">
+        <button type="button" ngbAutofocus class="btn btn-primary" (click)="d('cancel click')">Cancel</button>
+        <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria(5) " (click)="d('cancel click')">Ok</button>
+    </div>
+</ng-template>
+
+<!-- ************************************************************************************************************** -->
+
+
 
 
 

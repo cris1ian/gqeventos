@@ -1,0 +1,15 @@
+.slidewindow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-height: 90vh;
+}
+
+.slidewindow img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+/*# sourceMappingURL=carousel-config.component.css.map */
