@@ -24,7 +24,7 @@
 
     <div class="cont-gala-cli">
 
-        <ng-container *ngFor="let client of clients">
+        <ng-container *ngFor="let client of clients, let i = index">
             <!-- solo para resposnsive -->
             <div class="column">
                 <!-- cada tarjeta -->
@@ -36,15 +36,15 @@
                             <p><span>Nº Cliente:</span> {{client.hash}}</p>
                         </div>
 
-                        <button class="papelera" mat-icon-button (click)="open(content,client)">
+                        <button class="papelera" mat-icon-button (click)="open(content, i, client)">
                             <mat-icon>delete</mat-icon>
                         </button>
                     </div>
 
-                    <div class="stackPics" (click)="navigateTo()" [routerLink]="['/cliente-admin', client.id]">
-                        <img class="stack_1" [src]="client.img01" alt="">
-                        <img class="stack_2" [src]="client.img02" alt="">
-                        <img class="stack_3" [src]="client.img03" alt="">
+                    <div class="stackPics" [routerLink]="['/cliente-admin', client.id]">
+                        <img class="stack_1" [src]="client.picture" alt="">
+                        <img class="stack_2" [src]="client.picture" alt="">
+                        <img class="stack_3" [src]="client.picture" alt="">
                     </div>
 
 
@@ -88,7 +88,7 @@
 </span>
 <div class="modal-footer">
     <button type="button" ngbAutofocus class="btn btn-primary" (click)="d('cancel click')">Cancel</button>
-    <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria(5) " (click)="d('cancel click')">Ok</button>
+    <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria() " (click)="d('cancel click')">Ok</button>
 </div>
 </ng-template>
 
@@ -119,8 +119,6 @@
             <mat-hint>para identificar la galeria</mat-hint>
             <mat-hint align="end">{{no.value.length}} / 10</mat-hint>
         </mat-form-field>
-
-
 
     </div>
     <div class="modal-footer">

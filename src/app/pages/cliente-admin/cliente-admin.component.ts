@@ -80,13 +80,21 @@ export class ClienteAdminComponent implements OnInit {
 
     addPhoto() { this.file.nativeElement.click(); }
 
-    deletePhoto(i: number) {
-        console.log(this.photos.splice(i, 1));
-        console.log(`Deleted photo ${i}`);
+    deletePhoto(i: number, photo: Photo) {
+        this.userService.deletePhoto(photo.id)
+            .subscribe(
+                (resp: any) => {
+                    console.log(resp);
+                    console.log(this.photos.splice(i, 1));
+                    console.log(`Deleted photo ${i}`);
+                },
+                error => {
+                    console.log(error);
+                }
+            )
     }
 
     uploadPhotos() {
-        console.log('lets upload!');
         this.imageService.uploadImage(this.photos, this.client.id)
             .subscribe(
                 result => { console.log(result) },
