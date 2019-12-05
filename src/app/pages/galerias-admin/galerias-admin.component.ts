@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Client } from 'src/app/models/client.model';
 import { responseClient } from 'src/app/models/backend-client';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-galerias-admin',
@@ -12,14 +13,29 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class GaleriasAdminComponent implements OnInit {
   clients: Client[];
 
-  constructor(config: NgbModalConfig, private modalService: NgbModal) {
+  constructor(
+    config: NgbModalConfig,
+    private modalService: NgbModal,
+    private userService: UserService
+  ) {
     // customize default values of modals used by this component tree
     // config.backdrop = 'static';
     config.keyboard = false;
   }
 
   ngOnInit() {
-    this.clients = responseClient;
+    console.log(responseClient);
+    this.userService.getGallery()
+      .subscribe(
+        (resp: any) => {
+          console.log(resp);
+          this.clients = resp.result;
+        },
+        error => {
+          console.log(error);
+        }
+      )
+
   }
 
   open(content) {

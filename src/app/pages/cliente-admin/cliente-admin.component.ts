@@ -37,6 +37,12 @@ export class ClienteAdminComponent implements OnInit {
 
     ngOnInit() {
         this.selected = 0;
+        this.photos[0] = new Photo();
+        this.photos[0] = {
+            id: 1,
+            fileName: 'IMG_BUCKET',
+            picture: 'https://s3.console.aws.amazon.com/s3/object/gq-eventos/1/IMG_7239.JPG'
+        }
         this.client.id = 1; // BORRAR ESTA LINEA, PRUEBA
         // this.photos = responsePhoto1;
         // this.selected = this.photos.filter(element => element.isSelected).length;
@@ -58,8 +64,8 @@ export class ClienteAdminComponent implements OnInit {
         console.log('lets upload!');
         this.imageService.uploadImage(this.photos, this.client.id)
             .subscribe(
-                result => {console.log(result)},
-                error => {console.log(error)}
+                result => { console.log(result) },
+                error => { console.log(error) }
             );
     }
 
