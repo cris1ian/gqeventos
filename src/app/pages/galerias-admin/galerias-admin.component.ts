@@ -50,8 +50,9 @@ export class GaleriasAdminComponent implements OnInit {
         console.log("ir a vclientes");
     }
 
-    borrarGaleria(number) {
-        console.log("se quiere borrar " + number);
+    borrarGaleria(clientId: number) {
+        console.log("se quiere borrar " + clientId);
+        this.userService.deleteGallery(clientId);
     }
 
 }
