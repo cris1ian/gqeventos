@@ -5,10 +5,10 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
-    selector: 'app-galerias-admin',
-    templateUrl: './galerias-admin.component.html',
-    styleUrls: ['./galerias-admin.component.scss'],
-    providers: [NgbModalConfig, NgbModal]
+  selector: 'app-galerias-admin',
+  templateUrl: './galerias-admin.component.html',
+  styleUrls: ['./galerias-admin.component.scss'],
+  providers: [NgbModalConfig, NgbModal]
 })
 export class GaleriasAdminComponent implements OnInit {
     clients: Client[];

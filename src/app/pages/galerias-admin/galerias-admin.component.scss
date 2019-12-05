@@ -2,6 +2,8 @@
 .cont-panel-admin {
   @include flex-column;
   width: 100vw;
+  min-height: 96vh;
+  justify-content: flex-start;
   font-family: "Julius Sans One", sans-serif;
   background: #fffff0;
   header {

@@ -1,172 +1,169 @@
 @import "../../sass_files/index";
 .contenedor {
-  //para el boton flotante
-  background-color: #fffff0;
-  min-height: 96vh;
-  //*************************************header********************************************
-  header {
-    position: sticky;
-    top: 0;
-    left: 0;
+    //para el boton flotante
     background-color: #fffff0;
-    z-index: 1000;
-    @include flex-column;
-    width: 100vw;
-  }
-  .cont {
-    @include flex-row;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px 2% 0px;
-  }
-  .titulo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Julius Sans One", sans-serif;
-    p {
-      font-family: "Bad Script", cursive;
-      margin: 20px;
+    min-height: 96vh;
+    //*************************************header********************************************
+    header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color: #fffff0;
+        z-index: 1000;
+        @include flex-column;
+        width: 100vw;
     }
-  }
-  .client-info {
-    @include flex-column;
-    font-size: 1.5em;
-    align-self: center;
-    .no {
-      margin: 5px 0px;
-      font-size: 0.7em;
-      font-family: "Julius Sans One", sans-serif;
-      align-self: center;
+    .cont {
+        @include flex-row;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px 2% 0px;
     }
-  }
-  .botonera {
-    @include flex-column;
-    width: 11%;
-    max-width: 250px;
-    .botones {
-      margin: 10px;
-      width: 100%;
-      @include flex-row;
-      justify-content: space-between;
-      button {
-        margin: 0px 5px;
-        min-width: 60px;
-        width: 50%;
-        // max-width: 100px;
-        // white-space: pre;
-      }
-    }
-  }
-  .borde {
-    width: 95%;
-    border-bottom: 1px solid #000000;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-    align-self: center;
-    justify-self: center;
-  }
-  //***************************************************************************************
-  .cont-galeria {
-    // background: lightblue;
-    margin: 30px 10px;
-    //************
-    display: flex;
-    flex-wrap: wrap;
-    //************
-  }
-  .column {
-    // background: rgba(0, 110, 255, 0.863);
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    flex-basis: 300px;
-    margin: 10px;
-  }
-  .column:empty {
-    height: 0;
-  }
-  .tarjeta {
-    // background: rgb(150, 131, 46);
-    @include dimensiones(350px, 300px);
-    box-shadow: 4px 4px 10px rgb(0, 0, 0);
-    background-color: #ffffff;
-    border-radius: 4px;
-    padding: 10px 10px 0px 10px;
-    .thumbnail {
-      // background: goldenrod;
-      position: relative;
-      width: 100%;
-      height: 85%;
-      img {
-        object-fit: cover;
-        @include dimensiones(100%, 100%);
-        transition: transform 0.1s linear;
-        &:hover {
-          transform: scale(1.02);
-        }
-      }
-    }
-    .pie {
-      // background: red;
-      @include flex-row;
-      justify-content: flex-start;
-      font-family: "Julius Sans One", sans-serif;
-      position: relative;
-      height: 15%;
-      cursor: pointer;
-      .fileName {
-        // background: green;
-        padding-left: 10px;
-        width: 90%;
-        font-size: 0.8em;
-        // font-size: calc(1em + 0.5vw);
+    .titulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Julius Sans One", sans-serif;
         p {
-          text-overflow: ellipsis;
-          overflow: hidden;
-          white-space: nowrap;
-          text-transform: capitalize;
+            font-family: "Bad Script", cursive;
+            margin: 20px;
         }
-      }
-      .checkbox {
-        // background: rgb(0, 255, 200);
-        display: block;
-        width: 10%;
-      }
-      i {
-        font-size: 33px;
-        color: #ffbf98;
-      }
-      .not-show {
-        display: none;
-      }
-      .show {
-        display: inline-block;
-      }
     }
-  }
-  .mat-checkbox {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-  }
-  .not-selected {
-    cursor: pointer;
-  }
-  .selected {
-    cursor: pointer;
-    filter: brightness(0.6);
-  }
-  ::ng-deep .windowOfModal .modal-dialog {
-    max-width: 60vw;
-  }
+    .client-info {
+        @include flex-column;
+        font-size: 1.5em;
+        align-self: center;
+        .no {
+            margin: 5px 0px;
+            font-size: 0.7em;
+            font-family: "Julius Sans One", sans-serif;
+            align-self: center;
+        }
+    }
+    .botonera {
+        @include flex-column;
+        width: 11%;
+        max-width: 250px;
+        .botones {
+            margin: 10px;
+            width: 100%;
+            @include flex-row;
+            justify-content: space-between;
+            button {
+                margin: 0px 5px;
+                min-width: 60px;
+                width: 50%;
+                // max-width: 100px;
+                // white-space: pre;
+            }
+        }
+    }
+    .borde {
+        width: 95%;
+        border-bottom: 1px solid #000000;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+        align-self: center;
+        justify-self: center;
+    }
+    //***************************************************************************************
+    .cont-galeria {
+        // background: lightblue;
+        margin: 30px 10px;
+        //************
+        display: flex;
+        flex-wrap: wrap;
+        //************
+    }
+    .column {
+        // background: rgba(0, 110, 255, 0.863);
+        display: flex;
+        justify-content: center;
+        flex-grow: 1;
+        flex-basis: 300px;
+        margin: 10px;
+    }
+    .column:empty {
+        height: 0;
+    }
+    .tarjeta {
+        // background: rgb(150, 131, 46);
+        @include dimensiones(350px, 300px);
+        box-shadow: 4px 4px 10px rgb(0, 0, 0);
+        background-color: #ffffff;
+        border-radius: 4px;
+        padding: 10px 10px 0px 10px;
+        .thumbnail {
+            // background: goldenrod;
+            position: relative;
+            width: 100%;
+            height: 85%;
+            img {
+                object-fit: cover;
+                @include dimensiones(100%, 100%);
+                transition: transform 0.1s linear;
+                &:hover {
+                    transform: scale(1.02);
+                }
+            }
+        }
+        .pie {
+            // background: red;
+            @include flex-row;
+            justify-content: flex-start;
+            font-family: "Julius Sans One", sans-serif;
+            position: relative;
+            height: 15%;
+            cursor: pointer;
+            .fileName {
+                // background: green;
+                padding-left: 10px;
+                width: 90%;
+                font-size: 0.8em;
+                // font-size: calc(1em + 0.5vw);
+                p {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-transform: capitalize;
+                }
+            }
+            .checkbox {
+                // background: rgb(0, 255, 200);
+                display: block;
+                width: 10%;
+            }
+            i {
+                font-size: 33px;
+                color: #ffbf98;
+            }
+            .not-show {
+                display: none;
+            }
+            .show {
+                display: inline-block;
+            }
+        }
+    }
+    .mat-checkbox {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+    }
+    .not-selected {
+        cursor: pointer;
+    }
+    .selected {
+        cursor: pointer;
+        filter: brightness(0.6);
+    }
 }
 
 //*************************************modal********************************************
 ::ng-deep .windowOfModal .modal-dialog {
-  max-width: 60vw;
+    max-width: 60vw;
 }
 
 ::ng-deep .windowOfModal .modal-content {
-  background-color: rgb(0, 0, 0, 0);
-  border: none;
+    background-color: rgb(0, 0, 0, 0);
+    border: none;
 }
