@@ -1,3 +1,5 @@
+$theme-colors: ( "primary": #FFD8BD, "danger": #ff4136, "secondary":#CBA78D);
+@import "node_modules/bootstrap/scss/bootstrap";
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import '~@angular/material/theming';
@@ -39,6 +41,7 @@ body {
     scroll-behavior: smooth;
 }
 
+$emilio: red;
 h1,
 h2,
 h3,

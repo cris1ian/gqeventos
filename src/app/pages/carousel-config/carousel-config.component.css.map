@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,YAAY,CAAC;EACT,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,UAAU,EAAE,IAAI;CAKnB;;AARD,AAII,YAJQ,CAIR,GAAG,CAAC;EACA,UAAU,EAAE,OAAO;CAEtB",
+    "sources": [
+        "carousel-config.component.scss"
+    ],
+    "names": [],
+    "file": "carousel-config.component.css"
+}
