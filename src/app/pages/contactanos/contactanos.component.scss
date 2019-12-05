@@ -19,6 +19,7 @@ p:not(.opacity) {
     font-weight: bold;
     max-width: 30vw;
     margin-left: 1.5vw;
+    margin-bottom: 1.5vw;
     z-index: 2;
 }
 
@@ -129,6 +130,14 @@ input[type="submit"] {
     float: left;
     width: 8vw;
     margin-top: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.col-26 {
+    float: left;
+    width: 8vw;
+    margin-top: 6px;
 }
 
 
@@ -162,8 +171,15 @@ input[type="submit"] {
 @media screen and (max-width: 900px) {
     .col-25,
     .col-75,
+    .col-26
     input[type="submit"] {
         width: 100%;
         margin-top: 0;
     }
 }
+
+i{
+    color: #FFD8BD;
+    margin-left: 5vw;
+    margin-right: 1vw;
+    }

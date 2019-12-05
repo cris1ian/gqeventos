@@ -29,17 +29,29 @@
         }
     }
     .client-info {
+        @include flex-column;
         font-size: 1.5em;
         align-self: center;
+        .no {
+            margin: 5px 0px;
+            font-size: 0.7em;
+            font-family: 'Julius Sans One', sans-serif;
+            align-self: center;
+        }
     }
     .botonera {
         @include flex-column;
-        width: 10%;
+        width: 11%;
         .botones {
             margin: 10px;
             width: 100%;
             @include flex-row;
             justify-content: space-between;
+            button {
+                margin: 0px 5px;
+                width: 80px;
+                // white-space: pre;
+            }
         }
     }
     .borde {

@@ -1,5 +1,5 @@
 export const responseClient = [
-    { id: 43, hash: '34 - 753', name: 'Fandermole, Jorgesdfsdfsdfsdfsdfsdf', img01: '../../../assets/Fotos/photo1.jpg', img02: '../../../assets/Fotos/photo2.jpg', img03: '../../../assets/Fotos/photo3.jpg' },
+    { id: 43, hash: '34 - 753', name: '', img01: '../../../assets/Fotos/photo1.jpg', img02: '../../../assets/Fotos/photo2.jpg', img03: '../../../assets/Fotos/photo3.jpg' },
     { id: 44, hash: '33 - 753', name: 'Emilio, Jorgsdfsdfsdfsdfe', img01: '../../../assets/Fotos/photo1.jpg', img02: '../../../assets/Fotos/photo2.jpg', img03: '../../../assets/Fotos/photo3.jpg' },
     { id: 45, hash: '39 - 753', name: 'Fernando, Jorge', img01: '../../../assets/Fotos/photo1.jpg', img02: '../../../assets/Fotos/photo2.jpg', img03: '../../../assets/Fotos/photo3.jpg' },
     { id: 46, hash: '38 - 753', name: 'Fandermole, Rasdfsdfsdfsdmiro', img01: '../../../assets/Fotos/photo1.jpg', img02: '../../../assets/Fotos/photo2.jpg', img03: '../../../assets/Fotos/photo3.jpg' },
