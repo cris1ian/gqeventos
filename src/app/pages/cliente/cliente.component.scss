@@ -42,6 +42,7 @@
     .botonera {
         @include flex-column;
         width: 11%;
+        max-width: 250px;
         .botones {
             margin: 10px;
             width: 100%;
@@ -49,7 +50,9 @@
             justify-content: space-between;
             button {
                 margin: 0px 5px;
-                width: 80px;
+                min-width: 60px;
+                width: 50%;
+                // max-width: 100px;
                 // white-space: pre;
             }
         }
@@ -99,7 +102,6 @@
                 transition: transform 0.1s linear;
                 &:hover {
                     transform: scale(1.02);
-                    filter: blur(1px);
                 }
             }
         }

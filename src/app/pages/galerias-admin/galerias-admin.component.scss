@@ -63,10 +63,11 @@
                 box-shadow: 2px 2px 10px #000000;
                 .cabecera {
                     height: 20%;
-                    // font-size: 0.9em;
                     margin-bottom: 5px;
+                    @include flex-row;
+                    justify-content: space-between;
                     .renglon {
-                        width: 100%;
+                        width: 85%;
                         // background: lightgreen;
                         span {
                             font-family: 'Bad Script', cursive;
@@ -77,6 +78,12 @@
                             overflow: hidden;
                             white-space: nowrap;
                             font-size: 1em;
+                        }
+                    }
+                    button {
+                        color: #8f8f8fb9;
+                        &:hover {
+                            color: red;
                         }
                     }
                 }

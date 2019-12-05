@@ -14,8 +14,7 @@
             <div class="btn">
                 <button mat-mini-fab class="mas"><i class="material-icons">add</i></button>
                 <p>Agregar<br>Galeria</p>
-                <button mat-mini-fab class="menos"><i class="material-icons">remove</i></button>
-                <p>Borrar<br>Galeria</p>
+
             </div>
 
             <button type="button" routerLink="/" class="btn btn-outline-danger">Inicio</button>
@@ -40,10 +39,12 @@
                     <div class="cabecera">
                         <div class="renglon">
                             <p><span>Nombre:</span> {{client.name}}</p>
-                        </div>
-                        <div class="renglon">
                             <p><span>Nº Cliente:</span> {{client.hash}}</p>
                         </div>
+
+                        <button mat-icon-button>
+                            <mat-icon>delete</mat-icon>
+                        </button>
                     </div>
 
                     <div class="stackPics">
