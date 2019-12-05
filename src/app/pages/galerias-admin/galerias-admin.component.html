@@ -58,10 +58,6 @@
             </div>
         </ng-container>
 
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
-        <div class="column"></div>
     </div>
 
     <!-- *************************************************Modal******************************************************* -->
@@ -70,8 +66,8 @@
         <div class="modal-header">
             <h4 class="modal-title" id="modal-title">Eliminar galeíra</h4>
             <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <div class="modal-body">
             <p><strong>Esta seguro/a que desea borrar esta galeria?</strong> </p>
@@ -85,7 +81,8 @@
         </div>
         <div class="modal-footer">
             <button type="button" ngbAutofocus class="btn btn-danger" (click)="d('cancel click')">Cancel</button>
-            <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria(5) " (click)="d('cancel click')">Ok</button>
+            <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria(5) "
+                (click)="d('cancel click')">Ok</button>
         </div>
     </ng-template>
 
