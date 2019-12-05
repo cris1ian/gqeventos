@@ -28,8 +28,7 @@
         <div class="btn" (click)="addPhoto()">
             <button mat-mini-fab class="mas"><i class="material-icons">add</i></button>
             <p>Agregar Fotografias</p>
-            <input style="display: none;" #file type="file" accept="image/*" (change)="onInputChange($event)"
-                multiple />
+            <input style="display: none;" #file type="file" accept="image/*" (change)="onInputChange($event)" multiple />
         </div>
 
         <div class="btn-acep">
@@ -66,8 +65,7 @@
                         <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'">
                             <i class="far fa-square"></i>
                         </span>
-                        <span class="checkbox" class="checkbox-check"
-                            [className]="photo.isSelected ? 'show' : 'not-show'">
+                        <span class="checkbox" class="checkbox-check" [className]="photo.isSelected ? 'show' : 'not-show'">
                             <i class="fas fa-check-square"></i>
                         </span>
                         <div class="fileName">
