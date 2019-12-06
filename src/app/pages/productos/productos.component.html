@@ -5,31 +5,31 @@
     <div class="container">
         <div class="grid">
             <div class="one">
-                <a class="thumbnail" (click)="open()">
+                <a class="thumbnail" (click)="abrirModal(productos)">
                     <h2>
-                        Gigantografias
+                        Fotografías y Videos de Productos
                     </h2>
                     <p class="opacity"></p>
                 </a>
             </div>
             <div class="two">
-                <a class="thumbnail" (click)="open()">
+                <a class="thumbnail" (click)="abrirModal(acto)">
                     <h2>
-                        Videos con fotos
+                        Fotos en el Acto
                     </h2>
                     <p class="opacity"></p>
                 </a>
             </div>
             <div class="three">
-                <a class="thumbnail" (click)="open()">
+                <a class="thumbnail" (click)="abrirModal(mesa)">
                     <h2>
-                        Centros de mesa fotográficos
+                        Fototarjetas y Números de Mesa
                     </h2>
                     <p class="opacity"></p>
                 </a>
             </div>
             <div class="four">
-                <a class="thumbnail" (click)="open()">
+                <a class="thumbnail" (click)="abrirModal(fotolibro)">
                     <h2>
                         Fotolibros
                     </h2>
@@ -37,17 +37,17 @@
                 </a>
             </div>
             <div class="five">
-                <a class="thumbnail" (click)="open()">
+                <a class="thumbnail" (click)="abrirModal(pantalla)">
                     <h2>
-                        Props
+                        Pantalla Gigante y Pantalla Rompible
                     </h2>
                     <p class="opacity"></p>
                 </a>
             </div>
             <div class="six">
-                <a class="thumbnail" (click)="open()">
+                <a class="thumbnail" (click)="abrirModal(murales)">
                     <h2>
-                        Murales
+                        Gigantografías y Murales
                     </h2>
                     <p class="opacity"></p>
                 </a>
@@ -55,3 +55,119 @@
         </div>
     </div>
 </div>
+
+
+<!--*****************************Modal Productos**************************************************** -->
+<ng-template #productos let-modal>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(1).jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(2).jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(3).jpg"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(7).JPG"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(9).JPG"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(20).JPG"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(23).JPG"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(24).JPG"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(28).JPG"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(31).JPG"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(32).JPG"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(35).JPG"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(41).JPG"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(46).JPG"
+                    class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(47).JPG"
+                    class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev"  href="#carouselExampleSlidesOnly" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+</ng-template>
+<!--*****************************Modal Acto **************************************************** -->
+<ng-template #acto let-modal>
+
+
+
+
+</ng-template>
+<!--*****************************Modal Mesa **************************************************** -->
+<ng-template #mesa let-modal>
+
+
+
+
+</ng-template>
+<!--*****************************Modal Fotolibro **************************************************** -->
+<ng-template #fotolibro let-modal>
+
+
+
+
+</ng-template>
+<!--*****************************Modal Pantalla **************************************************** -->
+<ng-template #pantalla let-modal>
+
+
+
+
+</ng-template>
+<!--*****************************Modal Murales**************************************************** -->
+<ng-template #murales let-modal>
+
+
+
+
+</ng-template>
