@@ -1,3 +1,5 @@
+@function theme-color($key: "secondary") {
+    @return map-get($theme-colors, $key)};
 $theme-colors: ( "primary": #FFD8BD, "danger": #ff4136, "secondary":#CBA78D);
 @import "node_modules/bootstrap/scss/bootstrap";
 // Custom Theming for Angular Material
@@ -11,6 +13,8 @@ $gqeventos-accent: mat-palette($md-accent, A200, A100, A400);
 $gqeventos-warn: mat-palette($mat-red);
 $gqeventos-theme: mat-light-theme($gqeventos-primary, $gqeventos-accent, $gqeventos-warn);
 @include angular-material-theme($gqeventos-theme);
+
+
 
 /* You can add global styles to this file, and also import other style files */
 

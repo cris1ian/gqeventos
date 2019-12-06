@@ -22,38 +22,38 @@ h1 {
 }
 
 .one {
-  background-image: url(../../../assets/Fotos/productos/murales.jpg);
+  background-image: url("../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-\(43\).JPG");
   grid-column: 1;
   grid-row: 1;
   height: 20vw;
 }
 
 .two {
-  background-image: url(../../../assets/Fotos/productos/historia-de-fotos.jpg);
+  background-image: url("../../../assets/Fotos/productos/Fotos-en-el-acto/img\(6\).JPG");
   grid-column: 2;
   grid-row: 1;
 }
 
 .three {
-  background-image: url(../../../assets/Fotos/productos/numero-de-mesa.jpg);
+  background-image: url("../../../assets/Fotos/productos/Fototarjetas-y-números-de-Mesa/img\(1\).JPG");
   grid-column: 3;
   grid-row: 1;
 }
 
 .four {
-  background-image: url(../../../assets/Fotos/productos/foto-libros.jpg);
+  background-image: url("../../../assets/Fotos/productos/Fotolibros/img\(3\).JPG");
   grid-column: 1;
   grid-row: 2;
 }
 
 .five {
-  background-image: url(../../../assets/Fotos/productos/Props.jpg);
+  background-image: url("../../../assets/Fotos/productos/pantalla-gigante-y-pantalla-rompíble/img\(1\).JPG");
   grid-column: 2;
   grid-row: 2;
 }
 
 .six {
-  background-image: url(../../../assets/Fotos/productos/gigantografias.jpg);
+  background-image: url("../../../assets/Fotos/productos/gigantografias-y-murales/img\(2\).JPG");
   grid-column: 3;
   grid-row: 2;
 }
@@ -70,7 +70,7 @@ h1 {
 
 .grid h2 {
   position: absolute;
-  font-size: 2vw;
+  font-size: 1.5vw;
   color: white;
   font-family: julius sans one;
   font-weight: normal;
@@ -93,7 +93,7 @@ a {
 }
 
 a:hover > h2 {
-  font-size: 2.5vw;
+  font-size: 2.0vw;
 }
 
 ::ng-deep .windowOfModal .modal-dialog {
@@ -103,4 +103,15 @@ a:hover > h2 {
 ::ng-deep .windowOfModal .modal-content {
   background-color: rgb(0, 0, 0, 0);
   border: none;
+}
+
+.carousel-item {
+  
+  min-height:70vh;
+  max-height: 70vh;
+  img {
+    height: 70vh;
+      object-fit: contain;
+      // background-color: rgba(0, 0, 0, 0.8);
+  }
 }

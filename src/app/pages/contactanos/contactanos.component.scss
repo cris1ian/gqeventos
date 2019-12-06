@@ -11,7 +11,7 @@
   margin-top: 5vh;
 }
 
-p:not(.opacity) {
+p:not(.opacity, .contact) {
   align-self: flex-end;
   color: white;
   font-family: julius sans one;
@@ -68,8 +68,9 @@ h2 {
   width: 50%;
   div {
     margin-bottom: 20px;
+    display: flex;
     img {
-      margin-left: 20%;
+      width: 32px;
       margin-right: 20px;
     }
   }

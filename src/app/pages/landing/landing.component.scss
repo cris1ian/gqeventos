@@ -1,4 +1,6 @@
 @import "../../sass_files/index";
+
+
 .header-principal {
   position: sticky;
   top: 0px;
@@ -14,6 +16,21 @@
     padding: 10px 5% 10px 2%;
     position: relative;
     width: 100%;
+    .media{
+      display: flex;
+      justify-content: space-evenly;
+      width: 15vw;
+      padding: 0;
+      margin: 0;
+      color: black;
+      list-style: none;
+
+      i{
+        color:rgb(211, 36, 36);
+        font-size: 2vw;
+        
+      }
+    }
     nav {
       // background: rgb(212, 206, 125);
       @include flex-row;
