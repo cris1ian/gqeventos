@@ -1,103 +1,106 @@
-.container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 8vh;
+h1 {
+  font-family: bad script;
+  font-size: 4vw;
+  margin-bottom: 4vw;
+  margin-top: 50px;
+  text-align: right;
+  margin-right: 4vw;
 }
 
-h1 {
-    font-family: bad script;
-    font-size: 4vw;
-    margin-bottom: 4vw
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: 3;
-    grid-gap: 1vw;
-    grid-auto-rows: 2;
-    align-self: center;
+  display: grid;
+  grid-template-columns: 3;
+  grid-gap: 1vw;
+  grid-auto-rows: 2;
+  align-self: center;
 }
 
 .one {
-    background-image: url(../../../assets/Fotos/productos/murales.jpg);
-    grid-column: 1;
-    grid-row: 1;
-    height: 20vw;
+  background-image: url(../../../assets/Fotos/productos/murales.jpg);
+  grid-column: 1;
+  grid-row: 1;
+  height: 20vw;
 }
 
 .two {
-    background-image: url(../../../assets/Fotos/productos/historia-de-fotos.jpg);
-    grid-column: 2;
-    grid-row: 1;
+  background-image: url(../../../assets/Fotos/productos/historia-de-fotos.jpg);
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .three {
-    background-image: url(../../../assets/Fotos/productos/numero-de-mesa.jpg);
-    grid-column: 3;
-    grid-row: 1;
+  background-image: url(../../../assets/Fotos/productos/numero-de-mesa.jpg);
+  grid-column: 3;
+  grid-row: 1;
 }
 
 .four {
-    background-image: url(../../../assets/Fotos/productos/foto-libros.jpg);
-    grid-column: 1;
-    grid-row: 2;
+  background-image: url(../../../assets/Fotos/productos/foto-libros.jpg);
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .five {
-    background-image: url(../../../assets/Fotos/productos/Props.jpg);
-    grid-column: 2;
-    grid-row: 2;
+  background-image: url(../../../assets/Fotos/productos/Props.jpg);
+  grid-column: 2;
+  grid-row: 2;
 }
 
 .six {
-    background-image: url(../../../assets/Fotos/productos/gigantografias.jpg);
-    grid-column: 3;
-    grid-row: 2;
+  background-image: url(../../../assets/Fotos/productos/gigantografias.jpg);
+  grid-column: 3;
+  grid-row: 2;
 }
 
 .grid div {
-    display: flex;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 20vw;
-    width: 27.3vw;
+  display: flex;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 20vw;
+  width: 27.3vw;
 }
 
 .grid h2 {
-    position: absolute;
-    font-size: 2vw;
-    color: white;
-    font-family: julius sans one;
-    font-weight: normal;
-    z-index: 3;
-    top: 65%;
-    margin-left: 1.5vw;
+  position: absolute;
+  font-size: 2vw;
+  color: white;
+  font-family: julius sans one;
+  font-weight: normal;
+  z-index: 3;
+  top: 65%;
+  margin-left: 1.5vw;
 }
 
 .opacity {
-    position: absolute;
-    height: 20vw;
-    width: 27.3vw;
-    background-color: black;
-    opacity: 0.5;
-    z-index: 1;
+  position: absolute;
+  height: 20vw;
+  width: 27.3vw;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
 }
 
-a{
-    cursor: pointer;
+a {
+  cursor: pointer;
 }
 
-a:hover>h2 {
-    font-size: 2.5vw;
-    }
+a:hover > h2 {
+  font-size: 2.5vw;
+}
 
 ::ng-deep .windowOfModal .modal-dialog {
-    max-width: 60vw;
+  max-width: 60vw;
 }
-    
+
 ::ng-deep .windowOfModal .modal-content {
-    background-color: rgb(0, 0, 0, 0);
-    border: none;
+  background-color: rgb(0, 0, 0, 0);
+  border: none;
 }

@@ -54,16 +54,20 @@ h2 {
   justify-content: space-between;
   align-content: center;
 
-  margin-right: 30px;
-  margin-left: 30px;
+  // margin-right: 30px;
+  // margin-left: 30px;
 
-  .title,
-  .foto,
-  .video,
-  .entregamos {
-  }
+  // .title,
+  // .foto,
+  // .video,
+  // .entregamos {
+  // }
 
   .title {
+    h1 {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
     height: 20%;
   }
   .foto {
