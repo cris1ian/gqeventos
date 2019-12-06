@@ -4,6 +4,7 @@ import { responseClient } from 'src/app/models/backend-client';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from 'src/app/services/user.service';
 
+
 @Component({
     selector: 'app-galerias-admin',
     templateUrl: './galerias-admin.component.html',
@@ -20,6 +21,7 @@ export class GaleriasAdminComponent implements OnInit {
         config: NgbModalConfig,
         private modalService: NgbModal,
         private userService: UserService
+
     ) {
         // customize default values of modals used by this component tree
         // config.backdrop = 'static';
@@ -62,6 +64,14 @@ export class GaleriasAdminComponent implements OnInit {
                     console.log(error);
                 }
             );
+    }
+    /*para crear el nuevo usuario */
+    nuevoUsuario(form) {
+        console.log("emilio");
+        console.log(form.value);
+        console.warn('que loco');
+        form.reset(); 1
+
     }
 
 }

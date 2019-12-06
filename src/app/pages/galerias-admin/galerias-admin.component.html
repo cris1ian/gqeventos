@@ -100,33 +100,54 @@
 <!-- *************************************************Modal agregar galeria******************************************************* -->
 
 <ng-template #modalAgregar let-c="close" let-d="dismiss">
-    <div class="modal-header">
-        <h4 class="modal-title" id="modal-title">Agregar galería</h4>
-        <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
+    <form #newuser="ngForm" (ngSubmit)="nuevoUsuario(newuser.form)">
+
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-title">Agregar galería</h4>
+            <button type="button" class="close" aria-describedby="modal-title" (click)="d('Cross click')">
                 <span aria-hidden="true">&times;</span>
             </button>
-    </div>
-    <div class="modal-body">
+        </div>
+        <div class="modal-body">
 
-        <mat-form-field>
-            <mat-label>Nombre y Apellido</mat-label>
-            <input matInput #nombre placeholder="Emilio Perez" maxlength="60" required>
-            <mat-hint>Para nuevo usuario</mat-hint>
-            <mat-hint align="end">{{nombre.value.length}} / 60</mat-hint>
-        </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Nº de usuario</mat-label>
-            <input type="text" #no matInput placeholder="37-659" maxlength="10" required>
-            <mat-hint>para identificar la galeria</mat-hint>
-            <mat-hint align="end">{{no.value.length}} / 10</mat-hint>
-        </mat-form-field>
 
-    </div>
-    <div class="modal-footer">
-        <button type="button" ngbAutofocus class="btn btn-primary" (click)="d('cancel click')">Cancel</button>
-        <button type="button " class="btn btn-outline-secondary " (click)="borrarGaleria(5) " (click)="d('cancel click')">Ok</button>
-    </div>
+            <mat-form-field>
+                <mat-label>Nombre y Apellido</mat-label>
+
+                <input name="Nombre" ngModel #nameField="ngModel" matInput #nombre placeholder="Emilio Perez" autocomplete="off" minlength="3" maxlength="60" required>
+                <mat-hint>Para nuevo usuario</mat-hint>
+                <mat-hint align="end">{{nombre.value.length}} / 60</mat-hint>
+
+                <mat-error *ngIf="nameField.touched && nameField.errors">
+                    <mat-error *ngIf="nameField.errors.required">El campo nombre es requerido</mat-error>
+                    <mat-error *ngIf="nameField.errors.minlength">minimo de tres caracteres</mat-error>
+                </mat-error>
+
+
+
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Nº de usuario</mat-label>
+                <input name="id" ngModel #idField="ngModel" #no matInput placeholder="37-659" minlength="6" autocomplete="off" maxlength="10" required>
+                <mat-hint>para identificar la galeria</mat-hint>
+                <mat-hint align="end">{{no.value.length}} / 10</mat-hint>
+
+                <mat-error *ngIf="idField.touched && idField.errors">
+                    <mat-error *ngIf="idField.errors.required">El campo nombre es requerido</mat-error>
+                    <mat-error *ngIf="idField.errors.minlength">minimo de 6 caracteres</mat-error>
+                </mat-error>
+            </mat-form-field>
+
+
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" ngbAutofocus class="btn btn-primary" (click)="d('cancel click')">Cancel</button>
+            <button class="btn btn-secondary " (click)="d('cancel click')" [disabled]="!newuser.valid">Ok</button>
+        </div>
+    </form>
 </ng-template>
 
 <!-- ************************************************************************************************************** -->
