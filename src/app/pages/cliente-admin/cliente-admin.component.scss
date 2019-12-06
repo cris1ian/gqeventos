@@ -98,6 +98,7 @@
                 object-fit: cover;
                 @include dimensiones(100%, 100%);
                 transition: transform 0.1s linear;
+                cursor: pointer;
                 &:hover {
                     transform: scale(1.02);
                 }
@@ -201,4 +202,14 @@
     justify-content: center;
     font-size: 3em;
     text-align: center;
+}
+
+.slidewindow {
+    display: flex;
+    justify-content: center;
+    max-height: 90vh;
+    img {
+        object-fit: contain;
+        // background-color: rgba(0, 0, 0, 0.8);
+    }
 }

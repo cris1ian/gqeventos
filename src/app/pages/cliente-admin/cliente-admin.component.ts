@@ -11,6 +11,7 @@ import { Client } from 'src/app/models/client.model';
 import { ImageService } from 'src/app/services/image.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-cliente-admin',
@@ -28,6 +29,7 @@ export class ClienteAdminComponent implements OnInit {
 
     constructor(
         config: NgbModalConfig,
+        configcarusel: NgbCarouselConfig,
         private modalService: NgbModal,
         private imageCompress: NgxImageCompressService,
         private imageService: ImageService,
@@ -37,6 +39,13 @@ export class ClienteAdminComponent implements OnInit {
         config.centered = true;
         config.scrollable = false;
         config.windowClass = "windowOfModal";
+
+
+        configcarusel.interval = 60000;
+        configcarusel.wrap = true;
+        configcarusel.keyboard = true;
+        configcarusel.pauseOnHover = false;
+        configcarusel.showNavigationIndicators = false;
     }
 
     ngOnInit() {
@@ -74,8 +83,9 @@ export class ClienteAdminComponent implements OnInit {
             })
     }
 
-    open() {
-        this.modalService.open(CarouselConfigComponent);
+    open(i: number, carruzel) {
+        // this.modalService.open(CarouselConfigComponent);//!este es metodo original para llamarlo como componente
+        this.modalService.open(carruzel); //!este es el que llama al carruzel que esta ne cliente admin (html al final)
     }
 
     addPhoto() { this.file.nativeElement.click(); }
