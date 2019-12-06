@@ -141,6 +141,15 @@
             }
         }
     }
+    .deleteico {
+        display: none;
+    }
+    .deleteico:hover {
+        color: red;
+    }
+    .tarjeta:hover .pie .deleteico {
+        display: block;
+    }
     .modal-btn {
         @include dimensiones(100%, 100%);
     }

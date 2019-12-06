@@ -50,7 +50,7 @@ export class ClienteAdminComponent implements OnInit {
 
         this.route.paramMap.subscribe(
             (params: Params) => {
-                this.userService.getGallery({id: params.params.id})
+                this.userService.getGallery({ id: params.params.id })
                     .subscribe(
                         (resp: any) => {
                             console.log(resp.result[0]);
@@ -81,6 +81,7 @@ export class ClienteAdminComponent implements OnInit {
     addPhoto() { this.file.nativeElement.click(); }
 
     deletePhoto(i: number, photo: Photo) {
+
         this.userService.deletePhoto(photo.id)
             .subscribe(
                 (resp: any) => {
