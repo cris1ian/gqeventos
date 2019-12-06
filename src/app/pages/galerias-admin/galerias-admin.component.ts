@@ -27,7 +27,6 @@ export class GaleriasAdminComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(responseClient);
         this.userService.getGallery()
             .subscribe(
                 (resp: any) => {
