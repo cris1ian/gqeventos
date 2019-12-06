@@ -1,11 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+// import { NgbDropdownConfig } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
     selector: 'app-landing',
     templateUrl: './landing.component.html',
-    styleUrls: ['./landing.component.scss']
+    styleUrls: ['./landing.component.scss'],
+    // providers: [NgbDropdownConfig]
 })
 export class LandingComponent implements OnInit {
     hash: string;
@@ -13,9 +16,19 @@ export class LandingComponent implements OnInit {
     password: string;
 
     constructor(
+        // config: NgbDropdownConfig,
         private userService: UserService,
         private router: Router
-    ) { }
+    ) {
+        // customize default values of dropdowns used by this component tree
+        // config.placement = 'top-right';
+        // config.autoClose = false;
+    }
+
+
+
+
+
 
     ngOnInit() { }
 
