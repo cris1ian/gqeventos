@@ -61,6 +61,10 @@ export class UserService {
         return this.httpClient.get(`${environment.WS_URL}/login`, { params });
     }
 
+    contactMe = (body: any) => {
+        return this.httpClient.post(`${environment.WS_URL}/contact-me`, body, this.appJsonHeader);
+    }
+
     /**
      * Utilidades privadas de Auth
      */

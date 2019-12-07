@@ -30,7 +30,7 @@
                         <!-- <label for="name">Nombre:</label> -->
                     </div>
                     <div class="col-75">
-                        <input type="text" id="name" name="name" placeholder="Nombre">
+                        <input [(ngModel)]="name" type="text" id="name" name="name" placeholder="Nombre" required>
                     </div>
                 </div>
                 <div class="row">
@@ -38,7 +38,7 @@
                         <!-- <label for="fname">E-mail:</label> -->
                     </div>
                     <div class="col-75">
-                        <input type="text" id="email" name="email" placeholder="E-mail">
+                        <input [(ngModel)]="email" type="text" id="email" name="email" placeholder="E-mail" required   pattern="[A-Za-z0-9._%+-]{2,}@[a-zA-Z0-9-_.]{2,}[.]{1}[a-zA-Z]{2,}">
                     </div>
                 </div>
                 <div class="row">
@@ -46,7 +46,7 @@
                         <!-- <label for="fname">Teléfono:</label> -->
                     </div>
                     <div class="col-75">
-                        <input type="text" id="telefono" name="telefono" placeholder="Teléfono (ej:341-333333)...">
+                        <input [(ngModel)]="telefono" type="text" id="telefono" name="telefono" placeholder="Teléfono (ej:341-333333)" required>
                     </div>
                 </div>
                 <div class="row">
@@ -54,13 +54,14 @@
                         <!-- <label for="subject">Mensaje:</label> -->
                     </div>
                     <div class="col-75">
-                        <textarea id="mensaje" name="mensaje" placeholder="Escriba su mensaje..."
-                            style="height:200px"></textarea>
+                        <textarea [(ngModel)]="mensaje" id="mensaje" name="mensaje" placeholder="Escriba su mensaje..."
+                            style="height:200px" required></textarea>
                         <div class="row">
                             <input type="submit" value="Enviar Mensaje">
                         </div>
                     </div>
-                </div>
+                </div>                
+                <button class="btn btn-secondary" (click)="contactMe()">Boton para test - BORRAR</button>
             </form>
         </div>
     </div>
