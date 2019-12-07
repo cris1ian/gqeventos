@@ -1,7 +1,12 @@
 export class Photo {
     id?: number;
-    userId?: number;
+    userId: number;
     isSelected?: boolean = false;
     fileName: string;
-    picture: string | ArrayBuffer; 
+
+    constructor(userId: number, fileName: string) {
+        this.userId = userId;
+        this.fileName = fileName;
+    }
+
 }

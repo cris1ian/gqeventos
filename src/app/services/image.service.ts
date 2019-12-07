@@ -1,29 +1,38 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+
+/* Utilidades privadas de Auth */
+const headers = new HttpHeaders({ 'Content-Type': 'application/json' })
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ImageService {
 
-  constructor(private httpClient: HttpClient) { }
+    constructor(private httpClient: HttpClient) { }
 
-  uploadImage = (images: any, clientId: number) => {
-    console.log(images);
-    const body = new FormData().append('images', images);
-    const params = new HttpParams().set('clientId', `${clientId}`);
-    
-    console.log(body);
-    return this.httpClient.post(`${environment.WS_URL}/image`, images, { params });
-  }
+    /* Este método es para un objeto en base64 */
+    // uploadImage = (image: any, clientId: number) => {
+    //     const params = new HttpParams().set('clientId', `${clientId}`);
+    //     return this.httpClient.post(`${environment.WS_URL}/image`, image, { params });
+    // }
 
-  deleteImage = (myImage: any, clientId: number) => {
-    // const formData = new FormData();
-    // formData.append('myImage', myImage);
+    /* Este método es para un objeto tipo File */
+    uploadImage = (image: any, clientId: number) => {
+        const params = new HttpParams().set('clientId', `${clientId}`);
+        const formData = new FormData();
+        formData.append('image', image);
 
-    // return this.httpClient
-    //   .post(`${environment.WS_URL}/user/image?userEmail=${clientId}`, formData)
-  }
+        return this.httpClient.post(`${environment.WS_URL}/image`, formData, { params });
+    }
+
+    deleteImage = (myImage: any, clientId: number) => {
+        // const formData = new FormData();
+        // formData.append('myImage', myImage);
+
+        // return this.httpClient
+        //   .post(`${environment.WS_URL}/user/image?userEmail=${clientId}`, formData)
+    }
 
 }

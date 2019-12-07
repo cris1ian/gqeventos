@@ -11,6 +11,8 @@ import { Client } from 'src/app/models/client.model';
 import { ImageService } from 'src/app/services/image.service';
 import { ActivatedRoute, Params } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { ImageCompressService, ResizeOptions, ImageUtilityService, IImage, SourceImage } from 'ng2-image-compress';
+import { ConvertToFileService } from 'src/app/services/convert-to-file.service';
 
 @Component({
     selector: 'app-cliente-admin',
@@ -20,19 +22,27 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ClienteAdminComponent implements OnInit {
     @ViewChild('file', { static: false }) file;
+    S3_URL: string = environment.S3_URL;
     photos: Photo[] = [];
     client: Client;
     selected: number;
-    spinnerProgress: number;
+    spinnerProgress: number = 0;
     spinnerShow: boolean = false;
+    filesCount: number;
+    i: number;
+    base64ImageTry: any;
+    blobImageTry: any;
+    fileImageTry: any;
 
     constructor(
         config: NgbModalConfig,
         private modalService: NgbModal,
-        private imageCompress: NgxImageCompressService,
+        // private imageCompress: NgxImageCompressService,
         private imageService: ImageService,
         private route: ActivatedRoute,
         private userService: UserService,
+        private imgCompressService: ImageCompressService,
+        private convertToFile: ConvertToFileService
     ) {
         config.centered = true;
         config.scrollable = false;
@@ -41,16 +51,9 @@ export class ClienteAdminComponent implements OnInit {
 
     ngOnInit() {
         this.selected = 0;
-        // this.photos[0] = new Photo();
-        // this.photos[0] = {
-        //     id: 1,
-        //     fileName: 'IMG_BUCKET',
-        //     picture: 'https://s3.console.aws.amazon.com/s3/object/gq-eventos/1/IMG_7239.JPG'
-        // }
-
         this.route.paramMap.subscribe(
             (params: Params) => {
-                this.userService.getGallery({id: params.params.id})
+                this.userService.getGallery({ id: params.params.id })
                     .subscribe(
                         (resp: any) => {
                             console.log(resp.result[0]);
@@ -74,9 +77,7 @@ export class ClienteAdminComponent implements OnInit {
             })
     }
 
-    open() {
-        this.modalService.open(CarouselConfigComponent);
-    }
+    open() { this.modalService.open(CarouselConfigComponent); }
 
     addPhoto() { this.file.nativeElement.click(); }
 
@@ -94,44 +95,114 @@ export class ClienteAdminComponent implements OnInit {
             )
     }
 
-    uploadPhotos() {
-        this.imageService.uploadImage(this.photos, this.client.id)
-            .subscribe(
-                result => { console.log(result) },
-                error => { console.log(error) }
-            );
-    }
-
     // Cargar fotos desde PC
     onInputChange(event: any) {
-        const files = Array.from(event.target.files);
-        let orientation = -1;
-        let counter = 0;
+        const files = event.target.files;
+        this.filesCount = files.length;
         console.log(files);
-        console.log(`files.length: ${files.length}`);
-        this.spinnerShow = true;
-        this.spinnerProgress = 0;
+        console.log(`files.length: ${this.filesCount}`);
 
+        ImageCompressService.filesToCompressedImageSource(files)
+            .then(observableImages => {
+                this.i = 0;
+                this.spinnerProgress = 2;
+
+                this.spinnerShow = true;
+                observableImages
+                    .subscribe(
+                        (image) => { this.doUpload(image.compressedImage); },
+                        (error) => { console.log("Error while converting"); },
+                        () => { }
+                    );
+            });
+    }
+
+
+    doUpload(base64Img) {
+        const file = this.convertToFile.convertToFile(base64Img.imageDataUrl, base64Img.fileName, base64Img.type);
+
+        // Subo la imagen al S3
+        this.imageService.uploadImage(file, this.client.id)
+            .subscribe(
+                // Si la respuesta es Ok inserto el nombre en la base de datos
+                result => {
+                    let newPhoto = new Photo(this.client.id, file.name);
+                    this.userService.createPhoto(newPhoto)
+                        .subscribe(
+                            (resp: any) => {
+                                // Me devuelve el objeto creado en la base de datos y lo agrego al photos array
+                                // ¡¡¡ Tengo que confirmar si la respuesta es OK !!!
+                                newPhoto = resp.result[0];
+                                this.photos.push(newPhoto);    // Tengo que actualizar el id que si o si tiene que venir desde el backend
+                                this.photos = this.photos.sort((a, b) => (a.fileName > b.fileName) ? 1 : -1);
+                                this.spinnerProgress = 100 * ++this.i / (this.filesCount);
+                                console.log(resp.result[0]);
+                                console.log(resp.result);
+                                console.log(newPhoto);
+                                console.log(this.spinnerProgress);
+                                if (this.i == this.filesCount) console.log(this.spinnerShow = false);
+                            },
+                            err => {
+                                console.log(err);
+                            }
+                        );
+                },
+                error => {
+                    console.log(error);
+                    this.spinnerProgress = 100 * ++this.i / (this.filesCount);
+                    if (this.i == this.filesCount) console.log(this.spinnerShow = false);
+                    console.log(this.spinnerProgress);
+                }
+            )
+    }
+
+    doUploadbyArray(files) {
+        let counter = 0;
+        this.spinnerProgress = 2;
+        console.log(files);
+
+        // Para cada elemento del FileList de archivos del input
         files.forEach(
             (element: any, index: number) => {
-                var reader = new FileReader();
-                reader.readAsDataURL(element);
-                reader.onloadend = (event: any) => {
-                    this.imageCompress.compressFile(reader.result, orientation, 50, 50)
-                        .then(
-                            result => {
-                                this.photos.push({
-                                    picture: result,
-                                    fileName: element.name
-                                })
-                                this.photos = this.photos.sort((a, b) => (a.fileName > b.fileName) ? 1 : -1)
-                                this.spinnerProgress = 100 * ++counter / (files.length);
-                                console.log(this.spinnerProgress);
-                                console.log(`index: ${index}`);
-                                console.log(`counter: ${counter}`);
-                                if (counter == files.length) console.log(this.spinnerShow = false);
-                            })
-                }
-            })
+                console.log(element);
+                this.spinnerShow = true;
+                // Subo la imagen al S3
+                this.imageService.uploadImage(element, this.client.id)
+                    .subscribe(
+                        // Si la respuesta es Ok inserto el nombre en la base de datos
+                        result => {
+                            let newPhoto = new Photo(this.client.id, element.fileName);
+                            this.userService.createPhoto(newPhoto)
+                                .subscribe(
+                                    (resp: any) => {
+                                        // Me devuelve el objeto creado en la base de datos y lo agrego al photos array
+                                        newPhoto = resp.result[0];
+                                        this.photos.push(newPhoto);    // Tengo que actualizar el id que si o si tiene que venir desde el backend
+                                        this.photos = this.photos.sort((a, b) => (a.fileName > b.fileName) ? 1 : -1);
+                                        this.spinnerProgress = 100 * ++counter / (files.length);
+                                        console.log(resp.result[0]);
+                                        console.log(resp.result);
+                                        console.log(newPhoto);
+                                        console.log(this.spinnerProgress);
+                                        if (counter == files.length) console.log(this.spinnerShow = false);
+                                    },
+                                    err => {
+                                        console.log(err);
+                                        this.spinnerProgress = 100 * ++counter / (files.length);
+                                        if (counter == files.length) console.log(this.spinnerShow = false);
+                                        console.log(this.spinnerProgress);
+                                    }
+                                );
+                        },
+                        error => {
+                            console.log(error);
+                            this.spinnerProgress = 100 * ++counter / (files.length);
+                            if (counter == files.length) console.log(this.spinnerShow = false);
+                            console.log(this.spinnerProgress);
+                        }
+                    );
+            }
+        )
     }
+
 }

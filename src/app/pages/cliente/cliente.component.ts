@@ -7,6 +7,7 @@ import { CarouselConfigComponent } from '../carousel-config/carousel-config.comp
 import { ActivatedRoute, Params } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { Client } from 'src/app/models/client.model';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -20,6 +21,7 @@ export class ClienteComponent implements OnInit {
     photos: Photo[];
     client: Client;
     selected: number;
+    S3_URL: string = environment.S3_URL;
 
     constructor(
         config: NgbModalConfig,

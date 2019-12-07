@@ -41,7 +41,7 @@
             <div class="column">
                 <div class="tarjeta">
                     <div class="thumbnail" (click)="open()">
-                        <img [className]="photo.isSelected  ? 'selected' : 'not-selected'" [src]="photo.picture" alt="">
+                        <img [className]="photo.isSelected  ? 'selected' : 'not-selected'" [src]="S3_URL+'/'+photo.userId+'/'+photo.fileName" alt="">
                     </div>
 
                     <div class="pie" (click)="onSelect(i, photo)">

@@ -32,7 +32,7 @@ export class UserService {
     }
 
     createPhoto = (photo: Photo) => {
-        return this.httpClient.post(`${environment.WS_URL}/gallery`, photo, this.appJsonHeader);
+        return this.httpClient.post(`${environment.WS_URL}/photo`, photo, this.appJsonHeader);
     }
 
     selectPhoto = (photoId: number, isSelected: boolean) => {

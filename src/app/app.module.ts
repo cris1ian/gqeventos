@@ -31,6 +31,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ImageCompressService, ResizeOptions } from 'ng2-image-compress';
+import { CompressionTestComponent } from './pages/compression-test/compression-test.component';
 
 
 @NgModule({
@@ -47,7 +49,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ClienteAdminComponent,
     LandingComponent,
     CarouselConfigComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    CompressionTestComponent
   ],
   imports: [
     MatButtonModule,
@@ -66,7 +69,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatFormFieldModule,
     MatSlideToggleModule
   ],
-  providers: [NgxImageCompressService],
+  providers: [
+    NgxImageCompressService,
+    ImageCompressService,
+    ResizeOptions
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

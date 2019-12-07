@@ -6,6 +6,7 @@ import { ClienteAdminComponent } from './pages/cliente-admin/cliente-admin.compo
 import { GaleriasAdminComponent } from './pages/galerias-admin/galerias-admin.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { CarouselConfigComponent } from './pages/carousel-config/carousel-config.component';
+import { CompressionTestComponent } from './pages/compression-test/compression-test.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'cliente/:id', component: ClienteComponent },
   { path: 'cliente-admin/:id', component: ClienteAdminComponent },
   { path: 'galerias-admin', component: GaleriasAdminComponent },
-  { path: 'carousel', component: CarouselConfigComponent }
+  { path: 'carousel', component: CarouselConfigComponent },
+  { path: 'compression', component: CompressionTestComponent }
 
   // { path: '', redirectTo: '/home', pathMatch: 'full' },
   // { path: '**', component: AppComponent },
