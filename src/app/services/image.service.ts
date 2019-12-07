@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
+import { Photo } from '../models/photo.model';
 
 /* Utilidades privadas de Auth */
 const headers = new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -27,12 +28,11 @@ export class ImageService {
         return this.httpClient.post(`${environment.WS_URL}/image`, formData, { params });
     }
 
-    deleteImage = (myImage: any, clientId: number) => {
-        // const formData = new FormData();
-        // formData.append('myImage', myImage);
-
-        // return this.httpClient
-        //   .post(`${environment.WS_URL}/user/image?userEmail=${clientId}`, formData)
+    deleteImage = (image: Photo) => {
+        let params = new HttpParams();
+        params = params.append('userId', `${image.userId}`);
+        params = params.append('fileName', `${image.fileName}`);
+        return this.httpClient.delete(`${environment.WS_URL}/image`, { params });
     }
 
 }

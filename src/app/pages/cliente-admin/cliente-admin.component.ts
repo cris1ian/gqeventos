@@ -29,6 +29,7 @@ export class ClienteAdminComponent implements OnInit {
     selected: number;
     spinnerProgress: number = 0;
     spinnerShow: boolean = false;
+    spinnerMode: string;
     filesCount: number;
     i: number;
     base64ImageTry: any;
@@ -39,7 +40,6 @@ export class ClienteAdminComponent implements OnInit {
         config: NgbModalConfig,
         configcarusel: NgbCarouselConfig,
         private modalService: NgbModal,
-        // private imageCompress: NgxImageCompressService,
         private imageService: ImageService,
         private route: ActivatedRoute,
         private userService: UserService,
@@ -86,26 +86,27 @@ export class ClienteAdminComponent implements OnInit {
             })
     }
 
-    open(i: number, carruzel) {
+    open(i: number, carrusel) {
         // this.modalService.open(CarouselConfigComponent);//!este es metodo original para llamarlo como componente
-        this.modalService.open(carruzel); //!este es el que llama al carruzel que esta ne cliente admin (html al final)
+        this.modalService.open(carrusel); //!este es el que llama al carrusel que esta ne cliente admin (html al final)
     }
 
     addPhoto() { this.file.nativeElement.click(); }
 
     deletePhoto(i: number, photo: Photo) {
-
-        this.userService.deletePhoto(photo.id)
+        console.log(this.photos.splice(i, 1));
+        console.log(`Deleted photo ${i}`);
+        this.imageService.deleteImage(photo)
             .subscribe(
                 (resp: any) => {
-                    console.log(resp);
-                    console.log(this.photos.splice(i, 1));
-                    console.log(`Deleted photo ${i}`);
+                    // this.userService.deletePhoto(photo.id)
+                    //     .subscribe(
+                    //         (resp2: any) => { console.log(resp2); },
+                    //         error => { console.log(error); }
+                    //     )
                 },
-                error => {
-                    console.log(error);
-                }
-            )
+                error => { console.log(error); }
+            );
     }
 
     // Cargar fotos desde PC
@@ -114,18 +115,16 @@ export class ClienteAdminComponent implements OnInit {
         this.filesCount = files.length;
         console.log(files);
         console.log(`files.length: ${this.filesCount}`);
+        this.i = 0;
+        this.spinnerMode = 'indeterminate';
+        this.spinnerShow = true;
 
         ImageCompressService.filesToCompressedImageSource(files)
             .then(observableImages => {
-                this.i = 0;
-                this.spinnerProgress = 2;
-
-                this.spinnerShow = true;
                 observableImages
                     .subscribe(
                         (image) => { this.doUpload(image.compressedImage); },
-                        (error) => { console.log("Error while converting"); },
-                        () => { }
+                        (error) => { console.log("Error while converting"); }
                     );
             });
     }
@@ -149,9 +148,7 @@ export class ClienteAdminComponent implements OnInit {
                                 this.photos.push(newPhoto);    // Tengo que actualizar el id que si o si tiene que venir desde el backend
                                 this.photos = this.photos.sort((a, b) => (a.fileName > b.fileName) ? 1 : -1);
                                 this.spinnerProgress = 100 * ++this.i / (this.filesCount);
-                                console.log(resp.result[0]);
-                                console.log(resp.result);
-                                console.log(newPhoto);
+                                this.spinnerMode = 'determinate';
                                 console.log(this.spinnerProgress);
                                 if (this.i == this.filesCount) console.log(this.spinnerShow = false);
                             },
