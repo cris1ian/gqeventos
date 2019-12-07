@@ -41,7 +41,8 @@
     </header>
 
     <div *ngIf="spinnerShow" style="margin: 50px;">
-        <mat-progress-spinner style="margin: auto;" [mode]="spinnerMode" [value]="spinnerProgress"></mat-progress-spinner>
+        <mat-progress-spinner style="margin: auto;" [mode]="spinnerMode" [value]="spinnerProgress">
+        </mat-progress-spinner>
     </div>
 
     <div class="cont-galeria">
@@ -111,28 +112,24 @@
 
 </div>
 
-<!-- **************************************modal con carrusel************************************************************** -->
+<!-- ************************************** modal con carrusel************************************************************** -->
 
-<!-- !preguntar a emilio que no pudo hacer lo del carrusel ni a palos no entendi nada  -->
 <ng-template #Modalcarrusel let-modal>
 
-    <ngb-carousel *ngIf="photos" #myCarousel="ngbCarousel">
-
+    <ngb-carousel [activeId]="carouselActive" *ngIf="photos" #myCarousel="ngbCarousel">
 
         <ng-container *ngFor="let photo of photos; let i=index">
 
-            <ng-template ngbSlide id="i">
+            <ng-template ngbSlide [id]="i">
 
                 <div class="slidewindow">
-                    <img [src]="photo.picture" alt="">
+                    <img [src]="S3_URL+'/'+photo.userId+'/'+photo.fileName" alt="">
                 </div>
 
             </ng-template>
 
         </ng-container>
 
-
     </ngb-carousel>
-
 
 </ng-template>

@@ -39,7 +39,7 @@
         <ng-container *ngFor="let photo of photos; let i=index">
             <div class="column">
                 <div class="tarjeta">
-                    <div class="thumbnail" (click)="open()">
+                    <div class="thumbnail" (click)="open(i,Modalcarrusel)">
                         <img [className]="photo.isSelected  ? 'selected' : 'not-selected'" [src]="S3_URL+'/'+photo.userId+'/'+photo.fileName" alt="">
                     </div>
 
@@ -65,3 +65,25 @@
     </div>
 
 </div>
+
+<!-- ************************************** modal con carrusel************************************************************** -->
+
+<ng-template #Modalcarrusel let-modal>
+
+    <ngb-carousel [activeId]="carouselActive" *ngIf="photos" #myCarousel="ngbCarousel">
+
+        <ng-container *ngFor="let photo of photos; let i=index">
+
+            <ng-template ngbSlide [id]="i">
+
+                <div class="slidewindow">
+                    <img [src]="S3_URL+'/'+photo.userId+'/'+photo.fileName" alt="">
+                </div>
+
+            </ng-template>
+
+        </ng-container>
+
+    </ngb-carousel>
+
+</ng-template>

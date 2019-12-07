@@ -27,6 +27,7 @@ export class ClienteAdminComponent implements OnInit {
     photos: Photo[] = [];
     client: Client;
     selected: number;
+    carouselActive: number;
     spinnerProgress: number = 0;
     spinnerShow: boolean = false;
     spinnerMode: string;
@@ -87,8 +88,9 @@ export class ClienteAdminComponent implements OnInit {
     }
 
     open(i: number, carrusel) {
-        // this.modalService.open(CarouselConfigComponent);//!este es metodo original para llamarlo como componente
-        this.modalService.open(carrusel); //!este es el que llama al carrusel que esta ne cliente admin (html al final)
+        this.carouselActive = i;
+        // this.modalService.open(CarouselConfigComponent);   // !este es metodo original para llamarlo como componente
+        this.modalService.open(carrusel);                     // !este es el que llama al carrusel que esta ne cliente admin (html al final)
     }
 
     addPhoto() { this.file.nativeElement.click(); }

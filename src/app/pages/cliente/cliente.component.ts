@@ -21,6 +21,7 @@ export class ClienteComponent implements OnInit {
     photos: Photo[];
     client: Client;
     selected: number;
+    carouselActive: number;
     S3_URL: string = environment.S3_URL;
 
     constructor(
@@ -34,8 +35,10 @@ export class ClienteComponent implements OnInit {
         config.windowClass = "windowOfModal";
     }
 
-    open() {
-        this.modalService.open(CarouselConfigComponent);
+    open(i: number, carrusel) {
+        this.carouselActive = i;
+        // this.modalService.open(CarouselConfigComponent);   // !este es metodo original para llamarlo como componente
+        this.modalService.open(carrusel);                     // !este es el que llama al carrusel que esta ne cliente admin (html al final)
     }
 
     ngOnInit() {
