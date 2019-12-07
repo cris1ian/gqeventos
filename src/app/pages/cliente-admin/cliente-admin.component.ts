@@ -113,27 +113,35 @@ export class ClienteAdminComponent implements OnInit {
 
     // Cargar fotos desde PC
     onInputChange(event: any) {
-        const files = event.target.files;
+        const files: File[] = Array.from(event.target.files);
         this.filesCount = files.length;
-        console.log(files);
-        console.log(`files.length: ${this.filesCount}`);
         this.i = 0;
         this.spinnerMode = 'indeterminate';
         this.spinnerShow = true;
 
-        ImageCompressService.filesToCompressedImageSource(files)
-            .then(observableImages => {
-                observableImages
-                    .subscribe(
-                        (image) => { this.doUpload(image.compressedImage); },
-                        (error) => { console.log("Error while converting"); }
-                    );
+        files.forEach(
+            (element: File) => {
+                ImageCompressService.filesArrayToCompressedImageSource([element])
+                    .then(observableImages => {
+                        observableImages.subscribe(
+                            (image) => {
+                                this.doUpload(image.compressedImage, element.name);
+                            },
+                            (error) => { console.log("Error while converting"); }
+                        );
+                    });
             });
     }
 
 
-    doUpload(base64Img) {
-        const file = this.convertToFile.convertToFile(base64Img.imageDataUrl, base64Img.fileName, base64Img.type);
+    doUpload(base64Img, fileName) {
+        this.spinnerProgress = 100 * ++this.i / (this.filesCount);
+        this.spinnerMode = 'determinate';
+        if (this.i == this.filesCount) console.log(this.spinnerShow = false);
+
+        const file = this.convertToFile.convertToFile(base64Img.imageDataUrl, fileName, base64Img.type);
+        console.log(this.spinnerProgress);
+        console.log(file);
 
         // Subo la imagen al S3
         this.imageService.uploadImage(file, this.client.id)
@@ -149,22 +157,14 @@ export class ClienteAdminComponent implements OnInit {
                                 newPhoto = resp.result[0];
                                 this.photos.push(newPhoto);    // Tengo que actualizar el id que si o si tiene que venir desde el backend
                                 this.photos = this.photos.sort((a, b) => (a.fileName > b.fileName) ? 1 : -1);
-                                this.spinnerProgress = 100 * ++this.i / (this.filesCount);
-                                this.spinnerMode = 'determinate';
-                                console.log(this.spinnerProgress);
-                                if (this.i == this.filesCount) console.log(this.spinnerShow = false);
+
                             },
                             err => {
                                 console.log(err);
                             }
                         );
                 },
-                error => {
-                    console.log(error);
-                    this.spinnerProgress = 100 * ++this.i / (this.filesCount);
-                    if (this.i == this.filesCount) console.log(this.spinnerShow = false);
-                    console.log(this.spinnerProgress);
-                }
+                error => { console.log(error); }
             )
     }
 
