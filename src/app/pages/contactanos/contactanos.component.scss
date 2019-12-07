@@ -11,7 +11,7 @@
   margin-top: 5vh;
 }
 
-p:not(.opacity, .contact) {
+p:not(.opacity):not(.contact) {
   align-self: flex-end;
   color: white;
   font-family: julius sans one;
