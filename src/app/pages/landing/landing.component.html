@@ -5,6 +5,16 @@
 
         <a href="#home"><img class="logo" src="../assets/Fotos/LOGO-INVERTIDO.svg" alt="logo"></a>
 
+        <ul class="media">
+            <li><a href="https://www.instagram.com/gqeventos/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+            </li>
+            <li><a href="https://www.facebook.com/gqeventos/" target="_blank"><i class="fab fa-facebook-square fa-2x"></i></a>
+            </li>
+            <li><a href="https://twitter.com/gq_info" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+            <li><a href="mailto:gqfotoyvideo@gmail.com"><i class="fas fa-envelope fa-2x"></i>
+
+            </a></li>
+        </ul>
         <nav>
             <ul>
                 <li><a href="#nosotros">Nosotros</a> </li>
@@ -13,42 +23,73 @@
                 <li><a href="#contacto">Contacto</a> </li>
                 <li>
                     <div ngbDropdown placement="bottom-right">
-                        <button class="btn btn-primary" id="dropdownForm1"ngbDropdownToggle>Clientes</button>
-                        <div ngbDropdownMenu aria-labelledby="dropdownForm1">
-                            <form class="px-4 py-3">
-                                <div class="form-group" >
-                                    <label for="clientId">Ingrese su Nº de Cliente</label>
-                                    <input type="text" class="form-control" id="exampleDropdownFormEmail1" name="hash" [(ngModel)]="hash" required>
-                                </div>  
-                                <button type="submit" class="btn btn-outline-secondary" (click)="submitClientId()">Aceptar</button>
-                            </form>
+                        <button class="btn btn-primary" id="dropdownForm1" ngbDropdownToggle>Clientes</button>
+
+                        <div ngbDropdownMenu>
+                            <div class="dropMenu">
+                                <h4>Ingrese su Nº de Cliente</h4>
+
+                                <form #userid="ngForm" (ngSubmit)="submitClientId();">
+
+                                    <mat-form-field>
+                                        <mat-label>Nº cliente</mat-label>
+                                        <input matInput ngModel #clientId="ngModel" name="hash" [(ngModel)]="hash" required>
+                                        <mat-hint>Proporcionado por el fotografo</mat-hint>
+                                        <mat-error *ngIf="clientId.touched && clientId.errors">
+                                            <mat-error *ngIf="clientId.errors.required">Este campo es requerido</mat-error>
+                                        </mat-error>
+                                    </mat-form-field>
+
+                                    <button class="btn btn-secondary" [disabled]="!userid.valid">Aceptar</button>
+                                </form>
+                            </div>
+
                         </div>
+
                     </div>
                 </li>
+
+
                 <li>
+
+
                     <div ngbDropdown placement="bottom-right">
-                        <button class="btn btn-outline-secondary" id="dropdownForm1"ngbDropdownToggle>GQ</button>
-                        <div ngbDropdownMenu aria-labelledby="dropdownForm1">
-                            <form class="px-4 py-3">
-                                <div class="form-group" >
-                                    <input type="text" class="form-control" id="exampleDropdownFormEmail1" name="user" [(ngModel)]="user" required>
-                                    <input type="password" class="form-control" id="exampleDropdownFormEmail1" name="password" [(ngModel)]="password" required>
-                                </div>  
-                                <button type="submit" class="btn btn-outline-secondary" (click)="adminLogin()">Ingresar</button>
-                            </form>
+
+                        <button class="btn btn-outline-secondary" id="dropdownForm1" ngbDropdownToggle>GQ</button>
+
+                        <div ngbDropdownMenu>
+
+                            <div class="dropMenu">
+
+                                <form #admin="ngForm" (ngSubmit)="adminLogin()">
+
+
+                                    <mat-form-field>
+                                        <input matInput ngModel #userAdmin="ngModel" name="user" [(ngModel)]="user" required placeholder="User admin">
+                                        <mat-error *ngIf="userAdmin.touched && userAdmin.errors">
+                                            <mat-error *ngIf="userAdmin.errors.required">Este campo es requerido</mat-error>
+                                        </mat-error>
+                                    </mat-form-field>
+
+                                    <mat-form-field>
+                                        <input matInput ngModel #passAdmin="ngModel" name="password" [(ngModel)]="password" required placeholder="Pass">
+                                        <mat-error *ngIf="passAdmin.touched && passAdmin.errors">
+                                            <mat-error *ngIf="passAdmin.errors.required">Este campo es requerido</mat-error>
+                                        </mat-error>
+                                    </mat-form-field>
+
+                                    <button class="btn btn-outline-secondary" [disabled]="!admin.valid">Ingresar</button>
+                                </form>
+                            </div>
+
+
                         </div>
                     </div>
                 </li>
 
             </ul>
         </nav>
-
-
-
-
     </div>
-
-
 </header>
 
 

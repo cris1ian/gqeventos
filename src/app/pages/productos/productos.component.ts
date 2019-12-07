@@ -22,8 +22,8 @@ export class ProductosComponent implements OnInit {
     config.windowClass = "windowOfModal";
      }
 
-  open() {
-    this.modalService.open(CarouselConfigComponent);
+  abrirModal(contenido) {
+    this.modalService.open(contenido);
   }
 
   ngOnInit() {

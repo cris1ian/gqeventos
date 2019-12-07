@@ -2,11 +2,28 @@
     //****************************************footer****************************************************************
     footer {
         background-color: #CBA78D;
-        height: 4vh;
+        height: 5vh;
         @include flex-row;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
         padding: 5px 5%;
         p {
             font-size: 2vh;
+        }
+        .media{
+            display: flex;
+            justify-content: space-evenly;
+            width: 20vw;
+            padding: 0;
+            margin: 0;
+            color: black;
+            list-style: none;
+            align-items: center;
+      
+            i{
+              color:rgb(211, 36, 36);
+              font-size: 3.1vh;
+              
+            }
         }
     }

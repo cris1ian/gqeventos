@@ -76,7 +76,7 @@
 
             <div class="column">
                 <div class="tarjeta">
-                    <div class="thumbnail" (click)="open()">
+                    <div class="thumbnail" (click)="open(i,Modalcarruzel)">
                         <img [className]="photo.isSelected  ? 'selected' : 'not-selected'"
                             [src]="S3_URL+'/'+photo.userId+'/'+photo.fileName" alt="">
                     </div>
@@ -92,7 +92,7 @@
                         <div class="fileName">
                             <p>{{photo.fileName}}</p>
                         </div>
-                        <button mat-icon-button (click)="deletePhoto(i, photo)">
+                        <button class="deleteico" mat-icon-button (click)="deletePhoto(i, photo)">
                             <mat-icon>delete</mat-icon>
                         </button>
                     </div>
@@ -100,6 +100,39 @@
             </div>
         </ng-container>
 
+        <!-- ! no borrar -->
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+
     </div>
 
 </div>
+
+<!-- **************************************modal con carrusel************************************************************** -->
+
+<!-- !preguntar a emilio que no pudo hacer lo del carrusel ni a palos no entendi nada  -->
+<ng-template #Modalcarruzel let-modal>
+
+    <ngb-carousel *ngIf="photos" #myCarousel="ngbCarousel">
+
+
+        <ng-container *ngFor="let photo of photos; let i=index">
+
+            <ng-template ngbSlide id="i">
+
+                <div class="slidewindow">
+                    <img [src]="photo.picture" alt="">
+                </div>
+
+            </ng-template>
+
+        </ng-container>
+
+
+    </ngb-carousel>
+
+
+</ng-template>

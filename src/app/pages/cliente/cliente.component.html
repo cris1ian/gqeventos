@@ -15,8 +15,7 @@
 
             <div class="titulo">
                 <h1>Seleccione las fotos que desea recibir</h1>
-                <p>*Haga click en cada foto para seleccionarla y una vez finalice la seleccion, haga click en aceptar
-                    para enviarlas</p>
+                <p>*Haga click en cada foto para seleccionarla y una vez finalice la seleccion, haga click en aceptar para enviarlas</p>
             </div>
 
             <div class="botonera">
@@ -47,8 +46,7 @@
                     <div class="pie" (click)="onSelect(i, photo)">
                         <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i
                                 class="far fa-square"></i></span>
-                        <span class="checkbox" class="checkbox-check"
-                            [className]="photo.isSelected ? 'show' : 'not-show'"><i
+                        <span class="checkbox" class="checkbox-check" [className]="photo.isSelected ? 'show' : 'not-show'"><i
                                 class="fas fa-check-square"></i></span>
                         <div class="fileName">
                             <p>{{photo.fileName}}</p>
@@ -57,6 +55,12 @@
                 </div>
             </div>
         </ng-container>
+        <!-- ! no borrar -->
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column"></div>
 
     </div>
 
