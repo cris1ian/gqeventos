@@ -77,6 +77,8 @@ h1 {
   z-index: 3;
   top: 65%;
   margin-left: 1.5vw;
+  text-align: left;
+  transition: font-size 300ms linear;
 }
 
 .opacity {
@@ -93,7 +95,8 @@ a {
 }
 
 a:hover > h2 {
-  font-size: 2.0vw;
+  font-size: 1.6vw;
+  //transform: scale(1.1,1.1);
 }
 
 ::ng-deep .windowOfModal .modal-dialog {

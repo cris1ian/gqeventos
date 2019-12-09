@@ -28,7 +28,10 @@ export class ContactanosComponent implements OnInit {
                 mensaje: this.mensaje
             }
         ).subscribe(
-            resp => console.log("Mostrar un alert confirmando mensaje enviado"),
+            (resp: any) => {
+                if (resp.status == 0) console.log("Mostrar un alert confirmando mensaje enviado")
+                else console.log("Mostrar un alert diciendo que se produjo un error y que se intente más tarde")
+            },
             err => console.log("Mostrar un alert diciendo que se produjo un error y que se intente más tarde")
         );
 

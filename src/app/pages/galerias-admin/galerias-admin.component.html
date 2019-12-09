@@ -138,13 +138,13 @@
             </mat-form-field>
 
             <mat-form-field>
-                <mat-label>Nº de usuario</mat-label>
+                <mat-label>Nº de Cliente</mat-label>
                 <input name="id" ngModel #idField="ngModel" #no matInput placeholder="37-659" minlength="6" autocomplete="off" maxlength="10" required>
                 <mat-hint>para identificar la galeria</mat-hint>
                 <mat-hint align="end">{{no.value.length}} / 10</mat-hint>
 
                 <mat-error *ngIf="idField.touched && idField.errors">
-                    <mat-error *ngIf="idField.errors.required">El campo nombre es requerido</mat-error>
+                    <mat-error *ngIf="idField.errors.required">El campo N° de Cliente es requerido</mat-error>
                     <mat-error *ngIf="idField.errors.minlength">minimo de 6 caracteres</mat-error>
                 </mat-error>
             </mat-form-field>
