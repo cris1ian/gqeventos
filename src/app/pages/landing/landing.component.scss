@@ -58,6 +58,7 @@ nav {
     height: 15vh;
     position: absolute;
     top: 10px;
+    transition: all 200ms linear;
 }
 
 .media {
@@ -71,6 +72,7 @@ nav {
     i {
         color: black;
         font-size: 2vw;
+        transition: all 200ms linear;
     }
 }
 
@@ -105,3 +107,12 @@ nav {
         margin: 10px;
     }
 }
+
+:hover > i {
+    transform: scale(1.1,1.1)
+}
+
+:hover > img {
+    transform: scale(1.1,1.1)
+}
+
