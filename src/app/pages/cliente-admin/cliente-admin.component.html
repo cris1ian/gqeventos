@@ -19,8 +19,7 @@
             <div class="btn" (click)="addPhoto()">
                 <button mat-mini-fab class="mas"><i class="material-icons">add</i></button>
                 <p>Agregar Fotografias</p>
-                <input style="display: none;" #file type="file" accept="image/*" (change)="onInputChange($event)"
-                    multiple />
+                <input style="display: none;" #file type="file" accept="image/*" (change)="onInputChange($event)" multiple />
             </div>
 
             <div class="botonera">
@@ -73,21 +72,38 @@
 
     <div class="cont-galeria">
 
+
+
+
+        <!-- ****************************************placeholder*************************************************************** -->
+        <div class="column">
+            <div class="tarjeta">
+                <div class="thumbnail">
+                    <img src="../../../assets/Fotos/img_(2).jpg" alt="">
+                </div>
+
+                <div class="pie">
+
+                </div>
+            </div>
+        </div>
+        <!-- ************************************************************************************************************* -->
+
+
+
         <ng-container *ngFor="let photo of photos; let i=index">
 
             <div class="column">
                 <div class="tarjeta">
                     <div class="thumbnail" (click)="open(i,Modalcarrusel)">
-                        <img [className]="photo.isSelected  ? 'selected' : 'not-selected'"
-                            [src]="S3_URL+'/'+photo.userId+'/'+photo.fileName" alt="">
+                        <img [className]="photo.isSelected  ? 'selected' : 'not-selected'" [src]="S3_URL+'/'+photo.userId+'/'+photo.fileName" alt="">
                     </div>
 
                     <div class="pie">
                         <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'">
                             <i class="far fa-square"></i>
                         </span>
-                        <span class="checkbox" class="checkbox-check"
-                            [className]="photo.isSelected ? 'show' : 'not-show'">
+                        <span class="checkbox" class="checkbox-check" [className]="photo.isSelected ? 'show' : 'not-show'">
                             <i class="fas fa-check-square"></i>
                         </span>
                         <div class="fileName">

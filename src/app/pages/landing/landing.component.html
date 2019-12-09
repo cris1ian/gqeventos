@@ -72,7 +72,7 @@
                                     </mat-form-field>
 
                                     <mat-form-field>
-                                        <input matInput ngModel #passAdmin="ngModel" name="password" [(ngModel)]="password" required placeholder="Pass">
+                                        <input matInput ngModel type="password" #passAdmin="ngModel" name="password" [(ngModel)]="password" required placeholder="Pass">
                                         <mat-error *ngIf="passAdmin.touched && passAdmin.errors">
                                             <mat-error *ngIf="passAdmin.errors.required">Este campo es requerido</mat-error>
                                         </mat-error>
