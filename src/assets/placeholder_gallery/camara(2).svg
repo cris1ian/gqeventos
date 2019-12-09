@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+	<rect x="216.615" y="9.846" style="fill:#A4C2F7;" width="275.692" height="492.308"/>
+	<rect x="19.691" y="9.846" style="fill:#FFFFFF;" width="275.692" height="492.308"/>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-48.9299" y1="652.6777" x2="-47.8347" y2="651.7576" gradientTransform="matrix(413.5385 0 0 -492.3077 20263.9531 321347.7813)">
+		<stop  offset="0" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.1717" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.2" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.2001" style="stop-color:#DAE4F4"/>
+		<stop  offset="0.2007" style="stop-color:#EBEBF4"/>
+		<stop  offset="0.2014" style="stop-color:#F6F1F4"/>
+		<stop  offset="0.2023" style="stop-color:#FDF4F4"/>
+		<stop  offset="0.205" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.2522" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.26" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.26" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.3974" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.42" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.4201" style="stop-color:#DAE4F4"/>
+		<stop  offset="0.4207" style="stop-color:#EBEBF4"/>
+		<stop  offset="0.4214" style="stop-color:#F6F1F4"/>
+		<stop  offset="0.4223" style="stop-color:#FDF4F4"/>
+		<stop  offset="0.425" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.4894" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.5" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.5" style="stop-color:#F9F2F4"/>
+		<stop  offset="0.5001" style="stop-color:#E8EBF4"/>
+		<stop  offset="0.5003" style="stop-color:#DDE5F4"/>
+		<stop  offset="0.5005" style="stop-color:#D6E2F4"/>
+		<stop  offset="0.501" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.7062" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.74" style="stop-color:#D4E1F4"/>
+		<stop  offset="0.741" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.8346" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.85" style="stop-color:#FFF5F4"/>
+		<stop  offset="0.851" style="stop-color:#D4E1F4"/>
+	</linearGradient>
+	<rect x="49.23" y="9.846" style="fill:url(#SVGID_1_);" width="413.538" height="492.308"/>
+	<g>
+		<rect x="147.691" y="403.692" style="fill:#7FACFA;" width="344.615" height="98.462"/>
+		<circle style="fill:#7FACFA;" cx="137.845" cy="182.833" r="44.987"/>
+	</g>
+	<ellipse style="fill:#A4C2F7;" cx="120.949" cy="182.833" rx="28.091" ry="44.987"/>
+	<rect x="19.691" y="403.692" style="fill:#ECECEC;" width="344.615" height="98.462"/>
+	<rect x="49.23" y="403.692" style="fill:#A4C2F7;" width="413.538" height="98.462"/>
+	<g>
+		<path style="fill:#428DFF;" d="M137.845,237.664c-22.178,0-42.172-13.36-50.658-33.85s-3.795-44.074,11.888-59.756
+			s39.268-20.371,59.757-11.883c20.489,8.488,33.847,28.484,33.845,50.661C192.642,213.104,168.113,237.631,137.845,237.664
+			L137.845,237.664z M137.845,147.692c-19.406,0-35.139,15.731-35.139,35.138c-0.001,19.406,15.73,35.139,35.136,35.141
+			c19.406,0.002,35.14-15.728,35.143-35.135C172.963,163.438,157.244,147.717,137.845,147.692z"/>
+		<path style="fill:#428DFF;" d="M49.235,413.538c-4.099,0.003-7.772-2.533-9.22-6.368s-0.368-8.166,2.71-10.872l167.553-147.519
+			c3.902-3.426,9.793-3.237,13.466,0.433l107.971,107.962c2.487,2.487,3.458,6.112,2.548,9.51s-3.564,6.051-6.962,6.962
+			c-3.397,0.91-7.022-0.061-9.51-2.548L216.355,269.673L55.735,411.087C53.939,412.669,51.628,413.541,49.235,413.538z"/>
+		<path style="fill:#428DFF;" d="M270.764,320c-3.899-0.002-7.429-2.306-9.002-5.873c-1.573-3.568-0.891-7.728,1.738-10.607
+			l103.385-113.231c1.761-1.933,4.219-3.086,6.832-3.202c2.608-0.087,5.148,0.836,7.091,2.577l118.154,108.308
+			c2.594,2.377,3.722,5.957,2.96,9.392c-0.762,3.435-3.298,6.202-6.654,7.26c-3.355,1.058-7.02,0.245-9.614-2.133l-110.88-101.644
+			l-96.736,105.942C276.176,318.839,273.533,320.006,270.764,320z"/>
+		<path style="fill:#428DFF;" d="M492.307,512H19.691c-2.612,0.001-5.116-1.036-6.963-2.883c-1.847-1.847-2.884-4.352-2.883-6.963
+			V9.846c-0.001-2.612,1.036-5.116,2.883-6.963S17.08-0.001,19.691,0h472.615c2.612-0.001,5.117,1.035,6.964,2.882
+			c1.847,1.847,2.884,4.352,2.882,6.964v492.308c0.001,2.612-1.035,5.117-2.882,6.964C497.424,510.965,494.919,512.002,492.307,512z
+			 M29.538,492.308h452.923V19.692H29.538V492.308z"/>
+		<path style="fill:#428DFF;" d="M492.307,512H19.691c-2.612,0.001-5.116-1.036-6.963-2.883c-1.847-1.847-2.884-4.352-2.883-6.963
+			v-98.462c-0.001-2.612,1.036-5.116,2.883-6.963c1.847-1.847,4.351-2.884,6.963-2.883h472.615c2.612-0.001,5.117,1.035,6.964,2.882
+			c1.847,1.847,2.884,4.352,2.882,6.964v98.462c0.001,2.612-1.035,5.117-2.882,6.964C497.424,510.965,494.919,512.002,492.307,512z
+			 M29.538,492.308h452.923v-78.769H29.538V492.308z"/>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>

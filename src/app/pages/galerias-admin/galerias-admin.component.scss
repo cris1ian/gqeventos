@@ -104,20 +104,20 @@
             position: absolute;
             top: 0px;
             left: 0px;
-            box-shadow: 4px 4px 6px #000000;
+            // box-shadow: 4px 4px 6px #000000;
         }
         .stack_1 {
             z-index: 12;
             transition: transform 0.1s linear 0s;
         }
         .stack_2 {
-            transform: translate(10px, 10px);
-            transition: transform 0.1s linear 0.1s;
+            transform: translate(0px, 0px);
+            transition: transform 0.1s linear 0s;
             z-index: 11;
         }
         .stack_3 {
-            transform: translate(20px, 20px);
-            transition: transform 0.1s linear 0.2s;
+            transform: translate(0px, 0px);
+            transition: transform 0.1s linear 0s;
             z-index: 10;
         }
     }
