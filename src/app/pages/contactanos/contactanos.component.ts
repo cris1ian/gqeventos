@@ -31,6 +31,8 @@ export class ContactanosComponent implements OnInit {
             resp => console.log("Mostrar un alert confirmando mensaje enviado"),
             err => console.log("Mostrar un alert diciendo que se produjo un error y que se intente más tarde")
         );
+
+
     }
 
 }

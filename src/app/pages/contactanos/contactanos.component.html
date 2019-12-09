@@ -14,55 +14,124 @@
 
     <div class="contacto">
         <div class="datos">
-            <div> <img src="../../../assets/Icons/location.png" alt="" style="width: 32px;"> <p class="contact"> Mendoza 1080 PA - "Estudio 1080"</p></div>
+            <div> <img src="../../../assets/Icons/location.png" alt="" style="width: 32px;">
+                <p class="contact"> Mendoza 1080 PA - "Estudio 1080"</p>
+            </div>
             <!-- <div class="linea-contacto"></div> -->
-            <div> <img src="../../../assets/Icons/ant-design_clock-circle-outline.png" alt=""><p class="contact"> Coordinar Cita Previa</p></div>
+            <div> <img src="../../../assets/Icons/ant-design_clock-circle-outline.png" alt="">
+                <p class="contact"> Coordinar Cita Previa</p>
+            </div>
             <!-- <div class="linea-contacto"></div> -->
-            <div> <img src="../../../assets/Icons/ic-baseline-phone.png" alt="phone"><p class="contact"> 341-5483223 - Lila Quiroz</p></div>
+            <div> <img src="../../../assets/Icons/ic-baseline-phone.png" alt="phone">
+                <p class="contact"> 341-5483223 - Lila Quiroz</p>
+            </div>
             <!-- <div class="linea-contacto"></div> -->
-            <div> <img src="../../../assets/Icons/ant-design_mail-outline.png" alt="mail"> <a href="mailto:gqfotoyvideo@gmail.com"><p class="contact" style="font-weight: bold;"> gqfotoyvideo@gmail.com</p> </a></div>
+            <div> <img src="../../../assets/Icons/ant-design_mail-outline.png" alt="mail">
+                <a href="mailto:gqfotoyvideo@gmail.com">
+                    <p class="contact" style="font-weight: bold;"> gqfotoyvideo@gmail.com</p>
+                </a>
+            </div>
             <!-- <div class="linea-contacto"></div> -->
         </div>
         <div class="container">
-            <form action="action_page.php">
+
+            <form #contacto="ngForm" (ngSubmit)="contactMe()">
+
                 <div class="row">
-                    <div class="col-25">
-                        <!-- <label for="name">Nombre:</label> -->
-                    </div>
                     <div class="col-75">
-                        <input [(ngModel)]="name" type="text" id="name" name="name" placeholder="Nombre" required>
+                        <mat-form-field>
+                            <input matInput [(ngModel)]="name" ngModel #nameField="ngModel" name="name" placeholder="Nombre" required>
+
+                            <mat-error *ngIf="nameField.touched && nameField.errors">
+                                <mat-error *ngIf="nameField.errors.required">Este campo es requerido</mat-error>
+                            </mat-error>
+
+                        </mat-form-field>
+
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-25">
-                        <!-- <label for="fname">E-mail:</label> -->
-                    </div>
-                    <div class="col-75">
-                        <input [(ngModel)]="email" type="text" id="email" name="email" placeholder="E-mail" required   pattern="[A-Za-z0-9._%+-]{2,}@[a-zA-Z0-9-_.]{2,}[.]{1}[a-zA-Z]{2,}">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <!-- <label for="fname">Teléfono:</label> -->
-                    </div>
-                    <div class="col-75">
-                        <input [(ngModel)]="telefono" type="text" id="telefono" name="telefono" placeholder="Teléfono (ej:341-333333)" required>
+
+
+                <div class="row ">
+                    <div class="col-75 ">
+                        <mat-form-field>
+                            <input matInput [(ngModel)]="email " ngModel #mailField="ngModel" type="text " id="email " name="email " placeholder="E-mail " required>
+                            <mat-error *ngIf="mailField.touched && mailField.errors">
+                                <mat-error *ngIf="mailField.errors.required">Este campo es requerido</mat-error>
+                            </mat-error>
+                        </mat-form-field>
+
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-26">
-                        <!-- <label for="subject">Mensaje:</label> -->
+
+                <div class="row ">
+                    <div class="col-75 ">
+                        <mat-form-field>
+                            <input matInput [(ngModel)]="telefono " type="text " id="telefono " name="telefono " placeholder="Teléfono (ej:341-333333) ">
+                        </mat-form-field>
                     </div>
-                    <div class="col-75">
-                        <textarea [(ngModel)]="mensaje" id="mensaje" name="mensaje" placeholder="Escriba su mensaje..."
-                            style="height:200px" required></textarea>
-                        <div class="row">
-                            <input type="submit" value="Enviar Mensaje">
+                </div>
+
+
+                <div class="row ">
+                    <div class="col-75 ">
+                        <mat-form-field>
+                            <textarea matInput [(ngModel)]="mensaje " id="mensaje " name="mensaje " placeholder="Escriba su mensaje... " required></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+
+                <div class="row"> <button class=" btn btn-secondary " [disabled]="!contacto.valid ">Enviar Mensaje</button></div>
+
+
+            </form>
+
+
+
+
+
+
+            <!-- ******************************************************************************************** -->
+
+            <!-- <form action="action_page.php ">
+                <div class="row ">
+                    <div class="col-25 ">
+                         <label for="name ">Nombre:</label> 
+                    </div>
+                    <div class="col-75 ">
+                        <input [(ngModel)]="name " type="text " id="name " name="name " placeholder="Nombre " required>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-25 ">
+                        <label for="fname ">E-mail:</label>
+                    </div>
+                    <div class="col-75 ">
+                        <input [(ngModel)]="email " type="text " id="email " name="email " placeholder="E-mail " required pattern="[A-Za-z0-9._%+-]{2,}@[a-zA-Z0-9-_.]{2,}[.]{1}[a-zA-Z]{2,} ">
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-25 ">
+                        <label for="fname ">Teléfono:</label>
+                    </div>
+                    <div class="col-75 ">
+                        <input [(ngModel)]="telefono " type="text " id="telefono " name="telefono " placeholder="Teléfono (ej:341-333333) " required>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-26 ">
+                        <label for="subject ">Mensaje:</label>
+                    </div>
+                    <div class="col-75 ">
+                        <textarea [(ngModel)]="mensaje " id="mensaje " name="mensaje " placeholder="Escriba su mensaje... " style="height:200px " required></textarea>
+                        <div class="row ">
+                            <input type="submit " value="Enviar Mensaje ">
                         </div>
                     </div>
-                </div>                
-                <button class="btn btn-secondary" (click)="contactMe()">Boton para test - BORRAR</button>
-            </form>
+                </div>
+                <button class="btn btn-secondary " (click)="contactMe() ">Boton para test - BORRAR</button>
+            </form> -->
         </div>
     </div>
 
