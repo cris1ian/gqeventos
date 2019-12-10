@@ -148,6 +148,7 @@ export class ClienteAdminComponent implements OnInit {
             .subscribe(
                 // Si la respuesta es Ok inserto el nombre en la base de datos
                 result => {
+                    console.log(result);
                     let newPhoto = new Photo(this.client.id, file.name);
                     this.userService.createPhoto(newPhoto)
                         .subscribe(
