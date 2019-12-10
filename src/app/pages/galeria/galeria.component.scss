@@ -1,115 +1,140 @@
 @import url("https://fonts.googleapis.com/css?family=Bad+Script&display=swap");
 .contenedor {
-  margin-top: -1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100vw;
-  min-height: 95vh;
+    margin-top: -1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100vw;
+    min-height: 95vh;
 }
 
 .titulo {
-  margin: 1rem 1rem 1rem 60%;
-  font-size: 4vw;
-  font-family: "Bad Script", cursive;
+    margin: 1rem 1rem 1rem 60%;
+    font-size: 4vw;
+    font-family: "Bad Script", cursive;
 }
 
 .cont-galeria {
-  margin: 10px 5em;
-  height: 100vh;
-  margin: 0px 3%;
-  overflow: hidden;
+    margin: 10px 5em;
+    height: 100vh;
+    margin: 0px 3%;
+    overflow: hidden;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .masonry {
-  /* Masonry container */
-  -webkit-column-count: 5;
-  -moz-column-count: 5;
-  column-count: 5;
-  padding: 0;
-  width: 90%;
-  margin: auto;
-  column-gap: 1em;
-  // font-size: 2em;
+    /* Masonry container */
+    -webkit-column-count: 5;
+    -moz-column-count: 5;
+    column-count: 5;
+    padding: 0;
+    width: 90%;
+    margin: auto;
+    column-gap: 1em;
+    // font-size: 2em;
 }
 
 .item {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 1em;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-shadow: 4px 2px 6px 0 rgb(0, 0, 0);
-  letter-spacing: 0px;
-  line-height: 0px;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-shadow: 4px 2px 6px 0 rgb(0, 0, 0);
+    letter-spacing: 0px;
+    line-height: 0px;
+    transition: transform 0.1s linear;
+    &:hover {
+        transform: scale(1.01, 1.01);
+        box-shadow: 6px 4px 8px 0 rgb(0, 0, 0);
+    }
 }
 
 .item img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 @media only screen and (max-width: 320px) {
-  .masonry {
-    -moz-column-count: 1;
-    -webkit-column-count: 1;
-    column-count: 1;
-    column-gap: 0.3em;
-  }
-  .titulo {
-    font-size: 1.5rem;
-  }
-  .item {
-    margin-bottom: 0.3em;
-  }
+    .masonry {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+        column-gap: 0.3em;
+    }
+    .titulo {
+        font-size: 1.5rem;
+    }
+    .item {
+        margin-bottom: 0.3em;
+    }
 }
 
 @media only screen and (min-width: 321px) and (max-width: 768px) {
-  .masonry {
-    -moz-column-count: 2;
-    -webkit-column-count: 2;
-    column-count: 2;
-    column-gap: 0.4em;
-  }
-  .titulo {
-    font-size: 2rem;
-  }
-  .item {
-    margin-bottom: 0.4em;
-  }
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+        column-gap: 0.4em;
+    }
+    .titulo {
+        font-size: 2rem;
+    }
+    .item {
+        margin-bottom: 0.4em;
+    }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1200px) {
-  .masonry {
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;
-    column-gap: 0.6em;
-  }
-  .titulo {
-    font-size: 4rem;
-  }
-  .item {
-    margin-bottom: 0.6em;
-  }
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+        column-gap: 0.6em;
+    }
+    .titulo {
+        font-size: 4rem;
+    }
+    .item {
+        margin-bottom: 0.6em;
+    }
 }
 
 @media only screen and (min-width: 1201px) {
-  .masonry {
-    -moz-column-count: 4;
-    -webkit-column-count: 4;
-    column-count: 4;
-    column-gap: 0.9em;
-  }
-  .titulo {
-    font-size: 4.5rem;
-  }
-  .item {
-    margin-bottom: 0.9em;
-  }
+    .masonry {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+        column-gap: 0.9em;
+    }
+    .titulo {
+        font-size: 4.5rem;
+    }
+    .item {
+        margin-bottom: 0.9em;
+    }
+}
+
+//*************************************modal********************************************
+::ng-deep .windowOfModal .modal-dialog {
+    max-width: 60vw;
+}
+
+::ng-deep .windowOfModal .modal-content {
+    background-color: rgb(0, 0, 0, 0);
+    border: none;
+}
+
+.slidewindow {
+    display: flex;
+    justify-content: center;
+    max-height: 90vh;
+    img {
+        object-fit: contain;
+        // background-color: rgba(0, 0, 0, 0.8);
+    }
 }

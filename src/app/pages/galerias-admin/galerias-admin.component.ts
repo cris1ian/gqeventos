@@ -68,10 +68,12 @@ export class GaleriasAdminComponent implements OnInit {
     }
     /*para crear el nuevo usuario */
     nuevoUsuario(form, modal) {
-        console.log("emilio");
-        console.log(form.value);
-        console.warn('que loco');
-        const newClient = new Client("hash", "nombre")
+
+        console.log("nuevo usuario creado");
+        console.log("Nombre :", form.value.Nombre);
+        console.log("ID :", form.value.id);
+
+        const newClient = new Client(form.value.id, form.value.Nombre)
         this.userService.createGallery(newClient)
             .subscribe(
                 (resp: any) => {
@@ -81,7 +83,7 @@ export class GaleriasAdminComponent implements OnInit {
                 },
                 err => { console.log(err); })
         form.reset();
-        this.modalService.dismissAll();
+        this.modalService.dismissAll(modal);
 
     }
 
