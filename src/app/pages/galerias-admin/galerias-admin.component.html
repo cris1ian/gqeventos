@@ -109,7 +109,7 @@
 <!-- *************************************************Modal agregar galeria******************************************************* -->
 
 <ng-template #modalAgregar let-c="close" let-d="dismiss">
-    <form #newuser="ngForm" (ngSubmit)="nuevoUsuario(newuser.form)">
+    <form #newuser="ngForm" (ngSubmit)="nuevoUsuario(newuser.form , modalAgregar)">
 
         <div class="modal-header">
             <h4 class="modal-title" id="modal-title">Agregar galería</h4>
@@ -154,7 +154,7 @@
         </div>
         <div class="modal-footer">
             <button type="button" ngbAutofocus class="btn btn-primary" (click)="d('cancel click')">Cancel</button>
-            <button class="btn btn-secondary " (click)="d('cancel click')" [disabled]="!newuser.valid">Ok</button>
+            <button class="btn btn-secondary " type="submit" [disabled]="!newuser.valid">Ok</button>
         </div>
     </form>
 </ng-template>

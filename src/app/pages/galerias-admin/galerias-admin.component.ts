@@ -3,6 +3,7 @@ import { Client } from 'src/app/models/client.model';
 import { responseClient } from 'src/app/models/backend-client';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,14 +14,14 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class GaleriasAdminComponent implements OnInit {
     clients: Client[];
-    newClient: Client = new Client("", "");
     deleteClient: Client;
     index: number;
 
     constructor(
         config: NgbModalConfig,
         private modalService: NgbModal,
-        private userService: UserService
+        private userService: UserService,
+        private router: Router
 
     ) {
         // customize default values of modals used by this component tree
@@ -66,11 +67,21 @@ export class GaleriasAdminComponent implements OnInit {
             );
     }
     /*para crear el nuevo usuario */
-    nuevoUsuario(form) {
+    nuevoUsuario(form, modal) {
         console.log("emilio");
         console.log(form.value);
         console.warn('que loco');
-        form.reset(); 1
+        const newClient = new Client("hash", "nombre")
+        this.userService.createGallery(newClient)
+            .subscribe(
+                (resp: any) => {
+                    // Me devuelve el objeto creado en la base de datos y lo agrego al clients array
+                    console.log(resp);
+                    // if (resp.status == 0) this.router.navigate(['/cliente', resp.result[0].id]);
+                },
+                err => { console.log(err); })
+        form.reset();
+        this.modalService.dismissAll();
 
     }
 

@@ -49,7 +49,6 @@ import { CompressionTestComponent } from './pages/compression-test/compression-t
     ClienteAdminComponent,
     LandingComponent,
     CarouselConfigComponent,
-    FileSelectDirective,
     CompressionTestComponent
   ],
   imports: [
