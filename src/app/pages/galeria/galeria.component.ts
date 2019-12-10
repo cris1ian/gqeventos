@@ -16,13 +16,17 @@ export class GaleriaComponent implements OnInit {
     { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (6).jpg" },
     { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (7).jpg" },
     { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (8).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (9).jpg" },
     { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (10).jpg" },
     { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (11).jpg" },
     { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (12).jpg" },
-    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (5).jpg" },
-    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (6).jpg" },
-    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (7).jpg" },
-    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (8).jpg" }
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (13).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (14).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (15).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (16).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (17).jpg" },
+    { imagen: "../../../assets/Fotos/galeria-porfiolio/img- (18).jpg"},
+
   ]
 
   constructor() { }
