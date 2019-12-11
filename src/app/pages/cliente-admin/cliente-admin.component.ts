@@ -37,6 +37,9 @@ export class ClienteAdminComponent implements OnInit {
     blobImageTry: any;
     fileImageTry: any;
 
+    iDelete: number;
+    photoDelete: Photo;
+
     constructor(
         config: NgbModalConfig,
         configcarusel: NgbCarouselConfig,
@@ -92,22 +95,34 @@ export class ClienteAdminComponent implements OnInit {
         // this.modalService.open(CarouselConfigComponent);   // !este es metodo original para llamarlo como componente
         this.modalService.open(carrusel);                     // !este es el que llama al carrusel que esta ne cliente admin (html al final)
     }
+    openConfirmDelete(i, photo, content) {
+        this.iDelete = i;
+        this.photoDelete = photo;
+        this.modalService.open(content, { size: 'sm', windowClass: 'dark-modal' });
+    }
 
     addPhoto() { this.file.nativeElement.click(); }
 
-    deletePhoto(i: number, photo: Photo) {
-        console.log(this.photos.splice(i, 1));
-        console.log(`Deleted photo ${i}`);
-        this.imageService.deleteImage(photo)
+    deletePhoto() {
+
+        this.imageService.deleteImage(this.photoDelete)
+
             .subscribe(
                 (resp: any) => {
-                    // this.userService.deletePhoto(photo.id)
-                    //     .subscribe(
-                    //         (resp2: any) => { console.log(resp2); },
-                    //         error => { console.log(error); }
-                    //     )
+                    console.log(this.photos.splice(this.iDelete, 1));
+                    console.log(`Deleted photo ${this.iDelete}`);
+                    this.userService.deletePhoto(this.photoDelete.id)
+                        .subscribe(
+                            (resp2: any) => { console.log(resp2); },
+                            error => { console.log(error); }
+                        )
+                    this.modalService.dismissAll();
                 },
-                error => { console.log(error); }
+                error => {
+                    console.log(error);
+                    this.modalService.dismissAll();
+                }
+
             );
     }
 
