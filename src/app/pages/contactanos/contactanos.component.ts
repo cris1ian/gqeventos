@@ -54,6 +54,7 @@ export class ContactanosComponent implements OnInit {
                 console.log(" se produjo un error , intente más tarde");
                 this.showOk = false;
                 this.showError = true;
+                console.log(error);
 
             }
         );
