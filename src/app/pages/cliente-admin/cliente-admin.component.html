@@ -119,7 +119,7 @@
 
 <ng-template #Modalcarrusel let-modal>
 
-    <ngb-carousel [activeId]="carouselActive" *ngIf="photos" #myCarousel="ngbCarousel">
+    <ngb-carousel [activeId]="carouselActive" *ngIf="photos">
 
         <ng-container *ngFor="let photo of photos; let i=index">
 

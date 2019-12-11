@@ -8,6 +8,7 @@ import { ActivatedRoute, Params } from "@angular/router";
 import { UserService } from "src/app/services/user.service";
 import { Client } from "src/app/models/client.model";
 import { environment } from "src/environments/environment";
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 // import { ConsoleReporter } from "jasmine";
 
 @Component({
@@ -25,6 +26,7 @@ export class ClienteComponent implements OnInit {
   S3_URL: string = environment.S3_URL;
 
   constructor(
+    configcarusel: NgbCarouselConfig,
     config: NgbModalConfig,
     private modalService: NgbModal,
     private route: ActivatedRoute,
@@ -33,11 +35,19 @@ export class ClienteComponent implements OnInit {
     config.centered = true;
     config.scrollable = false;
     config.windowClass = "windowOfModal";
+
+    configcarusel.interval = 60000;
+    configcarusel.wrap = true;
+    configcarusel.keyboard = true;
+    configcarusel.pauseOnHover = false;
+    configcarusel.showNavigationIndicators = false;
+
   }
 
   abrir(content) {
     console.log(content);
     this.modalService.open(content, { windowClass: "modal-windows" });
+
   }
   close(content) {
     this.modalService.dismissAll(content);
@@ -45,8 +55,8 @@ export class ClienteComponent implements OnInit {
 
   open(i: number, carrusel) {
     this.carouselActive = i;
-    // this.modalService.open(CarouselConfigComponent);   // !este es metodo original para llamarlo como componente
-    this.modalService.open(carrusel); // !este es el que llama al carrusel que esta ne cliente admin (html al final)
+    this.modalService.open(carrusel, { windowClass: 'windowOfModalcliente' }); // !este es el que llama al carrusel que esta ne cliente admin (html al final)
+
   }
 
   ngOnInit() {

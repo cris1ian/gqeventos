@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, ChangeDetectionStrategy, ChangeDetectorRe
 import { Photo } from 'src/app/models/photo.model';
 import { responsePhoto1 } from 'src/app/models/backend-photos';
 
-import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 import { CarouselConfigComponent } from '../carousel-config/carousel-config.component';
 import { FileUploader } from 'ng2-file-upload';
 import { environment } from 'src/environments/environment';
@@ -13,6 +13,8 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { ImageCompressService, ResizeOptions, ImageUtilityService, IImage, SourceImage } from 'ng2-image-compress';
 import { ConvertToFileService } from 'src/app/services/convert-to-file.service';
+
+import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -92,13 +94,14 @@ export class ClienteAdminComponent implements OnInit {
 
     open(i: number, carrusel) {
         this.carouselActive = i;
-        // this.modalService.open(CarouselConfigComponent);   // !este es metodo original para llamarlo como componente
-        this.modalService.open(carrusel);                     // !este es el que llama al carrusel que esta ne cliente admin (html al final)
+        this.modalService.open(carrusel, { windowClass: 'windowOfModal' });                     // !este es el que llama al carrusel que esta ne cliente admin (html al final)
     }
+
+
     openConfirmDelete(i, photo, content) {
         this.iDelete = i;
         this.photoDelete = photo;
-        this.modalService.open(content, { size: 'sm', windowClass: 'dark-modal' });
+        this.modalService.open(content, { windowClass: 'deleteModal' });
     }
 
     addPhoto() { this.file.nativeElement.click(); }

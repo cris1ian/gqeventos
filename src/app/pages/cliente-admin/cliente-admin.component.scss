@@ -187,12 +187,12 @@
     filter: brightness(0.6);
 }
 
-.windowOfModal {
-    background: crimson;
-}
-
 .madalimg {
     width: 100%;
+}
+
+::ng-deep .deleteModal .modal-dialog {
+    max-width: 30vw;
 }
 
 ::ng-deep .windowOfModal .modal-dialog {
@@ -200,36 +200,29 @@
 }
 
 ::ng-deep .windowOfModal .modal-content {
-    background-color: rgb(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     border: none;
 }
 
+.slidewindow {
+    display: flex;
+    justify-content: center;
+    max-height: 90vh;
+    img {
+        object-fit: contain;
+        // background-color: rgba(0, 0, 0, 0.8);
+    }
+}
+
+// ::ng-deep .carousel-inner {
+//     // background: crimson;
+//     max-width: 60vw;
+//     max-height: 100vh;
+// }
 .dataTest {
     flex-direction: column;
     display: flex;
     justify-content: center;
     font-size: 3em;
     text-align: center;
-}
-
-.slidewindow {
-    display: flex;
-    justify-content: center;
-    height: 100%;
-    // max-height: 90vh;
-    img {
-        object-fit: cover;
-        // background-color: rgba(0, 0, 0, 0.8);
-        max-height: 90vh;
-    }
-}
-
-ngb-carousel {
-    // height: 90vh;
-}
-
-::ng-deep .carousel-inner {
-    // background: crimson;
-    max-width: 60vw;
-    max-height: 100vh;
 }
