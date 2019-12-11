@@ -8,7 +8,7 @@ import { ActivatedRoute, Params } from "@angular/router";
 import { UserService } from "src/app/services/user.service";
 import { Client } from "src/app/models/client.model";
 import { environment } from "src/environments/environment";
-import { ConsoleReporter } from "jasmine";
+// import { ConsoleReporter } from "jasmine";
 
 @Component({
   selector: "app-cliente",
@@ -84,7 +84,7 @@ export class ClienteComponent implements OnInit {
     this.photos[i].isSelected = !this.photos[i].isSelected;
     this.selected = this.photos.filter(element => element.isSelected).length;
     this.userService.selectPhoto(photo.id, photo.isSelected).subscribe(
-      (resp: any) => {},
+      (resp: any) => { },
       error => {
         console.log(error);
       }
