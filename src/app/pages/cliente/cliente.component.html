@@ -15,12 +15,14 @@
 
             <div class="titulo">
                 <h1>Seleccione las fotos que desea recibir</h1>
-                <p>*Haga click en cada foto para seleccionarla y una vez finalice la seleccion, haga click en aceptar para enviarlas</p>
+                <p>*Haga click en cada foto para seleccionarla y una vez finalice la seleccion, haga click en aceptar
+                    para enviarlas</p>
             </div>
 
             <div class="botonera">
                 <div class="botones">
-                    <button type="button" routerLink="/" class="btn btn-outline-danger btn-block ">Volver </button>
+                    <button type="button" class="btn btn-primary" (click)="abrir(aceptar)">Aceptar</button>
+                    <button type="button" routerLink="/" class="btn btn-outline-danger btn-block ">Volver</button>
                     <!-- <mat-slide-toggle color="primary-dark"></mat-slide-toggle>
                     <button type="button" (click)="Aceptar()" class="btn btn-success btn-block">Aceptar</button> -->
                 </div>
@@ -40,13 +42,15 @@
             <div class="column">
                 <div class="tarjeta">
                     <div class="thumbnail" (click)="open(i,Modalcarrusel)">
-                        <img [className]="photo.isSelected  ? 'selected' : 'not-selected'" [src]="S3_URL+'/'+photo.userId+'/'+photo.fileName" alt="">
+                        <img [className]="photo.isSelected  ? 'selected' : 'not-selected'"
+                            [src]="S3_URL+'/'+photo.userId+'/'+photo.fileName" alt="">
                     </div>
 
                     <div class="pie" (click)="onSelect(i, photo)">
                         <span class="checkbox" [className]="photo.isSelected ? 'not-show' : 'show'"><i
                                 class="far fa-square"></i></span>
-                        <span class="checkbox" class="checkbox-check" [className]="photo.isSelected ? 'show' : 'not-show'"><i
+                        <span class="checkbox" class="checkbox-check"
+                            [className]="photo.isSelected ? 'show' : 'not-show'"><i
                                 class="fas fa-check-square"></i></span>
                         <div class="fileName">
                             <p>{{photo.fileName}}</p>
@@ -85,5 +89,30 @@
         </ng-container>
 
     </ngb-carousel>
+
+</ng-template>
+
+
+<!-- ************************************** modal aceptar************************************************************** -->
+
+<ng-template #aceptar let-modal>
+    <span class="modal-1">
+        <div class="modal-header">
+
+            <strong>
+                ¡Gracias!
+            </strong>
+
+        </div>
+        <div class="modal-body">
+            <div>
+                Su selección ha sido enviada
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" ngbAutofocus class="btn btn-primary" (click)="close(aceptar)">Aceptar</button>
+        </div>
+    </span>
 
 </ng-template>
