@@ -1,3 +1,4 @@
+@import "../../sass_files/index";
 .parallax {
     position: relative;
     display: flex;
@@ -11,7 +12,7 @@
     margin-top: 5vh;
 }
 
-p:not(.opacity):not(.contact) {
+.parafoparalax {
     align-self: flex-end;
     color: white;
     font-family: julius sans one;
@@ -197,4 +198,30 @@ i {
     color: #ffd8bd;
     margin-left: 5vw;
     margin-right: 1vw;
+}
+
+.botonera {
+    @include flex-row;
+    font-family: "Bad Script", cursive;
+    width: 100%;
+    .balnk {
+        width: 33.3%;
+    }
+    .botn {
+        @include flex-row;
+        width: 33.3%;
+    }
+    .mensage {
+        @include flex-row;
+        width: 33.3%;
+        justify-content: flex-start;
+    }
+}
+
+.mal {
+    color: red;
+}
+
+.bien {
+    color: green;
 }
