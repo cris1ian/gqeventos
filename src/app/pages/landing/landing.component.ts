@@ -14,7 +14,10 @@ export class LandingComponent implements OnInit {
     hash: string;
     user: string;
     password: string;
+    showErrorAdmin: boolean;
+    showErrorClient: boolean;
 
+    
     constructor(
         // config: NgbDropdownConfig,
         private userService: UserService,
@@ -30,9 +33,13 @@ export class LandingComponent implements OnInit {
 
 
 
-    ngOnInit() { }
+    ngOnInit() {
+        this.showErrorAdmin = false;
+        this.showErrorClient = false;
+     }
 
     adminLogin() {
+        
         this.userService.login(this.user.toLowerCase(), this.password.toLowerCase())
             .subscribe(
                 (resp: any) => {
@@ -41,6 +48,8 @@ export class LandingComponent implements OnInit {
                 },
                 error => {
                     console.log(error);
+                    this.showErrorAdmin = true;
+                    console.log(this.showErrorAdmin);
                 }
             )
     }
@@ -52,11 +61,19 @@ export class LandingComponent implements OnInit {
                 (resp: any) => {
                     console.log(resp);
                     if (resp.result.length == 1) this.router.navigate(['/cliente', resp.result[0].id]);
+                    else {
+                        this.showErrorClient = true;
+                        console.log(this.showErrorClient)
+                    }
                 },
                 error => {
-                    console.log(error);
+                    console.log(error);                      
                 }
             )
+    }
+    resetMessage(){
+        this.showErrorClient = false;
+        this.showErrorAdmin = false;
     }
 
 }
