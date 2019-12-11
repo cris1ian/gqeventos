@@ -4,7 +4,7 @@
 
         <p class="opacity"></p>
 
-        <p>"Lo importante es ver aquello que resulta invisible para los demás"</p>
+        <p class="parafoparalax">"Lo importante es ver aquello que resulta invisible para los demás"</p>
 
     </div>
 
@@ -35,12 +35,12 @@
         </div>
         <div class="container">
 
-            <form #contacto="ngForm" (ngSubmit)="contactMe()">
+            <form #contacto="ngForm" (ngSubmit)="contactMe(contacto.form)">
 
                 <div class="row">
                     <div class="col-75">
                         <mat-form-field>
-                            <input matInput [(ngModel)]="name" ngModel #nameField="ngModel" name="name" placeholder="Nombre" required>
+                            <input matInput [(ngModel)]="name" ngModel #nameField="ngModel" name="name" placeholder="Nombre" required (click)="resetMessage()">
 
                             <mat-error *ngIf="nameField.touched && nameField.errors">
                                 <mat-error *ngIf="nameField.errors.required">Este campo es requerido</mat-error>
@@ -55,7 +55,7 @@
                 <div class="row ">
                     <div class="col-75 ">
                         <mat-form-field>
-                            <input matInput [(ngModel)]="email " ngModel #mailField="ngModel" type="text " id="email " name="email " placeholder="E-mail " required>
+                            <input (click)="resetMessage()" matInput [(ngModel)]="email " ngModel #mailField="ngModel" type="text " id="email " name="email " placeholder="E-mail " required>
                             <mat-error *ngIf="mailField.touched && mailField.errors">
                                 <mat-error *ngIf="mailField.errors.required">Este campo es requerido</mat-error>
                             </mat-error>
@@ -67,7 +67,7 @@
                 <div class="row ">
                     <div class="col-75 ">
                         <mat-form-field>
-                            <input matInput [(ngModel)]="telefono " type="text " id="telefono " name="telefono " placeholder="Teléfono (ej:341-333333) ">
+                            <input (click)="resetMessage()" matInput [(ngModel)]="telefono " type="text " id="telefono " name="telefono " placeholder="Teléfono (ej:341-333333) ">
                         </mat-form-field>
                     </div>
                 </div>
@@ -76,62 +76,26 @@
                 <div class="row ">
                     <div class="col-75 ">
                         <mat-form-field>
-                            <textarea matInput [(ngModel)]="mensaje " id="mensaje " name="mensaje " placeholder="Escriba su mensaje... " required></textarea>
+                            <textarea (click)="resetMessage()" matInput [(ngModel)]="mensaje " id="mensaje " name="mensaje " placeholder="Escriba su mensaje... " required></textarea>
                         </mat-form-field>
                     </div>
                 </div>
 
+                <div class="row" class="botonera">
+                    <div class="balnk"></div>
+                    <div class="botn"><button class=" btn btn-secondary " [disabled]="!contacto.valid ">Enviar Mensaje</button></div>
+                    <div class="mensage">
+                        <p *ngIf="showError" class="mal">Ocurrió un errror. <br> inténtelo más tarde</p>
+                        <P *ngIf="showOk" class="bien">Mensaje enviado</P>
+                    </div>
 
-                <div class="row"> <button class=" btn btn-secondary " [disabled]="!contacto.valid ">Enviar Mensaje</button></div>
+                </div>
+
 
 
             </form>
 
 
-
-
-
-
-            <!-- ******************************************************************************************** -->
-
-            <!-- <form action="action_page.php ">
-                <div class="row ">
-                    <div class="col-25 ">
-                         <label for="name ">Nombre:</label> 
-                    </div>
-                    <div class="col-75 ">
-                        <input [(ngModel)]="name " type="text " id="name " name="name " placeholder="Nombre " required>
-                    </div>
-                </div>
-                <div class="row ">
-                    <div class="col-25 ">
-                        <label for="fname ">E-mail:</label>
-                    </div>
-                    <div class="col-75 ">
-                        <input [(ngModel)]="email " type="text " id="email " name="email " placeholder="E-mail " required pattern="[A-Za-z0-9._%+-]{2,}@[a-zA-Z0-9-_.]{2,}[.]{1}[a-zA-Z]{2,} ">
-                    </div>
-                </div>
-                <div class="row ">
-                    <div class="col-25 ">
-                        <label for="fname ">Teléfono:</label>
-                    </div>
-                    <div class="col-75 ">
-                        <input [(ngModel)]="telefono " type="text " id="telefono " name="telefono " placeholder="Teléfono (ej:341-333333) " required>
-                    </div>
-                </div>
-                <div class="row ">
-                    <div class="col-26 ">
-                        <label for="subject ">Mensaje:</label>
-                    </div>
-                    <div class="col-75 ">
-                        <textarea [(ngModel)]="mensaje " id="mensaje " name="mensaje " placeholder="Escriba su mensaje... " style="height:200px " required></textarea>
-                        <div class="row ">
-                            <input type="submit " value="Enviar Mensaje ">
-                        </div>
-                    </div>
-                </div>
-                <button class="btn btn-secondary " (click)="contactMe() ">Boton para test - BORRAR</button>
-            </form> -->
         </div>
     </div>
 
