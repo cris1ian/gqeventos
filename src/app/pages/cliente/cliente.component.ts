@@ -84,7 +84,7 @@ export class ClienteComponent implements OnInit {
     this.photos[i].isSelected = !this.photos[i].isSelected;
     this.selected = this.photos.filter(element => element.isSelected).length;
     this.userService.selectPhoto(photo.id, photo.isSelected).subscribe(
-      (resp: any) => {},
+      (resp: any) => { },
       error => {
         console.log(error);
       }
