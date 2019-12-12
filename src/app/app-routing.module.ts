@@ -15,10 +15,8 @@ const routes: Routes = [
   { path: 'cliente-admin/:id', component: ClienteAdminComponent },
   { path: 'galerias-admin', component: GaleriasAdminComponent },
   { path: 'carousel', component: CarouselConfigComponent },
-  { path: 'compression', component: CompressionTestComponent }
-
-  // { path: '', redirectTo: '/home', pathMatch: 'full' },
-  // { path: '**', component: AppComponent },
+  { path: 'compression', component: CompressionTestComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
