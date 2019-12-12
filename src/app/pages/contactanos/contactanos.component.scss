@@ -260,6 +260,9 @@ i {
 @media screen and (max-width: 510px) {
   .parallax {
     height: 40vh;
+    p {
+      font-size: 2.5vw;
+    }
   }
   .opacity {
     height: 40vh;
