@@ -35,4 +35,10 @@ export class ImageService {
         return this.httpClient.delete(`${environment.WS_URL}/image`, { params });
     }
 
+    deleteFolder = (userId: number) => {
+        let params = new HttpParams();
+        params = params.append('userId', `${userId}`);
+        return this.httpClient.delete(`${environment.WS_URL}/imageFolder`, { params });
+    }
+
 }

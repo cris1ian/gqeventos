@@ -4,6 +4,7 @@ import { responseClient } from 'src/app/models/backend-client';
 import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
+import { ImageService } from 'src/app/services/image.service';
 
 
 @Component({
@@ -21,6 +22,7 @@ export class GaleriasAdminComponent implements OnInit {
         config: NgbModalConfig,
         private modalService: NgbModal,
         private userService: UserService,
+        private imageService: ImageService,
         private router: Router
 
     ) {
@@ -54,6 +56,11 @@ export class GaleriasAdminComponent implements OnInit {
     }
 
     borrarGaleria() {
+        this.imageService.deleteFolder(this.deleteClient.id)
+            .subscribe(
+                (resp: any) => { console.log(resp); },
+                error => { console.log(error); }
+            );
         this.userService.deleteGallery(this.deleteClient.id)
             .subscribe(
                 (resp: any) => {
@@ -69,19 +76,19 @@ export class GaleriasAdminComponent implements OnInit {
     /*para crear el nuevo usuario */
     nuevoUsuario(form, modal) {
 
-        console.log("nuevo usuario creado");
-        console.log("Nombre :", form.value.Nombre);
-        console.log("ID :", form.value.id);
-
         const newClient = new Client(form.value.id, form.value.Nombre)
         this.userService.createGallery(newClient)
             .subscribe(
                 (resp: any) => {
-                    // Me devuelve el objeto creado en la base de datos y lo agrego al clients array
                     console.log(resp);
-                    // if (resp.status == 0) this.router.navigate(['/cliente', resp.result[0].id]);
+                    if (resp.status == 0) this.router.navigate(['/cliente-admin', resp.result[0]]);
                 },
-                err => { console.log(err); })
+                err => {
+                    if (err && err.error) {
+                        console.log(err.error.message);
+                        alert(err.error.message);
+                    };
+                })
         form.reset();
         this.modalService.dismissAll(modal);
 
