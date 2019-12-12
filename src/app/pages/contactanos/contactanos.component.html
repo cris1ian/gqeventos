@@ -10,37 +10,80 @@
 
     <h1 id="contacto">Contactanos</h1>
     <div class="linea"></div>
-    <h2>Deja un mensaje y nos pondremos en contacto.</h2>
+    <h2>Por consultas y presupuestos, escribe un mensaje a continuación.</h2>
 
     <div class="contacto">
-        <div class="datos">
-            <div> <img src="../../../assets/Icons/location.png" alt="" style="width: 32px;">
+        <!-- <div class="datos">
+            <div>
+                <img src="../../../assets/Icons/location.png" alt="" style="width: 32px;">
                 <p class="contact"> Mendoza 1080 PA - "Estudio 1080"</p>
             </div>
-            <!-- <div class="linea-contacto"></div> -->
-            <div> <img src="../../../assets/Icons/ant-design_clock-circle-outline.png" alt="">
+            <div>
+                <img src="../../../assets/Icons/ant-design_clock-circle-outline.png" alt="">
                 <p class="contact"> Coordinar Cita Previa</p>
             </div>
-            <!-- <div class="linea-contacto"></div> -->
-            <div> <img src="../../../assets/Icons/ic-baseline-phone.png" alt="phone">
+            <div>
+                <img src="../../../assets/Icons/ic-baseline-phone.png" alt="phone">
                 <p class="contact"> 341-5483223 - Lila Quiroz</p>
             </div>
-            <!-- <div class="linea-contacto"></div> -->
-            <div> <img src="../../../assets/Icons/ant-design_mail-outline.png" alt="mail">
+            <div>
+                <img src="../../../assets/Icons/ant-design_mail-outline.png" alt="mail">
                 <a href="mailto:gqfotoyvideo@gmail.com">
                     <p class="contact" style="font-weight: bold;"> gqfotoyvideo@gmail.com</p>
                 </a>
             </div>
-            <!-- <div class="linea-contacto"></div> -->
+        </div> -->
+
+        <div class="container datos">
+            <div class="row">
+
+                <div class="col-2 offset-2 icon">
+                    <img src="../../../assets/Icons/location.png" alt="">
+                </div>
+                <div class="col-8 text">
+
+                    <p class="contact">Mendoza 1080 PA - "Estudio 1080"</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 offset-2 icon">
+                    <img src="../../../assets/Icons/ant-design_clock-circle-outline.png" alt="">
+                </div>
+                <div class="col-8 text">
+
+                    <p class="contact">Coordinar Cita Previa</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 offset-2 icon">
+                    <img src="../../../assets/Icons/ic-baseline-phone.png" alt="phone">
+                </div>
+                <div class="col-8 text">
+
+                    <p class="contact"> 341-5483223 - Lila Quiroz</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 offset-2 icon">
+                    <img src="../../../assets/Icons/ant-design_mail-outline.png" alt="mail">
+                </div>
+                <div class="col-8 text">
+                    <a href="mailto:gqfotoyvideo@gmail.com">
+                        <p class="contact" style="font-weight: bold;"> gqfotoyvideo@gmail.com</p>
+                    </a>
+                </div>
+            </div>
         </div>
+
         <div class="container">
 
-            <form #contacto="ngForm" (ngSubmit)="contactMe(contacto.form)">
+            <form class="form" #contacto="ngForm" (ngSubmit)="contactMe(contacto.form)">
 
                 <div class="row">
                     <div class="col-75">
                         <mat-form-field>
-                            <input matInput [(ngModel)]="name" ngModel #nameField="ngModel" name="name" placeholder="Nombre" required (click)="resetMessage()">
+                            <input matInput [(ngModel)]="name" ngModel #nameField="ngModel" name="name"
+                                placeholder="Nombre" required (click)="resetMessage()">
 
                             <mat-error *ngIf="nameField.touched && nameField.errors">
                                 <mat-error *ngIf="nameField.errors.required">Este campo es requerido</mat-error>
@@ -55,7 +98,8 @@
                 <div class="row ">
                     <div class="col-75 ">
                         <mat-form-field>
-                            <input (click)="resetMessage()" matInput [(ngModel)]="email " ngModel #mailField="ngModel" type="text " id="email " name="email " placeholder="E-mail " required>
+                            <input (click)="resetMessage()" matInput [(ngModel)]="email " ngModel #mailField="ngModel"
+                                type="text " id="email " name="email " placeholder="E-mail " required>
                             <mat-error *ngIf="mailField.touched && mailField.errors">
                                 <mat-error *ngIf="mailField.errors.required">Este campo es requerido</mat-error>
                             </mat-error>
@@ -67,23 +111,26 @@
                 <div class="row ">
                     <div class="col-75 ">
                         <mat-form-field>
-                            <input (click)="resetMessage()" matInput [(ngModel)]="telefono " type="text " id="telefono " name="telefono " placeholder="Teléfono (ej:341-333333) ">
+                            <input (click)="resetMessage()" matInput [(ngModel)]="telefono " type="text " id="telefono "
+                                name="telefono " placeholder="Teléfono (ej:341-333333) ">
                         </mat-form-field>
                     </div>
                 </div>
 
 
-                <div class="row ">
+                <div class="row mensaje">
                     <div class="col-75 ">
                         <mat-form-field>
-                            <textarea (click)="resetMessage()" matInput [(ngModel)]="mensaje " id="mensaje " name="mensaje " placeholder="Escriba su mensaje... " required></textarea>
+                            <textarea (click)="resetMessage()" matInput [(ngModel)]="mensaje " id="mensaje "
+                                name="mensaje " placeholder="Escriba su mensaje... " required></textarea>
                         </mat-form-field>
                     </div>
                 </div>
 
-                <div class="row" class="botonera">
+                <div class="row botonera">
                     <div class="balnk"></div>
-                    <div class="botn"><button class=" btn btn-secondary " [disabled]="!contacto.valid ">Enviar Mensaje</button></div>
+                    <div class="botn"><button class=" btn btn-secondary " [disabled]="!contacto.valid ">Enviar
+                            Mensaje</button></div>
                     <div class="mensage">
                         <p *ngIf="showError" class="mal">Ocurrió un errror. <br> inténtelo más tarde</p>
                         <P *ngIf="showOk" class="bien">Mensaje enviado</P>

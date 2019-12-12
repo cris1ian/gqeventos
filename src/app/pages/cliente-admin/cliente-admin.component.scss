@@ -1,217 +1,217 @@
 @import "../../sass_files/index";
 .contenedor {
+  @include flex-column;
+  width: 100vw;
+  min-height: 94vh;
+  justify-content: flex-start;
+  font-family: "Julius Sans One", sans-serif;
+  background: #fffff0;
+  //************************************* header**************************************************
+  header {
+    background-color: #fffff0;
     @include flex-column;
+    position: sticky;
     width: 100vw;
-    min-height: 95vh;
-    justify-content: flex-start;
-    font-family: "Julius Sans One", sans-serif;
-    background: #fffff0;
-    //************************************* header**************************************************
-    header {
-        background-color: #fffff0;
-        @include flex-column;
-        position: sticky;
-        width: 100vw;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        .cont {
-            @include flex-row;
-            justify-content: space-between;
-            width: 100%;
-            padding: 10px 2% 0px;
-        }
-        .titulo {
-            h1 {
-                font-size: 3.5vh;
-            }
-            .client-info {
-                display: flex;
-                justify-content: space-between;
-                span {
-                    font-family: "Bad Script", cursive;
-                    font-size: 1.1em;
-                }
-                p {
-                    margin-right: 5px;
-                }
-            }
-        }
-        .botonera {
-            @include flex-column;
-            width: 15%;
-            max-width: 250px;
-            font-family: "Bad Script", cursive;
-            .botones {
-                margin: 10px;
-                width: 100%;
-                @include flex-row;
-                justify-content: center;
-                button {
-                    margin: 0px 5px;
-                    min-width: 60px;
-                    width: 40%;
-                    max-width: 100px;
-                    // white-space: pre;
-                }
-            }
-        }
-        .borde {
-            width: 95%;
-            border-bottom: 1px solid #000000;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-        }
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    .cont {
+      @include flex-row;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px 2% 0px;
     }
-    //************************************body*********************************************
-    .cont-galeria {
-        // background: lightblue;
-        margin: 30px 10px;
-        //************
+    .titulo {
+      h1 {
+        font-size: 3.5vh;
+      }
+      .client-info {
         display: flex;
-        flex-wrap: wrap;
-        //************
+        justify-content: space-between;
+        span {
+          font-family: "Bad Script", cursive;
+          font-size: 1.1em;
+        }
+        p {
+          margin-right: 5px;
+        }
+      }
     }
-    .column {
-        // background: rgba(0, 110, 255, 0.863);
-        display: flex;
-        justify-content: center;
-        flex-grow: 1;
-        flex-basis: 300px;
+    .botonera {
+      @include flex-column;
+      width: 15%;
+      max-width: 250px;
+      font-family: "Bad Script", cursive;
+      .botones {
         margin: 10px;
-    }
-    .column:empty {
-        height: 0;
-    }
-    .tarjeta {
-        // background: rgb(150, 131, 46);
-        @include dimensiones(350px, 300px);
-        box-shadow: 4px 4px 10px rgb(0, 0, 0);
-        background-color: #ffffff;
-        border-radius: 4px;
-        padding: 10px 10px 0px 10px;
-        .thumbnail {
-            // background: goldenrod;
-            position: relative;
-            width: 100%;
-            height: 85%;
-            img {
-                object-fit: cover;
-                @include dimensiones(100%, 100%);
-                transition: transform 0.1s linear;
-                cursor: pointer;
-                &:hover {
-                    transform: scale(1.02);
-                }
-            }
+        width: 100%;
+        @include flex-row;
+        justify-content: center;
+        button {
+          margin: 0px 5px;
+          min-width: 60px;
+          width: 40%;
+          max-width: 100px;
+          // white-space: pre;
         }
-        .pie {
-            // background: red;
-            @include flex-row;
-            justify-content: flex-start;
-            font-family: "Julius Sans One", sans-serif;
-            position: relative;
-            height: 15%;
-            .fileName {
-                // background: blue;
-                padding-left: 10px;
-                width: 76%;
-                font-size: 0.8em;
-                // font-size: calc(1em + 0.5vw);
-                p {
-                    text-overflow: ellipsis;
-                    overflow: hidden;
-                    white-space: nowrap;
-                    text-transform: capitalize;
-                }
-            }
-            .checkbox {
-                cursor: pointer;
-                // background: rgb(0, 255, 200);
-                display: block;
-                width: 10%;
-            }
-            i {
-                font-size: 33px;
-                color: #ffbf98;
-            }
-            .not-show {
-                display: none;
-            }
-            .show {
-                display: inline-block;
-            }
-        }
+      }
     }
-    .deleteico {
-        display: none;
+    .borde {
+      width: 95%;
+      border-bottom: 1px solid #000000;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
     }
-    .deleteico:hover {
-        color: red;
-    }
-    .tarjeta:hover .pie .deleteico {
-        display: block;
-    }
-    .modal-btn {
+  }
+  //************************************body*********************************************
+  .cont-galeria {
+    // background: lightblue;
+    margin: 30px 10px;
+    //************
+    display: flex;
+    flex-wrap: wrap;
+    //************
+  }
+  .column {
+    // background: rgba(0, 110, 255, 0.863);
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    flex-basis: 300px;
+    margin: 10px;
+  }
+  .column:empty {
+    height: 0;
+  }
+  .tarjeta {
+    // background: rgb(150, 131, 46);
+    @include dimensiones(350px, 300px);
+    box-shadow: 4px 4px 10px rgb(0, 0, 0);
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 10px 10px 0px 10px;
+    .thumbnail {
+      // background: goldenrod;
+      position: relative;
+      width: 100%;
+      height: 85%;
+      img {
+        object-fit: cover;
         @include dimensiones(100%, 100%);
-    }
-    .mat-checkbox {
-        position: absolute;
-        bottom: 0px;
-        right: 0px;
-    }
-    .not-selected {
+        transition: transform 0.1s linear;
         cursor: pointer;
+        &:hover {
+          transform: scale(1.02);
+        }
+      }
     }
-    .selected {
+    .pie {
+      // background: red;
+      @include flex-row;
+      justify-content: flex-start;
+      font-family: "Julius Sans One", sans-serif;
+      position: relative;
+      height: 15%;
+      .fileName {
+        // background: blue;
+        padding-left: 10px;
+        width: 76%;
+        font-size: 0.8em;
+        // font-size: calc(1em + 0.5vw);
+        p {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          text-transform: capitalize;
+        }
+      }
+      .checkbox {
         cursor: pointer;
-        filter: brightness(0.6);
+        // background: rgb(0, 255, 200);
+        display: block;
+        width: 10%;
+      }
+      i {
+        font-size: 33px;
+        color: #ffbf98;
+      }
+      .not-show {
+        display: none;
+      }
+      .show {
+        display: inline-block;
+      }
     }
-}
-
-.modal-btn {
+  }
+  .deleteico {
+    display: none;
+  }
+  .deleteico:hover {
+    color: red;
+  }
+  .tarjeta:hover .pie .deleteico {
+    display: block;
+  }
+  .modal-btn {
     @include dimensiones(100%, 100%);
-}
-
-.mat-checkbox {
+  }
+  .mat-checkbox {
     position: absolute;
     bottom: 0px;
     right: 0px;
+  }
+  .not-selected {
+    cursor: pointer;
+  }
+  .selected {
+    cursor: pointer;
+    filter: brightness(0.6);
+  }
+}
+
+.modal-btn {
+  @include dimensiones(100%, 100%);
+}
+
+.mat-checkbox {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }
 
 .not-selected {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .selected {
-    cursor: pointer;
-    filter: brightness(0.6);
+  cursor: pointer;
+  filter: brightness(0.6);
 }
 
 .madalimg {
-    width: 100%;
+  width: 100%;
 }
 
 ::ng-deep .deleteModal .modal-dialog {
-    max-width: 30vw;
+  max-width: 30vw;
 }
 
 ::ng-deep .windowOfModal .modal-dialog {
-    max-width: 60vw;
+  max-width: 60vw;
 }
 
 ::ng-deep .windowOfModal .modal-content {
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
 }
 
 .slidewindow {
-    display: flex;
-    justify-content: center;
-    max-height: 90vh;
-    img {
-        object-fit: contain;
-        // background-color: rgba(0, 0, 0, 0.8);
-    }
+  display: flex;
+  justify-content: center;
+  max-height: 90vh;
+  img {
+    object-fit: contain;
+    // background-color: rgba(0, 0, 0, 0.8);
+  }
 }
 
 // ::ng-deep .carousel-inner {
@@ -220,9 +220,9 @@
 //     max-height: 100vh;
 // }
 .dataTest {
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    font-size: 3em;
-    text-align: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  text-align: center;
 }

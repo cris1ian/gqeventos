@@ -1,28 +1,49 @@
-    @import '../app/sass_files/';
-    //****************************************footer****************************************************************
-    footer {
-        background-color: #CBA78D;
-        height: 5vh;
-        @include flex-row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 5px 5%;
-        p {
-            font-size: 2vh;
-        }
-        .media{
-            display: flex;
-            justify-content: space-evenly;
-            width: 20vw;
-            padding: 0;
-            margin: 0;
-            color: black;
-            list-style: none;
-            align-items: center;
-      
-            i{
-              color:black;
-              font-size: 3.1vh; 
-            }
-        }
+@import "../app/sass_files/";
+//****************************************footer****************************************************************
+footer {
+  background-color: #cba78d;
+  height: 6vh;
+  @include flex-row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5%;
+  img {
+    width: 4vh;
+  }
+  p {
+    font-size: 2vh;
+  }
+  .cont-eon6 {
+    display: flex;
+    font-family: julius sans one;
+    width: 20vw;
+    align-items: center;
+    .dis-web {
+      width: 38px;
+      font-size: 10px;
+      text-align: center;
+      margin-left: 0.7vw;
     }
+  }
+  .media {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20vw;
+    padding: 0;
+    margin: 0;
+    color: black;
+    list-style: none;
+    align-items: center;
+
+    i {
+      color: black;
+      font-size: 3.1vh;
+    }
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .eon6 {
+    font-size: 3vw;
+  }
+}
