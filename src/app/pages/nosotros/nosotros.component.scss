@@ -50,7 +50,7 @@ h1 {
   margin-right: 10vw;
 }
 
-.cont-boton{
+.cont-boton {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,7 +61,7 @@ h1 {
   font-size: 2vw;
   margin-right: 9vw;
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
   justify-content: space-between;
   p {
     width: 100%;
@@ -75,5 +75,11 @@ h1 {
   img {
     object-fit: contain;
     // background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .parallax {
+    height: 40vh;
   }
 }

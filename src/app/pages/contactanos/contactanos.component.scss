@@ -256,3 +256,12 @@ i {
     }
   }
 }
+
+@media screen and (max-width: 510px) {
+  .parallax {
+    height: 40vh;
+  }
+  .opacity {
+    height: 40vh;
+  }
+}

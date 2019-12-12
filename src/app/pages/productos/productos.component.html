@@ -1,70 +1,95 @@
 <div id="productos">
 
     <h1>Productos</h1>
-
-    <div class="container">
-        <div class="grid">
-            <div class="one">
-                <a class="thumbnail" (click)="abrirModal(productos)">
-                    <h2>
-                        Fotografías y Videos de Productos
-                    </h2>
-                    <p class="opacity"></p>
-                </a>
+    <div class="seccion-productos">
+        <div style="width: 100%;" class="row">
+            <div class="col-12 col-sm-6 col-xl-4 column">
+                <div class="cards">
+                    <a class="thumbnail" (click)="abrirModal(productos)">
+                        <h2>
+                            Fotografías y Videos de Productos
+                        </h2>
+                        <img class="foto"
+                            src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(43).JPG" alt="">
+                        <p class="opacity"></p>
+                    </a>
+                </div>
             </div>
-            <div class="two">
-                <a class="thumbnail" (click)="abrirModal(acto)">
-                    <h2>
-                        Fotos en el Acto
-                    </h2>
-                    <p class="opacity"></p>
-                </a>
+            <div class="col-12 col-sm-6 col-xl-4 column">
+                <div class="cards">
+                    <a class="thumbnail" (click)="abrirModal(acto)">
+                        <h2>
+                            Fotos en el Acto
+                        </h2>
+                        <img class="foto" src="../../../assets/Fotos/productos/Fotos-en-el-acto/img(6).JPG" alt="">
+                        <p class="opacity"></p>
+                    </a>
+                </div>
             </div>
-            <div class="three">
-                <a class="thumbnail" (click)="abrirModal(mesa)">
-                    <h2>
-                        Fototarjetas y Números de Mesa
-                    </h2>
-                    <p class="opacity"></p>
-                </a>
+            <div class="col-12 col-sm-6 col-xl-4 column">
+                <div class="cards">
+                    <a class="thumbnail" (click)="abrirModal(mesa)">
+                        <h2>
+                            Fototarjetas y Números de Mesa
+                        </h2>
+                        <img class="foto"
+                            src="../../../assets/Fotos/productos/Fototarjetas-y-números-de-Mesa/img(5).JPG" alt="">
+                        <p class="opacity"></p>
+                    </a>
+                </div>
             </div>
-            <div class="four">
-                <a class="thumbnail" (click)="abrirModal(fotolibro)">
-                    <h2>
-                        Fotolibros
-                    </h2>
-                    <p class="opacity"></p>
-                </a>
+            <div class="col-12 col-sm-6 col-xl-4 column">
+                <div class="cards">
+                    <a class="thumbnail" (click)="abrirModal(fotolibro)">
+                        <h2>
+                            Fotolibros
+                        </h2>
+                        <img class="foto" src="../../../assets/Fotos/productos/Fotolibros/img(3).JPG" alt="">
+                        <p class="opacity"></p>
+                    </a>
+                </div>
             </div>
-            <div class="five">
-                <a class="thumbnail" (click)="abrirModal(pantalla)">
-                    <h2>
-                        Pantalla Gigante y Pantalla Rompible
-                    </h2>
-                    <p class="opacity"></p>
-                </a>
+            <div class="col-12 col-sm-6 col-xl-4 column">
+                <div class="cards">
+                    <a class="thumbnail" (click)="abrirModal(pantalla)">
+                        <h2>
+                            Pantalla Gigante y Pantalla Rompible
+                        </h2>
+                        <img class="foto"
+                            src="../../../assets/Fotos/productos/pantalla-gigante-y-pantalla-rompíble/img(1).JPG"
+                            alt="">
+                        <p class="opacity"></p>
+                    </a>
+                </div>
             </div>
-            <div class="six">
-                <a class="thumbnail" (click)="abrirModal(murales)">
-                    <h2>
-                        Gigantografías y Murales
-                    </h2>
-                    <p class="opacity"></p>
-                </a>
+            <div class="col-12 col-sm-6 col-xl-4 column">
+                <div class="cards">
+                    <a class="thumbnail" (click)="abrirModal(murales)">
+                        <h2>
+                            Gigantografías y Murales
+                        </h2>
+                        <img class="foto" src="../../../assets/Fotos/productos/gigantografias-y-murales/img(1).JPG"
+                            alt="">
+                        <p class="opacity"></p>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
+
 <!--*****************************Modal Productos**************************************************** -->
 
 <ng-template #productos let-modal>
+
     <ngb-carousel>
 
         <ng-template ngbSlide>
             <div class="slidewindow">
-                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(1).jpg" alt="">
+                <img src="../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-(1).jpg"
+                    class="d-block w-100" alt="">
             </div>
         </ng-template>
 

@@ -1,119 +1,109 @@
 h1 {
-    font-family: bad script;
-    font-size: 4vw;
-    margin-bottom: 4vw;
-    margin-top: 50px;
-    text-align: right;
-    margin-right: 4vw;
+  font-family: bad script;
+  font-size: 4vw;
+  margin-bottom: 4vw;
+  margin-top: 50px;
+  text-align: right;
+  margin-right: 4vw;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
+.seccion-productos {
+  padding-right: 30px;
+  padding-left: 30px;
+  width: 100vw;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: 3;
-    grid-gap: 1vw;
-    grid-auto-rows: 2;
-    align-self: center;
+.cards {
+  position: relative;
+  height: 350px;
+  width: 380px;
+  margin-bottom: 30px;
 }
 
-.one {
-    background-image: url("../../../assets/Fotos/productos/Fotografias-y-Videos-de-productos/img-\(43\).JPG");
-    grid-column: 1;
-    grid-row: 1;
-    height: 20vw;
+.foto {
+  position: absolute;
+  height: 350px;
+  width: 380px;
 }
 
-.two {
-    background-image: url("../../../assets/Fotos/productos/Fotos-en-el-acto/img\(6\).JPG");
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.three {
-    background-image: url("../../../assets/Fotos/productos/Fototarjetas-y-números-de-Mesa/img\(5\).JPG");
-    grid-column: 3;
-    grid-row: 1;
-}
-
-.four {
-    background-image: url("../../../assets/Fotos/productos/Fotolibros/img\(3\).JPG");
-    grid-column: 1;
-    grid-row: 2;
-}
-
-.five {
-    background-image: url("../../../assets/Fotos/productos/pantalla-gigante-y-pantalla-rompíble/img\(1\).JPG");
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.six {
-    background-image: url("../../../assets/Fotos/productos/gigantografias-y-murales/img\(2\).JPG");
-    grid-column: 3;
-    grid-row: 2;
-}
-
-.grid div {
-    display: flex;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 20vw;
-    width: 27.3vw;
-}
-
-.grid h2 {
-    position: absolute;
-    font-size: 1.5vw;
-    color: white;
-    font-family: julius sans one;
-    font-weight: normal;
-    z-index: 3;
-    top: 65%;
-    margin-left: 1.5vw;
-    text-align: left;
-    transition: font-size 300ms linear;
+h2 {
+  position: absolute;
+  font-size: 1.5vw;
+  color: white;
+  font-family: julius sans one;
+  font-weight: normal;
+  z-index: 3;
+  top: 65%;
+  margin-left: 1.5vw;
+  text-align: left;
+  transition: font-size 300ms linear;
 }
 
 .opacity {
-    position: absolute;
-    height: 20vw;
-    width: 27.3vw;
-    background-color: black;
-    opacity: 0.5;
-    z-index: 1;
+  position: absolute;
+  height: 350px;
+  width: 380px;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
 }
 
 a {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-a:hover>h2 {
-    font-size: 1.6vw;
-    //transform: scale(1.1,1.1);
+a:hover > h2 {
+  font-size: 1.6vw;
+  //transform: scale(1.1,1.1);
 }
 
 ::ng-deep .windowOfModal .modal-dialog {
-    max-width: 60vw;
+  max-width: 60vw;
+  margin: auto;
 }
 
 ::ng-deep .windowOfModal .modal-content {
-    background-color: rgba(0, 0, 0, 0);
-    border: none;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  margin: auto;
 }
 
 .slidewindow {
+  display: flex;
+  justify-content: center;
+  max-height: 90vh;
+  img {
+    object-fit: contain;
+    // background-color: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@media screen and (max-width: 817px) {
+  .opacity,
+  .foto,
+  .cards {
+    height: 230px;
+    width: 260px;
+  }
+  .column {
     display: flex;
     justify-content: center;
-    max-height: 90vh;
-    img {
-        object-fit: contain;
-        // background-color: rgba(0, 0, 0, 0.8);
-    }
+  }
+  h2 {
+    font-size: 2.7vw;
+  }
+}
+@media screen and (min-width: 1520px) {
+  .opacity,
+  .foto,
+  .cards {
+    height: 360px;
+    width: 450px;
+  }
 }
