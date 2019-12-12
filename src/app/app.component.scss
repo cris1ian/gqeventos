@@ -2,7 +2,7 @@
 //****************************************footer****************************************************************
 footer {
   background-color: #cba78d;
-  height: 5vh;
+  height: 6vh;
   @include flex-row;
   justify-content: space-between;
   align-items: center;
@@ -10,12 +10,20 @@ footer {
   img {
     width: 4vh;
   }
-  p:not(.eon6) {
+  p {
     font-size: 2vh;
-    width: 20vw;
   }
-  .eon6 {
+  .cont-eon6 {
+    display: flex;
     font-family: julius sans one;
+    width: 20vw;
+    align-items: center;
+    .dis-web {
+      width: 38px;
+      font-size: 10px;
+      text-align: center;
+      margin-left: 0.7vw;
+    }
   }
   .media {
     display: flex;
