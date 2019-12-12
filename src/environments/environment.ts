@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  WS_URL: 'http://localhost:3001/api/v1',
-  // WS_URL: 'http://ec2-18-188-90-248.us-east-2.compute.amazonaws.com:3001/api/v1',
+  // WS_URL: 'http://localhost:3001/api/v1',
+  WS_URL: 'http://ec2-18-188-90-248.us-east-2.compute.amazonaws.com:3001/api/v1',
   S3_URL: 'https://gq-eventos.s3.us-east-2.amazonaws.com'
 };
 
