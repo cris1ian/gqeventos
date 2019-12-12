@@ -1,87 +1,43 @@
 @import "../../sass_files/index";
-.header-principal {
-    position: sticky;
-    top: 0px;
-    left: 0px;
-    z-index: 5;
-    width: 100vw;
-    box-shadow: -10px 10px 5px rgba(255, 255, 255, 0.7);
-}
-
-.wrapper {
-    @include flex-row;
-    justify-content: space-between;
-    height: 7vh;
-    max-height: 150px;
-    padding: 10px 5% 10px 2%;
-    position: relative;
-    width: 100%;
-}
-
-nav {
-    // background: rgb(212, 206, 125);
-    @include flex-row;
-    width: 50%;
-    height: 100%;
-    ul {
-        // background: rgb(125, 180, 212);
-        @include flex-row;
-        justify-content: space-between;
-        height: 7vh;
-        max-height: 150px;
-        position: relative;
-        width: 100%;
-        margin: 0px;
-        li {
-            list-style: none;
-            text-decoration: none;
-            font-family: "Bad Script", cursive;
-            font-size: 1.3vw;
-            color: #000000;
-            a {
-                color: #000000;
-            }
-            button,
-            input,
-            label {
-                white-space: nowrap;
-                font-size: 1.3vw;
-            }
-            input {
-                font-family: Julius Sans One;
-            }
-        }
-    }
+.my-nav {
+    z-index: 10000;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: -1px 9px 3px rgba(255, 255, 255, 0.7);
 }
 
 .logo {
     height: 15vh;
+    max-height: 150px;
     position: absolute;
-    top: 10px;
-    transition: all 200ms linear;
-}
-
-.media {
-    display: flex;
-    justify-content: space-evenly;
-    width: 15vw;
-    padding: 0;
-    margin: 0;
-    color: black;
-    list-style: none;    
-    i {
-        color: black;
-        font-size: 2vw;
-        transition: all 200ms linear;
+    top: 0;
+    left: 0;
+    img {
+        height: 100%;
     }
 }
 
-.headertrans {
-    background: rgba(255, 255, 255, 0.7);
+.logo-cont {
+    justify-self: flex-start;
 }
 
-.headertcolor {
-    background: rgba(216, 4, 4, 0.952);
+#menu-link {
+    flex-grow: 0;
+}
+
+.botones {
+    @include flex-row;
+    width: 20%;
+    max-width: 200px;
+    justify-content: space-evenly;
+}
+
+.navbar-nav .nav-link {
+    font-size: 21px;
+    padding: 0.5rem 1.2rem;
+    color: #000000;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .dropMenu {
@@ -106,18 +62,103 @@ nav {
     button {
         margin: 10px;
     }
-    .error{
+    .error {
         color: red;
         text-align: center;
     }
 }
 
-:hover > i {
-    transform: scale(1.1,1.1)
+@media (max-width: 768px) {
+    .admin-btn {
+        display: none;
+    }
+    .botones {
+        width: auto;
+        padding-left: 10px;
+    }
 }
 
-:hover > img {
-    transform: scale(1.1,1.1)
-}
-
-
+// .header-principal {
+//     position: sticky;
+//     top: 0px;
+//     left: 0px;
+//     z-index: 5;
+//     width: 100vw;
+//     box-shadow: -10px 10px 5px rgba(255, 255, 255, 0.7);
+// }
+// .wrapper {
+//     @include flex-row;
+//     justify-content: space-between;
+//     height: 7vh;
+//     max-height: 150px;
+//     padding: 10px 5% 10px 2%;
+//     position: relative;
+//     width: 100%;
+// }
+// nav {
+//     // background: rgb(212, 206, 125);
+//     @include flex-row;
+//     width: 50%;
+//     height: 100%;
+//     ul {
+//         // background: rgb(125, 180, 212);
+//         @include flex-row;
+//         justify-content: space-between;
+//         height: 7vh;
+//         max-height: 150px;
+//         position: relative;
+//         width: 100%;
+//         margin: 0px;
+//         li {
+//             list-style: none;
+//             text-decoration: none;
+//             font-family: "Bad Script", cursive;
+//             font-size: 1.3vw;
+//             color: #000000;
+//             a {
+//                 color: #000000;
+//             }
+//             button,
+//             input,
+//             label {
+//                 white-space: nowrap;
+//                 font-size: 1.3vw;
+//             }
+//             input {
+//                 font-family: Julius Sans One;
+//             }
+//         }
+//     }
+// }
+// .logo {
+//     height: 15vh;
+//     position: absolute;
+//     top: 10px;
+//     transition: all 200ms linear;
+// }
+// .media {
+//     display: flex;
+//     justify-content: space-evenly;
+//     width: 15vw;
+//     padding: 0;
+//     margin: 0;
+//     color: black;
+//     list-style: none;    
+//     i {
+//         color: black;
+//         font-size: 2vw;
+//         transition: all 200ms linear;
+//     }
+// }
+// .headertrans {
+//     background: rgba(255, 255, 255, 0.7);
+// }
+// .headertcolor {
+//     background: rgba(216, 4, 4, 0.952);
+// }
+// :hover > i {
+//     transform: scale(1.1,1.1)
+// }
+// :hover > img {
+//     transform: scale(1.1,1.1)
+// }

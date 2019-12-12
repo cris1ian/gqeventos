@@ -1,6 +1,108 @@
-<!-- *******************************************header******************************************************** -->
+<!-- *******************************************navbar******************************************************** -->
 
-<header class="header-principal  headertrans ">
+
+
+<nav class="navbar navbar-expand-md fixed-top my-nav justify-content-end ">
+
+    <div class="logo-cont">
+        <a href="#home" class="navbar-brand logo"><img src="../assets/Fotos/LOGO-INVERTIDO.svg" alt="logo"></a>
+    </div>
+
+
+
+    <button class="navbar-toggler " data-toggle="collapse" data-target="#menu-link">
+          <span><i class="fas fa-bars"></i></span>           
+  </button>
+
+
+    <div class="collapse navbar-collapse" id="menu-link">
+        <ul class="navbar-nav justify-content-center align-items-end">
+            <li class="nav-item">
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+
+            </li>
+
+            <li class="nav-item">
+                <a href="#combos" class="nav-link">Combos</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#productos" class="nav-link">Productos</a>
+            </li>
+
+            <li class="nav-item">
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="botones">
+        <div ngbDropdown placement="bottom-left">
+            <button class="btn btn-primary" id="dropdownForm1" ngbDropdownToggle>Clientes</button>
+            <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+                <div class="dropMenu">
+                    <h4>Ingrese su Nº de Cliente</h4>
+
+                    <form #userid="ngForm" (ngSubmit)="submitClientId()">
+
+                        <mat-form-field>
+                            <mat-label>Nº cliente</mat-label>
+                            <input matInput ngModel #clientId="ngModel" name="hash" [(ngModel)]="hash" required (click)="resetMessage()">
+                            <mat-hint>Proporcionado por el fotografo</mat-hint>
+                            <mat-error *ngIf="clientId.touched && clientId.errors">
+                                <mat-error *ngIf="clientId.errors.required">Este campo es requerido
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <button class="btn btn-secondary" [disabled]="!userid.valid">Aceptar</button>
+                        <div *ngIf="showErrorClient" class="error">El número ingresado no es válido</div>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div ngbDropdown placement="bottom-right" class="admin-btn">
+            <button class="btn btn-outline-secondary" id="dropdownForm1" ngbDropdownToggle>GQ</button>
+            <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+                <div class="dropMenu">
+                    <form #admin="ngForm" (ngSubmit)="adminLogin()">
+                        <mat-form-field>
+                            <input matInput ngModel #userAdmin="ngModel" name="user" [(ngModel)]="user" required placeholder="User admin" (click)="resetMessage()">
+                            <mat-error *ngIf="userAdmin.touched && userAdmin.errors">
+                                <mat-error *ngIf="userAdmin.errors.required">Este campo es requerido
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input matInput ngModel type="password" #passAdmin="ngModel" name="password" [(ngModel)]="password" required placeholder="Pass" (click)="resetMessage()">
+                            <mat-error *ngIf="passAdmin.touched && passAdmin.errors">
+                                <mat-error *ngIf="passAdmin.errors.required">Este campo es requerido
+                                </mat-error>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <button class="btn btn-outline-secondary" [disabled]="!admin.valid">Ingresar</button>
+                        <div *ngIf="showErrorAdmin" class="error">Usuario o Contraseña incorrectos*</div>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+<!-- 
+<header class="header-principal headertrans">
     <div class="wrapper" id="wrapper">
 
         <a href="#home"><img class="logo" src="../assets/Fotos/LOGO-INVERTIDO.svg" alt="logo"></a>
@@ -33,12 +135,11 @@
                             <div class="dropMenu">
                                 <h4>Ingrese su Nº de Cliente</h4>
 
-                                <form #userid="ngForm" (ngSubmit)="submitClientId();">
+                                <form #userid="ngForm" (ngSubmit)="submitClientId()">
 
                                     <mat-form-field>
                                         <mat-label>Nº cliente</mat-label>
-                                        <input matInput ngModel #clientId="ngModel" name="hash" [(ngModel)]="hash"
-                                            required (click)="resetMessage()">
+                                        <input matInput ngModel #clientId="ngModel" name="hash" [(ngModel)]="hash" required (click)="resetMessage()">
                                         <mat-hint>Proporcionado por el fotografo</mat-hint>
                                         <mat-error *ngIf="clientId.touched && clientId.errors">
                                             <mat-error *ngIf="clientId.errors.required">Este campo es requerido
@@ -72,8 +173,7 @@
 
 
                                     <mat-form-field>
-                                        <input matInput ngModel #userAdmin="ngModel" name="user" [(ngModel)]="user"
-                                            required placeholder="User admin" (click)="resetMessage()">
+                                        <input matInput ngModel #userAdmin="ngModel" name="user" [(ngModel)]="user" required placeholder="User admin" (click)="resetMessage()">
                                         <mat-error *ngIf="userAdmin.touched && userAdmin.errors">
                                             <mat-error *ngIf="userAdmin.errors.required">Este campo es requerido
                                             </mat-error>
@@ -81,16 +181,14 @@
                                     </mat-form-field>
 
                                     <mat-form-field>
-                                        <input matInput ngModel type="password" #passAdmin="ngModel" name="password"
-                                            [(ngModel)]="password" required placeholder="Pass" (click)="resetMessage()">
+                                        <input matInput ngModel type="password" #passAdmin="ngModel" name="password" [(ngModel)]="password" required placeholder="Pass" (click)="resetMessage()">
                                         <mat-error *ngIf="passAdmin.touched && passAdmin.errors">
                                             <mat-error *ngIf="passAdmin.errors.required">Este campo es requerido
                                             </mat-error>
                                         </mat-error>
                                     </mat-form-field>
 
-                                    <button class="btn btn-outline-secondary"
-                                        [disabled]="!admin.valid">Ingresar</button>
+                                    <button class="btn btn-outline-secondary" [disabled]="!admin.valid">Ingresar</button>
                                     <div *ngIf="showErrorAdmin" class="error">Usuario o Contraseña incorrectos*</div>
                                 </form>
                             </div>
@@ -104,7 +202,7 @@
         </nav>
     </div>
 </header>
-
+ -->
 
 <!-- ******************************************************************************************************* -->
 
