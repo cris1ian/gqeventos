@@ -10,7 +10,7 @@
 
     <h1 id="contacto">Contactanos</h1>
     <div class="linea"></div>
-    <h2>Deja un mensaje y nos pondremos en contacto.</h2>
+    <h2>Por consultas y presupuestos, escribe un mensaje a continuación.</h2>
 
     <div class="contacto">
         <!-- <div class="datos">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-8 text">
 
-                    <p class="contact"> 341-5483223 - Lila Quiroz</p>
+                    <p class="contact">Coordinar Cita Previa</p>
                 </div>
             </div>
             <div class="row">
@@ -68,15 +68,16 @@
                     <img src="../../../assets/Icons/ant-design_mail-outline.png" alt="mail">
                 </div>
                 <div class="col-8 text">
-
-                    <p class="contact"> 341-5483223 - Lila Quiroz</p>
+                    <a href="mailto:gqfotoyvideo@gmail.com">
+                        <p class="contact" style="font-weight: bold;"> gqfotoyvideo@gmail.com</p>
+                    </a>
                 </div>
             </div>
         </div>
 
         <div class="container">
 
-            <form #contacto="ngForm" (ngSubmit)="contactMe(contacto.form)">
+            <form class="form" #contacto="ngForm" (ngSubmit)="contactMe(contacto.form)">
 
                 <div class="row">
                     <div class="col-75">
@@ -117,7 +118,7 @@
                 </div>
 
 
-                <div class="row ">
+                <div class="row mensaje">
                     <div class="col-75 ">
                         <mat-form-field>
                             <textarea (click)="resetMessage()" matInput [(ngModel)]="mensaje " id="mensaje "
@@ -126,7 +127,7 @@
                     </div>
                 </div>
 
-                <div class="row" class="botonera">
+                <div class="row botonera">
                     <div class="balnk"></div>
                     <div class="botn"><button class=" btn btn-secondary " [disabled]="!contacto.valid ">Enviar
                             Mensaje</button></div>

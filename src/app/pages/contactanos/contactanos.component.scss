@@ -221,3 +221,38 @@ i {
 .bien {
   color: green;
 }
+
+@media screen and (max-width: 893px) {
+  h1 {
+    font-size: 6vw;
+  }
+  h2 {
+    margin-bottom: 2vh;
+    font-size: 4vw;
+  }
+  .contacto {
+    display: inline-block;
+    width: 96vw;
+    margin: 3vw;
+    height: 90vh;
+    .container {
+      display: inline;
+      padding: 0px;
+      .mensaje {
+        height: 30vh;
+      }
+    }
+    .row {
+      height: 7vh;
+      margin-left: 3vw;
+      margin-right: 3vw;
+      margin-bottom: 0px;
+      .icon {
+        margin-left: 0px;
+      }
+      .contact {
+        font-size: 2vh;
+      }
+    }
+  }
+}
