@@ -8,11 +8,23 @@
         <a href="#home" class="navbar-brand logo"><img src="../assets/Fotos/LOGO-INVERTIDO.svg" alt="logo"></a>
     </div>
 
+    <ul class="media">
+        <li><a href="https://www.instagram.com/gqeventos/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+        </li>
+        <li><a href="https://www.facebook.com/gqeventos/" target="_blank"><i
+                    class="fab fa-facebook-square fa-2x"></i></a>
+        </li>
+        <li><a href="https://twitter.com/gq_info" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a></li>
+        <li><a href="mailto:gqfotoyvideo@gmail.com"><i class="fas fa-envelope fa-2x"></i>
+
+            </a></li>
+    </ul>
+
 
 
     <button class="navbar-toggler " data-toggle="collapse" data-target="#menu-link">
-          <span><i class="fas fa-bars"></i></span>           
-  </button>
+        <span><i class="fas fa-bars"></i></span>
+    </button>
 
 
     <div class="collapse navbar-collapse" id="menu-link">
@@ -48,7 +60,8 @@
 
                         <mat-form-field>
                             <mat-label>Nº cliente</mat-label>
-                            <input matInput ngModel #clientId="ngModel" name="hash" [(ngModel)]="hash" required (click)="resetMessage()">
+                            <input matInput ngModel #clientId="ngModel" name="hash" [(ngModel)]="hash" required
+                                (click)="resetMessage()">
                             <mat-hint>Proporcionado por el fotografo</mat-hint>
                             <mat-error *ngIf="clientId.touched && clientId.errors">
                                 <mat-error *ngIf="clientId.errors.required">Este campo es requerido
@@ -71,7 +84,8 @@
                 <div class="dropMenu">
                     <form #admin="ngForm" (ngSubmit)="adminLogin()">
                         <mat-form-field>
-                            <input matInput ngModel #userAdmin="ngModel" name="user" [(ngModel)]="user" required placeholder="User admin" (click)="resetMessage()">
+                            <input matInput ngModel #userAdmin="ngModel" name="user" [(ngModel)]="user" required
+                                placeholder="User admin" (click)="resetMessage()">
                             <mat-error *ngIf="userAdmin.touched && userAdmin.errors">
                                 <mat-error *ngIf="userAdmin.errors.required">Este campo es requerido
                                 </mat-error>
@@ -79,7 +93,8 @@
                         </mat-form-field>
 
                         <mat-form-field>
-                            <input matInput ngModel type="password" #passAdmin="ngModel" name="password" [(ngModel)]="password" required placeholder="Pass" (click)="resetMessage()">
+                            <input matInput ngModel type="password" #passAdmin="ngModel" name="password"
+                                [(ngModel)]="password" required placeholder="Pass" (click)="resetMessage()">
                             <mat-error *ngIf="passAdmin.touched && passAdmin.errors">
                                 <mat-error *ngIf="passAdmin.errors.required">Este campo es requerido
                                 </mat-error>
