@@ -4,8 +4,9 @@
 
 export const environment = {
   production: true,
-  WS_URL: 'ec2-18-231-125-85.sa-east-1.compute.amazonaws.com:3001/api/v1',
-  S3_URL: 'http://gqclientes.s3.sa-east-1.amazonaws.com'
+  WS_URL:
+    "http://ec2-18-231-125-85.sa-east-1.compute.amazonaws.com:3001/api/v1",
+  S3_URL: "http://gqclientes.s3.sa-east-1.amazonaws.com"
 };
 
 /*
@@ -16,10 +17,6 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
-
-
-
-
 
 // export const environment = {
 //   production: true
