@@ -5,7 +5,7 @@
 export const environment = {
   production: true,
   WS_URL:
-    "http://localhost:3001/api/v1",
+    "http://ec2-18-231-125-85.sa-east-1.compute.amazonaws.com/3001/api/v1",
   S3_URL: "http://gq-eventos.s3.sa-east-1.amazonaws.com"
 };
 
