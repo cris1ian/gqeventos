@@ -5,7 +5,7 @@
 export const environment = {
   production: true,
   WS_URL: "https://gqeventos.crabdance.com:3001/api/v1",
-  S3_URL: "http://gq-eventos.s3.sa-east-1.amazonaws.com"
+  S3_URL: "https://gq-eventos.s3.sa-east-1.amazonaws.com"
 };
 
 /*
