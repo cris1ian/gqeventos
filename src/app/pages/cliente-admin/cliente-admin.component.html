@@ -42,6 +42,7 @@
     <div *ngIf="spinnerShow" style="margin: 50px;">
         <mat-progress-spinner style="margin: auto;" [mode]="spinnerMode" [value]="spinnerProgress">
         </mat-progress-spinner>
+        <h4 style="margin: auto;">{{spinnerProgress | number : '1.0-0'}}%</h4>
     </div>
 
     <div class="cont-galeria">

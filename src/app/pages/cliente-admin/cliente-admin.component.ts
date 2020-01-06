@@ -154,7 +154,7 @@ export class ClienteAdminComponent implements OnInit {
 
     doUpload(base64Img, fileName) {
         this.spinnerProgress = 100 * ++this.i / (this.filesCount);
-        this.spinnerMode = 'determinate';
+        // this.spinnerMode = 'determinate';
         if (this.i == this.filesCount) console.log(this.spinnerShow = false);
 
         const file = this.convertToFile.convertToFile(base64Img.imageDataUrl, fileName, base64Img.type);
